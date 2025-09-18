@@ -1,0 +1,36 @@
+name: Copilot Agent - Feature Branch Workflow
+
+on:
+  push:
+    branches: [copilot/fix-b6f69937-170b-467e-b796-098f4c962712]  # Replace with your feature branch name
+  workflow_dispatch:
+
+jobs:
+  copilot-agent:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout feature branch
+        uses: actions/checkout@v3
+        with:
+          ref: copilot-agent-work  # Make sure this matches your feature branch
+
+      # Example: Agent code-writing/generation step
+      # Replace this with your actual Copilot agent command/script
+      - name: Run Copilot agent
+        run: |
+          echo "This is where your agent writes or updates files."
+          # Example: touch newfile.py
+
+      - name: Commit and push Copilot changes
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add -A
+          git commit -m "Auto-commit Copilot changes [skip ci]" || echo "Nothing to commit"
+          git push origin HEAD
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Optionally, you can add a step to create a pull request automatically,
+      # or you can open one manually from copilot-agent-work to main.
