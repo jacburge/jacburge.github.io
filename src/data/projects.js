@@ -31,9 +31,9 @@ export const featuredProjects = [
 
 // Personal Information - Easy to update
 export const personalInfo = {
-  name: "Jaclyn Field",
-  tagline: "Bridging Mathematics, Art, and Product Leadership",
-  bio: "I'm passionate about the intersection of mathematical thinking, creative expression, and technology leadership. With a background in mathematics and experience in product management, I create experiences that make complex concepts accessible and beautiful.",
+  name: "Jaclyn Field Mathai",
+  tagline: "Data Science | Product Strategy | Creative Leadership",
+  bio: "I turn complex data and bold ideas into products that save time, unlock revenue, and delight users.",
   email: "hello@jaclynfieldmath.ai",
-  location: "San Francisco, CA"
+  location: "Greater DC Area"
 };
