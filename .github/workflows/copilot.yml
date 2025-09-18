@@ -1,36 +1,36 @@
-name: Copilot Agent - Feature Branch Workflow
+name: Copilot CI/CD
 
 on:
   push:
-    branches: [copilot/fix-b6f69937-170b-467e-b796-098f4c962712]  # Replace with your feature branch name
-  workflow_dispatch:
+    branches: [ main, develop, 'copilot/**' ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  copilot-agent:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout feature branch
-        uses: actions/checkout@v3
-        with:
-          ref: copilot-agent-work  # Make sure this matches your feature branch
+    - uses: actions/checkout@v4
 
-      # Example: Agent code-writing/generation step
-      # Replace this with your actual Copilot agent command/script
-      - name: Run Copilot agent
-        run: |
-          echo "This is where your agent writes or updates files."
-          # Example: touch newfile.py
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
 
-      - name: Commit and push Copilot changes
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git add -A
-          git commit -m "Auto-commit Copilot changes [skip ci]" || echo "Nothing to commit"
-          git push origin HEAD
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Install dependencies
+      run: npm ci
 
-      # Optionally, you can add a step to create a pull request automatically,
-      # or you can open one manually from copilot-agent-work to main.
+    - name: Run linting
+      run: npm run lint
+
+    - name: Build project
+      run: npm run build
+
+    - name: Deploy to GitHub Pages (main branch only)
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
