@@ -1,35 +1,6 @@
 import headshot from '../assets/jaclyn_portugal.jpg';
 import { personalInfo } from '../data/projects';
 
-// Example logo imports (replace with your actual logo files)
-import disneyLogo from '../assets/logos/disney.png';
-import libertyLogo from '../assets/logos/liberty.png';
-import pythonLogo from '../assets/logos/python.png';
-import reactLogo from '../assets/logos/react.png';
-import awsLogo from '../assets/logos/aws.png';
-import tableauLogo from '../assets/logos/tableau.png';
-import berkeleyLogo from '../assets/logos/berkeley.png';
-import ewhaLogo from '../assets/logos/ewha.png';
-import umdLogo from '../assets/logos/umd.png';
-
-const companyLogos = [
-  { src: disneyLogo, alt: 'Disney', tooltip: 'Disney' },
-  { src: libertyLogo, alt: 'Liberty Mutual', tooltip: 'Liberty Mutual' },
-];
-
-const techLogos = [
-  { src: pythonLogo, alt: 'Python', tooltip: 'Python' },
-  { src: reactLogo, alt: 'React', tooltip: 'React' },
-  { src: awsLogo, alt: 'AWS', tooltip: 'AWS' },
-  { src: tableauLogo, alt: 'Tableau', tooltip: 'Tableau' },
-];
-
-const schoolLogos = [
-  { src: berkeleyLogo, alt: 'UC Berkeley', tooltip: 'UC Berkeley' },
-  { src: ewhaLogo, alt: 'Ewha Womans University', tooltip: 'Ewha Womans University' },
-  { src: umdLogo, alt: 'University of Maryland', tooltip: 'University of Maryland, College Park' },
-];
-
 const Hero = () => {
   const scrollToProjects = () => {
     const projectsSection = document.getElementById('featured-projects');
