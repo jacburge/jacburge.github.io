@@ -7,8 +7,8 @@ import Skills from '../components/Skills';
 const Home = () => (
   <div className="bg-gray-50 min-h-screen">
     <Hero />
-    <FeaturedProjects />
     <Skills />
+    <FeaturedProjects />
     {/* Add About, Footer components here */}
   </div>
 );

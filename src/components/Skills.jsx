@@ -1,6 +1,4 @@
 import edxLogo from '../assets/logos/edx.png';
-import microsoftLogo from '../assets/logos/microsoft.png';
-import columbiaLogo from '../assets/logos/columbia.png';
 import disneyLogo from '../assets/logos/disney.png';
 import libertyLogo from '../assets/logos/liberty.png';
 import pythonLogo from '../assets/logos/python.png';
@@ -19,9 +17,9 @@ import datacampLogo from '../assets/logos/datacamp.png';
 const brands = [
   {
     src: disneyLogo,
-    alt: 'Disney',
+    alt: 'The Walt Disney Company',
     tooltip: 'Disney',
-    description: 'Built ML products for ad revenue optimization and content analytics',
+    description: 'Built ML products for ad revenue optimization, master data management, and content analytics',
   },
   {
     src: libertyLogo,
@@ -89,9 +87,10 @@ const productSkills = [
 ];
 
 const schools = [
-  { src: berkeleyLogo, alt: 'UC Berkeley', tooltip: 'B.A. in Cognitive Science' },
-  { src: ewhaLogo, alt: 'Ewha Womans University', tooltip: 'Summer International Program: Traditional East Asian Painting and Korean 101' },
-  { src: umdLogo, alt: 'University of Maryland', tooltip: 'Executive Master of Business Administration' },
+  { src: umdLogo, alt: 'University of Maryland, College Park', description: 'Executive Master of Business Administration' },
+  { src: berkeleyLogo, alt: 'University of California, Berkeley', description: 'B.A., Cognitive Science' },
+  { src: ewhaLogo, alt: 'Ewha Womans University', description: 'Summer International Program: Traditional East Asian Painting and Korean 101' }
+  
 ];
 
 const certifications = [
@@ -204,23 +203,54 @@ const Skills = () => (
       <h2 className="text-3xl font-bold text-accent-600 mb-10 text-center">Skills & Experience</h2>
       <Card>
         <div className="mb-6 text-center text-lg text-gray-700 font-medium">
-          Trusted by world-class brands:
+          Educated at top institutions:
         </div>
-        <LogoRow logos={brands} showDescription />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {schools.map((school, idx) => (
+            <div
+              key={idx}
+              className="relative bg-white rounded-2xl shadow-lg border-2 border-accent-100 p-6 flex flex-col items-center group transition-all duration-200"
+            >
+              <img
+                src={school.src}
+                alt={school.alt}
+                className="h-10 object-contain mb-4"
+              />
+              <div className="font-bold text-lg text-gray-900 text-center mb-1">{school.alt}</div>
+              <div className="text-sm text-gray-500 text-center">{school.description}</div>
+            </div>
+          ))}
+        </div>
       </Card>
       <Card>
         <div className="mb-6 text-center text-lg text-gray-700 font-medium">
-          Tech I use to turn ideas into products:
+          Trusted by world-class brands:
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {brands.map((brand, idx) => (
+            <div
+              key={idx}
+              className="relative bg-white rounded-2xl shadow-lg border-2 border-accent-100 p-6 flex flex-col items-center group transition-all duration-200"
+            >
+              <img
+                src={brand.src}
+                alt={brand.alt}
+                className="h-10 object-contain mb-4"
+              />
+              <div className="font-bold text-lg text-gray-900 text-center mb-1">{brand.alt}</div>
+              <div className="text-sm text-gray-500 text-center">{brand.description}</div>
+            </div>
+          ))}
+        </div>
+      </Card>
+      <Card>
+        <div className="mb-6 text-center text-lg text-gray-700 font-medium">
+          Tech stack:
         </div>
         <LogoRow logos={techStack} tech />
         <BadgeRow badges={productSkills} />
       </Card>
-      <Card>
-        <div className="mb-6 text-center text-lg text-gray-700 font-medium">
-          Educated at top institutions:
-        </div>
-        <LogoRow logos={schools} school />
-      </Card>
+      
       <Card>
         <div className="mb-6 text-center text-lg text-gray-700 font-medium">
           Certifications:
