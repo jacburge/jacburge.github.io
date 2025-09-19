@@ -30,12 +30,6 @@ const schoolLogos = [
   { src: umdLogo, alt: 'University of Maryland', tooltip: 'University of Maryland, College Park' },
 ];
 
-const allLogos = [
-  ...companyLogos,
-  ...techLogos,
-  ...schoolLogos,
-];
-
 const Hero = () => {
   const scrollToProjects = () => {
     const projectsSection = document.getElementById('featured-projects');

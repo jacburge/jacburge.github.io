@@ -15,7 +15,6 @@ import blossom_branch from '../assets/art/ink/blossom_branch.jpg';
 import blossoms_close from '../assets/art/ink/blossoms-close.jpg';
 import crane_sumi from '../assets/art/ink/crane_sumi.jpg';
 import fan1 from '../assets/art/ink/fan1.jpg';
-import fan2 from '../assets/art/ink/fan2.jpg';
 import lily from '../assets/art/ink/lily.jpg';
 
 import lemon from '../assets/art/lemons/lemon.jpeg';
