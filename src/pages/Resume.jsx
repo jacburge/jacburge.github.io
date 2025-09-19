@@ -136,21 +136,21 @@ const certifications = [
     name: "Computational Thinking with Python",
     org: "BerkeleyX (edX)",
     date: "Jun 2019",
-    type: "Data Science",
+    type: "Python",
   },
   {
     logo: edxLogo,
     name: "Inferential Thinking by Resampling",
     org: "BerkeleyX (edX)",
     date: "Jun 2019",
-    type: "Data Science",
+    type: "Statistics",
   },
   {
     logo: microsoftLogo,
     name: "Programming with Python for Data Science (DAT210x)",
     org: "Microsoft (edX)",
     date: "Feb 2018",
-    type: "Data Science",
+    type: "Python",
   },
   {
     logo: columbiaLogo,
@@ -232,6 +232,8 @@ const awards = [
 const badgeColors = {
   "Machine Learning": "#10B981",
   "Data Science": "#3B82F6",
+  "Statistics": "#8B5CF6",
+  "Python": "#F59E0B",
 };
 
 const sectionAnchors = [
@@ -252,7 +254,7 @@ function Sidebar() {
       style={{ minWidth: 220, maxWidth: 260 }}
       aria-label="Resume navigation sidebar"
     >
-      <img src={logo} alt="Logo" className="w-16 h-16 mx-auto mb-2 rounded-full" />
+      {/* <img src={logo} alt="Logo" className="w-16 h-16 mx-auto mb-2 rounded-full" /> */}
       <nav aria-label="Section navigation">
         <ul className="flex flex-col gap-3">
           {sectionAnchors.map((s) => (
@@ -262,9 +264,6 @@ function Sidebar() {
           ))}
         </ul>
       </nav>
-      <a href="/src/assets/JaclynMathai_Resume2025.pdf" download className="mt-4 flex items-center justify-center gap-2 bg-accent-600 text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-accent-700 transition" aria-label="Download PDF Resume">
-        <FaDownload /> PDF Resume
-      </a>
       <div className="flex flex-col gap-2 mt-4">
         <a href="mailto:jacburge@gmail.com" className="flex items-center gap-2 text-accent-700 font-medium hover:underline"><FaEnvelope /> Email</a>
         <a href="https://linkedin.com/in/jacburge" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent-700 font-medium hover:underline"><FaLinkedin /> LinkedIn</a>
@@ -280,7 +279,7 @@ function ExpandableExperience({ role }) {
   return (
     <div className={`transition-all duration-500 bg-white rounded-2xl shadow-lg mb-8 p-6 border border-accent-100 group ${expanded ? "expanded" : "collapsed"}`} tabIndex={0} aria-expanded={expanded} onKeyDown={e => (e.key === "Enter" || e.key === " ") && setExpanded(!expanded)}>
       <div className="flex items-center gap-4 mb-2">
-        <img src={role.logo} alt={role.company} className="w-12 h-12 rounded-lg object-contain" />
+        {/* <img src={role.logo} alt={role.company} className="w-12 h-12 rounded-lg object-contain" /> */}
         <div>
           <div className="font-bold text-lg text-accent-700">{role.title}</div>
           <div className="font-semibold text-gray-700">{role.company}</div>
@@ -306,10 +305,9 @@ function ResumePage() {
       <Sidebar />
       <main className="flex-1 max-w-4xl mx-auto px-2 lg:px-0">
         <section className="bg-accent-50 rounded-2xl shadow-xl p-8 mb-10 flex flex-col items-center text-center animate-fade-in" id="top">
-          <img src={logo} alt="Logo" className="w-20 h-20 mb-4 rounded-full shadow" />
+          {/* <img src={logo} alt="Logo" className="w-20 h-20 mb-4 rounded-full shadow" /> */}
           <h1 className="text-4xl font-bold text-accent-700 mb-2">Jaclyn Field Mathai</h1>
           <div className="text-lg font-semibold text-accent-600 mb-2">Senior Data Science Leader | ML Products | Creative Strategy</div>
-          <a href="/src/assets/JaclynMathai_Resume2025.pdf" download className="flex items-center gap-2 bg-accent-600 text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-accent-700 transition mb-4"><FaFilePdf /> Download Resume</a>
           <div className="text-gray-700 text-base max-w-xl mb-2">I turn complex data and bold ideas into products that save time, unlock revenue, and delight users.</div>
         </section>
 
@@ -346,21 +344,12 @@ function ResumePage() {
         <section id="skills" className="mb-12 animate-fade-in">
           <h2 className="text-2xl font-bold text-accent-700 mb-6">Skills & Tech Stack</h2>
           <div className="bg-white rounded-2xl shadow-lg p-6 border border-accent-100">
-            <div className="flex flex-wrap justify-center gap-6 mb-4">
-              <img src={pythonLogo} alt="Python" className="h-10 object-contain" title="Python" />
-              <img src={reactLogo} alt="React" className="h-10 object-contain" title="React" />
-              <img src={awsLogo} alt="AWS" className="h-10 object-contain" title="AWS" />
-              <img src={snowflakeLogo} alt="Snowflake" className="h-10 object-contain" title="Snowflake" />
-              <img src={tableauLogo} alt="Tableau" className="h-10 object-contain" title="Tableau" />
-              <img src={gitlabLogo} alt="GitLab" className="h-10 object-contain" title="GitLab" />
-              <img src={jiraLogo} alt="JIRA" className="h-10 object-contain" title="JIRA" />
-            </div>
             <div className="flex flex-wrap gap-3 justify-center mb-2">
               {skills.technical.map((skill, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-100 text-accent-700 font-semibold text-sm shadow"><img src={pythonLogo} alt="icon" className="h-5 w-5 object-contain" />{skill}</span>
+                <span key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-100 text-accent-700 font-semibold text-sm shadow">{skill}</span>
               ))}
               {skills.leadership.map((skill, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 font-semibold text-sm shadow"><img src={tableauLogo} alt="icon" className="h-5 w-5 object-contain" />{skill}</span>
+                <span key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 font-semibold text-sm shadow">{skill}</span>
               ))}
             </div>
           </div>
@@ -378,22 +367,6 @@ function ResumePage() {
                 <span className="inline-block px-4 py-1 rounded-full font-semibold text-sm mb-2" style={{ background: badgeColors[cert.type], color: '#fff' }}>{cert.type}</span>
               </div>
             ))}
-          </div>
-        </section>
-
-        <section id="projects" className="mb-12 animate-fade-in">
-          <h2 className="text-2xl font-bold text-accent-700 mb-6">Featured Projects & Impact Highlights</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl shadow-lg p-6 border border-accent-100 flex flex-col items-center">
-              <img src={datacampLogo} alt="DataCamp" className="h-10 w-10 object-contain mb-2" />
-              <div className="font-bold text-lg text-accent-700 text-center mb-1">DataCamp Instructor</div>
-              <div className="text-sm text-gray-500 text-center mb-1">"Cluster Analysis in R" curriculum for 2500+ students</div>
-            </div>
-            <div className="bg-white rounded-2xl shadow-lg p-6 border border-accent-100 flex flex-col items-center">
-              <img src={disneyLogo} alt="Disney" className="h-10 w-10 object-contain mb-2" />
-              <div className="font-bold text-lg text-accent-700 text-center mb-1">ML Forecasting Platform</div>
-              <div className="text-sm text-gray-500 text-center mb-1">Automated 60+ hours of monthly forecasting, supporting billions in ad revenue</div>
-            </div>
           </div>
         </section>
 
@@ -438,11 +411,6 @@ function ResumePage() {
             </div>
           </div>
         </section>
-        <div className="w-full flex justify-center py-6">
-          <img src={logo} alt="Logo" className="w-12 h-12 opacity-30" />
-        </div>
-        <hr className="border-t border-accent-100 my-4" />
-        <footer className="text-center text-gray-400 text-sm pb-8">© {new Date().getFullYear()} Jaclyn Field Mathai. All rights reserved.</footer>
       </main>
     </div>
   );

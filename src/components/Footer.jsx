@@ -12,8 +12,8 @@ const Footer = () => (
     <div className="max-w-5xl mx-auto px-4 py-6 flex flex-col items-center justify-center gap-2">
       {/* Centered: Made with ❤️ and copyright */}
       <div className="flex items-center gap-1 text-gray-400 text-sm justify-center">
-        Made with <FaRegHeart className="text-red-500 mx-1" /> by Jaclyn Field Mathai <FaRegCopyright className="inline-block" />
-        <span>{new Date().getFullYear()}</span>
+        <FaRegCopyright className="inline-block" />
+        {new Date().getFullYear()} Made with <FaRegHeart className="text-gray-400 mx-1" /> by Jaclyn Field Mathai. All Rights Reserved.
       </div>
     </div>
   </footer>

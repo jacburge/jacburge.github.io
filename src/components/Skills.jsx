@@ -391,7 +391,7 @@ const Skills = () => (
         <LogoRow logos={techStack} tech />
         <BadgeRow badges={productSkills} />
       </Card>
-      <Card>
+      {/* <Card>
         <div className="mb-6 text-center text-lg text-gray-700 font-medium">
           Certifications:
         </div>
@@ -419,7 +419,7 @@ const Skills = () => (
             </div>
           ))}
         </div>
-      </Card>
+      </Card> */}
     </div>
     <style>
       {`
