@@ -3,10 +3,10 @@ import logo from '../assets/logo.png';
 
 const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
+  // { name: 'About', href: '/about' },
   { name: 'Projects', href: '/projects' },
   { name: 'Art', href: '/art' },
-  { name: 'Skills & Experience', href: '/#skills' }, // Updated to anchor to homepage section
+  { name: 'Resume', href: '/resume' }, // Updated to anchor to homepage section
   { name: 'Contact', href: '/contact' },
 ];
 

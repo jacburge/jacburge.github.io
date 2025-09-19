@@ -9,19 +9,11 @@ const Footer = () => (
       boxShadow: '0 -6px 24px -8px rgba(76, 110, 129, 0.12)',
     }}
   >
-    <div className="max-w-5xl mx-auto px-4 py-6 flex flex-col items-center sm:flex-row sm:items-center sm:justify-between gap-4">
-      {/* Left: Made with ❤️ */}
-      <div className="flex items-center gap-1 text-gray-400 text-sm order-3 w-full sm:w-auto justify-center sm:justify-end">
-        Made with <FaRegHeart className="text-red-500 mx-1" /> by Jaclyn Field Mathai
-      </div>
-      {/* Center: Logo */}
-      <div className="flex justify-center order-1 sm:order-2 w-full sm:w-auto">
-        <img src={logo} alt="Logo" className="h-16 w-auto" />
-      </div>
-      {/* Right: Copyright */}
-      <div className="flex items-center gap-1 text-gray-400 text-sm order-3 w-full sm:w-auto justify-center sm:justify-end">
-        <FaRegCopyright className="inline-block" />
-        <span>2025</span>
+    <div className="max-w-5xl mx-auto px-4 py-6 flex flex-col items-center justify-center gap-2">
+      {/* Centered: Made with ❤️ and copyright */}
+      <div className="flex items-center gap-1 text-gray-400 text-sm justify-center">
+        Made with <FaRegHeart className="text-red-500 mx-1" /> by Jaclyn Field Mathai <FaRegCopyright className="inline-block" />
+        <span>{new Date().getFullYear()}</span>
       </div>
     </div>
   </footer>

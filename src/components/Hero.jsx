@@ -52,7 +52,7 @@ const Hero = () => {
             <p className="text-lg text-white mb-6 max-w-2xl leading-relaxed">
               {personalInfo.bio}
             </p>
-            {/* <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <div className="flex flex-col sm:flex-row gap-4 mt-8">
               <button
                 onClick={() => {
                   const projectsSection = document.getElementById('featured-projects');
@@ -68,9 +68,9 @@ const Hero = () => {
                 onClick={() => window.open('/resume.pdf', '_blank')}
                 className="bg-accent-700 text-white px-8 py-4 rounded-2xl font-semibold text-lg border-2 border-white hover:bg-white hover:text-accent-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
-                Download Resume
+                About Me
               </button>
-            </div> */}
+            </div>
           </div>
           {/* Right: Headshot/Illustration */}
           <div className="flex-1 flex flex-col items-center lg:justify-end">
@@ -109,6 +109,9 @@ const Hero = () => {
                 </button>
               )}
             </div>
+              <span className="text-xs text-accent-400 mt-2 text-center">
+              Hover or tap the photo for a surprise!
+            </span>
           </div>
         </div>
       </div>

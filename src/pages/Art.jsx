@@ -9,6 +9,7 @@ import reverie from '../assets/art/artforgall/reverie.jpg';
 import sketch from '../assets/art/artforgall/sketch.jpg';
 import scoliosis from '../assets/art/artforgall/scoliosis.jpg';
 import treble from '../assets/art/artforgall/treble.jpg';
+import clairdelune from '../assets/art/artforgall/clairdelune.jpeg';
 
 import bamboo from '../assets/art/ink/bamboo.jpg';
 import blossom_branch from '../assets/art/ink/blossom_branch.jpg';
@@ -99,16 +100,18 @@ const artSections = [
   {
     title: "Art for Gall: Watercolor, Sketching, Acrylic, Pastel",
     description:
-      "In 2017, I set a New Year’s resolution to make art once a week. Many of these pieces come from that project, which I called “Art For Gall.” Inspired by qigong, the gallbladder channel boosts confidence. I believe creativity isn’t just for the innately talented, it’s a skill anyone can cultivate with a little boldness and practice.",
+      "In 2017, I set a New Year’s resolution to make art once a week, even if it was a simple sketch. Many of these pieces come from that project, which I called “Art For Gall.” Inspired by qigong, the gallbladder channel boosts confidence. I believe creativity isn’t just for the innately talented, it’s a skill anyone can cultivate with a little boldness and practice.",
     images: [
       { src: italy, title: "Italy", caption: "Inspired by travel and new perspectives." },
       { src: arirang, title: "Arirang", caption: "A piece reflecting Korean heritage and movement." },
       { src: blackgoldsplatter, title: "Black Gold Splatter", caption: "Exploring texture and contrast." },
       { src: hands, title: "Hands", caption: "Gesture study in ink." },
       { src: reverie, title: "Reverie", caption: "Dreamlike state, mixed media." },
+      { src: clairdelune, title: "Clair de Lune", caption: "Inspired by Debussy's music." },
       { src: sketch, title: "Sketch", caption: "Quick sketch from a creative burst." },
       { src: scoliosis, title: "Scoliosis", caption: "Art as healing and reflection." },
       { src: treble, title: "Treble", caption: "Music and motion." },
+      
     ],
   },
 ];
