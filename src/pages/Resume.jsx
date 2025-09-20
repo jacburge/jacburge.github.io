@@ -7,8 +7,6 @@ import berkeleyLogo from "../assets/logos/berkeley.png";
 import umdLogo from "../assets/logos/umd.png";
 import edxLogo from "../assets/logos/edX.png";
 
-const accent = "#3B82F6";
-
 const education = [
   {
     logo: umdLogo,
