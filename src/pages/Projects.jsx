@@ -39,14 +39,12 @@ const Projects = () => {
     return 0;
   });
 
-  const featuredProjects = projects.filter(p => p.featured);
-
   return (
     <div className="min-h-screen w-full" style={accentBg}>
       {/* Top headline and intro */}
       <div className="max-w-5xl mx-auto px-4 pt-16 pb-8 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold text-accent-700 mb-4 drop-shadow-lg">Selected Works</h1>
-        <p className="text-lg text-gray-700 mb-6 font-medium">A showcase of my favorite passion projects—exploring data, design, and creative technology. Click any card to learn more!</p>
+        <p className="text-lg text-gray-700 mb-6 font-medium">A showcase of my favorite passion projects—exploring data, design, and community building. Click any card to learn more!</p>
       </div>
       {/* Filter/sort controls */}
       <div className="max-w-5xl mx-auto px-4 mb-8 flex flex-wrap gap-4 justify-center items-center sticky top-0 z-30 bg-white/80 rounded-xl shadow-lg py-4">
@@ -67,11 +65,10 @@ const Projects = () => {
           <option value="recent">Most Recent</option>
         </select>
       </div>
-      {/* Featured Projects section */}
+      {/* All Projects grid/list */}
       <section className="max-w-7xl mx-auto px-4 mb-16">
-        <h2 className="text-3xl font-bold text-accent-600 mb-8 text-center">Featured Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {featuredProjects.map((proj, idx) => (
+          {sorted.map((proj, idx) => (
             <div
               key={proj.id}
               className="bg-white rounded-3xl shadow-2xl hover:shadow-accent-400 transition-all duration-300 p-8 flex flex-col cursor-pointer group relative"
@@ -89,7 +86,6 @@ const Projects = () => {
                   style={{ aspectRatio: '16/9' }}
                   onClick={e => { e.stopPropagation(); setModal(proj); }}
                 />
-                {/* Play overlay for video projects can be added here */}
               </div>
               <h3 className="text-2xl font-bold text-accent-700 mb-2">{proj.title}</h3>
               <p className="text-gray-700 mb-4 text-base font-medium">{proj.summary}</p>
@@ -104,14 +100,11 @@ const Projects = () => {
               >
                 View Project
               </button>
-              {/* Animated underline on button hover */}
               <span className="absolute left-0 bottom-0 w-full h-1 bg-accent-200 group-hover:bg-accent-600 transition-all duration-300 rounded-b-3xl" />
-              {/* Expanded details below card */}
               {expanded === proj.id && (
                 <div className="mt-8 p-6 bg-accent-50 rounded-2xl shadow-inner animate-fade-in">
                   <h4 className="text-xl font-bold text-accent-700 mb-2">Details</h4>
                   <p className="text-gray-700 mb-4">{proj.details || proj.summary}</p>
-                  {/* More images/videos, links, reflections, etc. */}
                   <div className="flex flex-wrap gap-3 mb-4">
                     {proj.links && proj.links.map((link, i) => (
                       <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="underline text-accent-600 hover:text-accent-800 font-semibold">{link.label}</a>
@@ -120,49 +113,6 @@ const Projects = () => {
                   {proj.reflection && <div className="text-accent-700 italic text-base">{proj.reflection}</div>}
                 </div>
               )}
-            </div>
-          ))}
-        </div>
-      </section>
-      {/* All Projects grid/list */}
-      <section className="max-w-7xl mx-auto px-4 mb-24">
-        <h2 className="text-2xl font-bold text-accent-600 mb-8 text-center">All Projects</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {sorted.map((proj, idx) => (
-            <div
-              key={proj.id}
-              className="bg-white rounded-3xl shadow-lg hover:shadow-accent-400 transition-all duration-300 p-6 flex flex-col cursor-pointer group relative"
-              tabIndex={0}
-              onClick={() => setModal(proj)}
-              onKeyDown={e => (e.key === 'Enter' ? setModal(proj) : null)}
-              aria-label={`View details for ${proj.title}`}
-              style={{ outline: modal && modal.id === proj.id ? '2px solid #76A5AE' : 'none' }}
-            >
-              <div className="relative mb-4 rounded-2xl overflow-hidden aspect-video shadow-md">
-                <img
-                  src={proj.image}
-                  alt={proj.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  style={{ aspectRatio: '16/9' }}
-                  onClick={e => { e.stopPropagation(); setModal(proj); }}
-                />
-                {/* Play overlay for video projects can be added here */}
-              </div>
-              <h3 className="text-lg font-bold text-accent-700 mb-1">{proj.title} {proj.role && <span className="text-xs text-accent-400 font-semibold">– {proj.role}</span>}</h3>
-              <p className="text-gray-700 mb-3 text-sm font-medium line-clamp-3">{proj.summary}</p>
-              <div className="flex flex-wrap gap-2 mb-2">
-                {proj.tags.map((tag, i) => (
-                  <span key={i} className="bg-accent-100 text-accent-700 rounded-full px-3 py-1 text-xs font-medium">{tag}</span>
-                ))}
-              </div>
-              <button
-                className="mt-auto bg-accent-600 text-white px-4 py-2 rounded-xl font-semibold text-sm hover:bg-accent-700 transition shadow group-hover:scale-105 group-hover:shadow-lg"
-                onClick={e => { e.stopPropagation(); setModal(proj); }}
-              >
-                View More
-              </button>
-              {/* Animated underline on button hover */}
-              <span className="absolute left-0 bottom-0 w-full h-1 bg-accent-200 group-hover:bg-accent-600 transition-all duration-300 rounded-b-3xl" />
             </div>
           ))}
         </div>

@@ -13,6 +13,7 @@ import gitlabLogo from '../assets/logos/gitlab.png';
 import jiraLogo from '../assets/logos/jira.png';
 import canvaLogo from '../assets/logos/canva.png';
 import datacampLogo from '../assets/logos/datacamp.png';
+import copilotLogo from '../assets/logos/copilot.png';
 
 const brands = [
   {
@@ -76,6 +77,11 @@ const techStack = [
     alt: 'Canva',
     tooltip: 'Canva: Visual design and presentations',
   },
+  {
+    src: copilotLogo,
+    alt: 'GitHub Copilot',
+    tooltip: 'GitHub Copilot: AI pair programming, code generation, productivity',
+  }
 ];
 
 const productSkills = [

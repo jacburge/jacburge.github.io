@@ -22,7 +22,7 @@ const education = [
     degree: "B.A., Cognitive Science",
     field: "Cognitive Science",
     dates: "Graduated May 2015",
-    summary: "Explored interdisciplinary approaches to cognition, computation, and creative problem-solving.",
+    summary: "Cognitive Science: interdisciplinary study of the mind, blending Computer Science, Neuroscience, Linguistics, and more.",
   },
 ];
 
@@ -234,15 +234,15 @@ const sectionAnchors = [
 
 function ResumeNavBar({ activeSection }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  // Find the active section label for scrollspy
   const activeLabel = sectionAnchors.find(s => s.id === activeSection)?.label || "Sections";
 
-  // Collapse to dropdown on mobile, horizontal on desktop
+  // Transparent sticky filter bar style
   return (
-    <nav className="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-accent-100 w-screen" style={{ boxShadow: "0 12px 12px 0 rgba(59,130,246,0.04)" }}>
+    <nav
+      className="max-w-5xl mx-auto px-4 mb-8 flex flex-wrap gap-4 justify-center items-center sticky top-0 z-30 bg-white/80 rounded-xl shadow-lg py-1"
+    >
       {/* Desktop: horizontal nav */}
-      <ul className="hidden lg:flex flex-row flex-nowrap w-full px-2 py-4 justify-center items-center gap-2 sm:gap-6 md:gap-10">
+      <ul className="hidden lg:flex flex-row flex-nowrap w-full px-2 justify-center items-center gap-2 sm:gap-6 md:gap-6">
         {sectionAnchors
           .filter(s => s.id !== "contact")
           .map((s) => (
@@ -365,11 +365,11 @@ function ResumePage() {
   }, []);
 
   return (
-    <div className="bg-gray-50 min-h-screen flex flex-col items-center w-full">
+    <div className="min-h-screen flex flex-col items-center w-full" style={{ background: "#e6f4f6" }}>
       {/* Top section: full width, no rounded corners */}
       <section
         ref={sectionRefs.current.top}
-        className="bg-accent-50 shadow-xl p-8 mb-0 flex flex-col items-center text-center w-screen"
+        className="bg-accent-50 p-8 mb-0 flex flex-col items-center text-center w-screen"
         id="top"
         style={{ left: 0, right: 0 }}
       >
@@ -552,7 +552,7 @@ function ResumePage() {
         </section>
         <section ref={sectionRefs.current.contact} id="contact" className="mb-0 animate-fade-in">
           {/* Contact section: match width and style of experience cards */}
-          <div className="bg-accent-50 shadow-xl p-8 flex flex-col items-center text-center rounded-2xl max-w-5xl mx-auto">
+          <div className="bg-white shadow-xl p-8 flex flex-col items-center text-center rounded-2xl max-w-5xl mx-auto">
             <img src={logo} alt="Logo" className="w-16 h-16 mb-2" />
             <h2 className="text-2xl font-bold text-accent-700 mb-2">Let’s work together!</h2>
             <div className="text-gray-700 mb-2">Contact me for collaborations, consulting, or speaking.</div>
