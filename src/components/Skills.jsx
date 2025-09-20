@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import disneyLogo from '../assets/logos/disney.png';
+import disneyLogo from '../assets/logos/Disney.png';
 import libertyLogo from '../assets/logos/liberty.png';
 import pythonLogo from '../assets/logos/python.png';
 import reactLogo from '../assets/logos/react.png';
