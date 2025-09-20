@@ -8,7 +8,7 @@ const FeaturedProjects = () => (
         {featuredProjects.map((proj, idx) => (
           <div key={idx} className="bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl transition p-6 flex flex-col">
             <img
-              src={proj.img}
+              src={proj.image}
               alt={proj.title}
               className="w-full h-40 object-cover rounded-xl mb-4"
             />
