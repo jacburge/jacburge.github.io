@@ -8,20 +8,24 @@ export default {
     extend: {
       colors: {
         accent: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          50:  '#e6f4f6',
+          100: '#c2e3ea',
+          200: '#9ed2de',
+          300: '#7ac1d2',
+          400: '#56b0c6',
+          500: '#76A5AE', // Your main teal
+          600: '#4e8a97',
+          700: '#366b74',
+          800: '#244a4f',
+          900: '#12292a',
+        },
+        teal: {
+          500: '#76A5AE',
+          600: '#4e8a97',
         }
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
+        sans: ['Josefin Sans','Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
       }
     },
   },

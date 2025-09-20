@@ -56,7 +56,7 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Get In Touch</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            I'm always excited to discuss new opportunities, collaborations, or just chat about the intersection of math, art, and technology.
+            I'm always excited to discuss new opportunities, collaborations, or just chat about the intersection of data, art, and technology.
           </p>
         </div>
 
@@ -178,10 +178,10 @@ const Contact = () => {
               <div className="space-y-3">
                 {[
                   "Product strategy & development",
-                  "Mathematical art projects",
-                  "Data visualization consulting",
+                  "Data & AI consulting",
                   "Educational technology initiatives",
                   "Speaking opportunities",
+                  "Art projects",
                   "Creative collaborations"
                 ].map((item, index) => (
                   <div key={index} className="flex items-center">
@@ -193,7 +193,7 @@ const Contact = () => {
             </div>
 
             {/* Response Time */}
-            <div className="bg-accent-50 rounded-2xl p-6">
+            {/* <div className="bg-accent-50 rounded-2xl p-6">
               <div className="flex items-center">
                 <div className="w-8 h-8 bg-accent-600 rounded-full flex items-center justify-center mr-3">
                   <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -205,7 +205,7 @@ const Contact = () => {
                   <p className="text-sm text-gray-600">I typically respond within 24 hours</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

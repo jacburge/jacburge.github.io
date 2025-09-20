@@ -1,63 +1,59 @@
-import { personalInfo } from '../data/projects';
+import logo from '../assets/logo.png';
+import { FaBookOpen, FaBrain, FaLightbulb } from 'react-icons/fa';
 
-const About = () => {
-  return (
-    <div className="min-h-screen bg-gray-50 py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-2xl shadow-lg p-8 lg:p-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8">About Me</h1>
-          
-          <div className="prose prose-lg max-w-none">
-            <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-              {personalInfo.bio}
+const About = () => (
+  <div className="w-full flex justify-center py-14 bg-gradient-to-br from-accent-50 via-white to-gray-100"
+    style={{
+      background: 'linear-gradient(120deg, #e6f4f6 0%, #f8fafc 100%)',
+    }}
+  >
+    <div
+      className="w-full max-w-5xl rounded-2xl shadow-lg border-2 border-accent-100 px-8 py-12 flex flex-col items-center relative bg-transparent overflow-hidden"
+    >
+      {/* Logo overlay as background */}
+      <img
+        src={logo}
+        alt="Logo"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 w-2/3 max-w-xl pointer-events-none select-none z-0"
+        style={{ filter: 'blur(0.5px)' }}
+      />
+      {/* Card content */}
+      <div className="w-full max-w-3xl text-center relative z-10">
+        <div className="flex flex-col gap-8">
+          {/* Background */}
+          <div>
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <FaBookOpen className="text-accent-600 text-3xl" />
+              <h3 className="font-bold text-2xl text-accent-700">Background</h3>
+            </div>
+            <p className="text-lg text-gray-700 font-medium leading-relaxed mb-2">
+              I am a product-minded data science leader, blending analytics, storytelling, and art to create products that empower and inspire. Rooted in an interdisciplinary background, I bring a <span className="text-accent-600 font-semibold">maker’s mindset</span> to everything I do.
             </p>
-            
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Background</h2>
-            <p className="text-gray-700 mb-6">
-              With a deep foundation in mathematics and years of experience in product leadership, 
-              I specialize in translating complex technical concepts into accessible, user-friendly experiences. 
-              My work spans the intersection of analytical thinking, creative problem-solving, and strategic product development.
+          </div>
+          {/* Philosophy */}
+          <div>
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <FaBrain className="text-accent-600 text-3xl" />
+              <h3 className="font-bold text-2xl text-accent-700">Philosophy</h3>
+            </div>
+            <p className="text-lg text-gray-700 font-medium leading-relaxed mb-2">
+              I believe <span className="text-accent-600 font-semibold">creativity is for everyone</span>—it just takes courage, practice, and the willingness to learn from failure. Building products and communities is like making art or practicing martial arts: it’s messy, dynamic, and demands resilience.
             </p>
-            
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Expertise</h2>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-accent-600 rounded-full mr-3"></span>
-                Mathematical Modeling
-              </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-accent-600 rounded-full mr-3"></span>
-                Product Strategy
-              </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-accent-600 rounded-full mr-3"></span>
-                Data Visualization
-              </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-accent-600 rounded-full mr-3"></span>
-                User Experience Design
-              </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-accent-600 rounded-full mr-3"></span>
-                Creative Technology
-              </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-accent-600 rounded-full mr-3"></span>
-                Educational Innovation
-              </li>
-            </ul>
-            
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Philosophy</h2>
-            <p className="text-gray-700">
-              I believe that the most beautiful solutions emerge at the intersection of logical thinking and creative expression. 
-              Whether I'm developing a new product feature, creating mathematical art, or solving complex problems, 
-              I approach each challenge with curiosity, empathy, and a commitment to making the complex accessible and beautiful.
+          </div>
+          {/* Mission */}
+          <div>
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <FaLightbulb className="text-accent-600 text-3xl" />
+              <h3 className="font-bold text-2xl text-accent-700">Mission</h3>
+            </div>
+            <p className="text-lg text-gray-700 font-medium leading-relaxed">
+              My mission is to break down barriers so more people feel seen, empowered, and inspired to create. Whether I’m scaling ML platforms or painting on a Sunday, I’m driven by curiosity, empathy, and the joy of turning ideas into reality.
             </p>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 export default About;
