@@ -1,13 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import { FaLinkedin, FaDownload, FaEnvelope, FaAward, FaMicrophone, FaFilePdf } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaAward, FaMicrophone, FaFilePdf, FaGraduationCap, FaBriefcase, FaTools, FaCertificate, FaStar, FaComments, FaChevronDown, FaList } from "react-icons/fa";
 import logo from "../assets/logo.png";
 import disneyLogo from "../assets/logos/Disney.png";
 import libertyLogo from "../assets/logos/liberty.png";
 import berkeleyLogo from "../assets/logos/berkeley.png";
 import umdLogo from "../assets/logos/umd.png";
-import microsoftLogo from "../assets/logos/microsoft.png";
-import columbiaLogo from "../assets/logos/columbia.png";
 import edxLogo from "../assets/logos/edX.png";
 
 const accent = "#3B82F6";
@@ -137,14 +134,14 @@ const certifications = [
     type: "Statistics",
   },
   {
-    logo: microsoftLogo,
+    logo: edxLogo,
     name: "Programming with Python for Data Science (DAT210x)",
     org: "Microsoft (edX)",
     date: "Feb 2018",
     type: "Python",
   },
   {
-    logo: columbiaLogo,
+    logo: edxLogo,
     name: "Machine Learning for Data Science and Analytics",
     org: "ColumbiaX (edX)",
     date: "Mar 2016",
@@ -228,61 +225,102 @@ const badgeColors = {
 };
 
 const sectionAnchors = [
-  { id: "education", label: "Education" },
-  { id: "experience", label: "Work Experience" },
-  { id: "skills", label: "Skills" },
-  { id: "certifications", label: "Certifications" },
-  { id: "projects", label: "Featured Projects" },
-  { id: "awards", label: "Awards" },
-  { id: "speaking", label: "Speaking" },
-  { id: "contact", label: "Contact" },
+  { id: "education", label: "Education", icon: <FaGraduationCap /> },
+  { id: "experience", label: "Work Experience", icon: <FaBriefcase /> },
+  { id: "skills", label: "Skills", icon: <FaTools /> },
+  { id: "certifications", label: "Certifications", icon: <FaCertificate /> },
+  { id: "awards", label: "Awards", icon: <FaStar /> },
+  { id: "speaking", label: "Speaking", icon: <FaComments /> },
+  { id: "contact", label: "Contact", icon: <FaEnvelope /> },
 ];
 
-function Sidebar({ activeSection }) {
+function ResumeNavBar({ activeSection }) {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  // Find the active section label for scrollspy
+  const activeLabel = sectionAnchors.find(s => s.id === activeSection)?.label || "Sections";
+
+  // Collapse to dropdown on mobile, horizontal on desktop
   return (
-    <aside
-      className="hidden lg:flex flex-col sticky top-8 h-fit bg-white rounded-2xl shadow-xl p-6 gap-6 border border-accent-100"
-      style={{ minWidth: 220, maxWidth: 260 }}
-      aria-label="Resume navigation sidebar"
-    >
-      <nav aria-label="Section navigation">
-        <ul className="flex flex-col gap-3">
-          {sectionAnchors.map((s) => (
-            <li key={s.id}>
+    <nav className="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-accent-100 w-screen" style={{ boxShadow: "0 12px 12px 0 rgba(59,130,246,0.04)" }}>
+      {/* Desktop: horizontal nav */}
+      <ul className="hidden lg:flex flex-row flex-nowrap w-full px-2 py-4 justify-center items-center gap-2 sm:gap-6 md:gap-10">
+        {sectionAnchors
+          .filter(s => s.id !== "contact")
+          .map((s) => (
+            <li key={s.id} className="relative min-w-[120px] flex-shrink-0 flex justify-center">
               <a
-                href={`#${s.id}`}
-                className={`text-accent-700 font-semibold transition ${
-                  activeSection === s.id
-                    ? "underline decoration-4 decoration-accent-600"
-                    : "hover:underline focus:underline focus:outline-accent-600"
-                }`}
+                href={`#${s.id}-header`}
+                className={`flex items-center gap-2 px-4 py-3 font-semibold rounded-full transition-all duration-300 whitespace-nowrap
+                  ${activeSection === s.id
+                    ? "text-accent-400"
+                    : "text-gray-500 hover:text-accent-600"}
+                `}
                 tabIndex={0}
                 aria-current={activeSection === s.id ? "section" : undefined}
+                aria-label={s.label}
+                title={s.label}
               >
-                {s.label}
+                <span className="text-2xl" aria-label={s.label}>{s.icon}</span>
+                <span>{s.label}</span>
               </a>
             </li>
           ))}
-        </ul>
-      </nav>
-      <div className="flex flex-col gap-2 mt-4">
-        <a href="mailto:jacburge@gmail.com" className="flex items-center gap-2 text-accent-700 font-medium hover:underline"><FaEnvelope /> Email</a>
-        <a href="https://linkedin.com/in/jacburge" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent-700 font-medium hover:underline"><FaLinkedin /> LinkedIn</a>
+      </ul>
+      {/* Mobile: dropdown nav */}
+      <div className="flex lg:hidden w-full px-2 py-2 justify-center items-center relative">
+        <button
+          className="flex items-center gap-2 px-4 py-3 font-semibold rounded-full bg-white border border-accent-100 shadow transition-all duration-300 text-accent-700"
+          aria-haspopup="listbox"
+          aria-expanded={dropdownOpen}
+          aria-label="Open sections menu"
+          onClick={() => setDropdownOpen((open) => !open)}
+        >
+          <FaList className="text-xl" />
+          <span>{activeLabel}</span>
+          <FaChevronDown className={`ml-2 transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
+        </button>
+        {/* Dropdown menu */}
+        <div
+          className={`absolute left-1/2 top-full mt-2 w-[90vw] max-w-xs bg-white rounded-2xl shadow-lg border border-accent-100 z-50 transition-all duration-300 overflow-hidden
+            ${dropdownOpen ? "opacity-100 scale-y-100 pointer-events-auto" : "opacity-0 scale-y-0 pointer-events-none"}
+          `}
+          style={{ transformOrigin: "top center" }}
+          role="listbox"
+        >
+          {sectionAnchors
+            .filter(s => s.id !== "contact")
+            .map((s) => (
+              <a
+                key={s.id}
+                href={`#${s.id}-header`}
+                className={`flex items-center gap-3 px-6 py-4 font-semibold text-lg transition-all duration-200
+                  ${activeSection === s.id
+                    ? "text-accent-400 bg-accent-50"
+                    : "text-gray-700 hover:bg-accent-100"}
+                `}
+                aria-label={s.label}
+                title={s.label}
+                tabIndex={0}
+                role="option"
+                onClick={() => setDropdownOpen(false)}
+              >
+                <span className="text-2xl">{s.icon}</span>
+                <span>{s.label}</span>
+              </a>
+            ))}
+        </div>
       </div>
-    </aside>
+    </nav>
   );
 }
 
 function ExpandableExperience({ role }) {
-  const [expanded, setExpanded] = useState(false);
-  const keyBullets = role.bullets.slice(0, 2);
-  const moreBullets = role.bullets.slice(2);
   return (
     <div
-      className={`transition-all duration-500 bg-white rounded-2xl shadow-lg mb-8 p-6 border border-accent-100 group ${expanded ? "expanded" : "collapsed"}`}
+      className="transition-all duration-500 bg-white rounded-2xl shadow-lg mb-8 p-6 border border-accent-100 group"
       tabIndex={0}
-      aria-expanded={expanded}
-      onKeyDown={e => (e.key === "Enter" || e.key === " ") && setExpanded(!expanded)}
+      aria-expanded={true}
     >
       <div className="flex items-center gap-4 mb-2">
         <div>
@@ -290,22 +328,10 @@ function ExpandableExperience({ role }) {
           <div className="font-semibold text-gray-700">{role.company}</div>
           <div className="text-xs text-accent-400 font-semibold">{role.dates}</div>
         </div>
-        <button
-          className="ml-auto px-3 py-1 rounded-full bg-accent-100 text-accent-700 text-xs font-semibold shadow hover:bg-accent-200 transition"
-          onClick={() => setExpanded((v) => !v)}
-          aria-label={expanded ? "Collapse details" : "Expand details"}
-        >
-          {expanded ? "Show Less" : "Show More"}
-        </button>
       </div>
-      {/* Bullets: single column */}
+      {/* Bullets: single column, always expanded */}
       <div className="flex flex-col gap-2 mt-2">
-        {keyBullets.map((b, i) => (
-          <div key={i} className="text-gray-700 text-sm leading-relaxed">
-            <span className="font-bold text-accent-600">• </span>{b}
-          </div>
-        ))}
-        {expanded && moreBullets.map((b, i) => (
+        {role.bullets.map((b, i) => (
           <div key={i} className="text-gray-700 text-sm leading-relaxed">
             <span className="font-bold text-accent-600">• </span>{b}
           </div>
@@ -316,7 +342,7 @@ function ExpandableExperience({ role }) {
 }
 
 function ResumePage() {
-  // Track active section for sidebar highlight
+  // Track active section for scrollspy
   const [activeSection, setActiveSection] = useState(sectionAnchors[0].id);
   const sectionRefs = useRef(sectionAnchors.reduce((acc, s) => {
     acc[s.id] = React.createRef();
@@ -325,7 +351,7 @@ function ResumePage() {
 
   useEffect(() => {
     function onScroll() {
-      const scrollY = window.scrollY + 120; // Offset for sticky sidebar
+      const scrollY = window.scrollY + 120;
       let current = sectionAnchors[0].id;
       for (const s of sectionAnchors) {
         const ref = sectionRefs.current[s.id];
@@ -341,29 +367,36 @@ function ResumePage() {
   }, []);
 
   return (
-    <div className="bg-gray-50 min-h-screen flex flex-col lg:flex-row gap-8">
-      <Sidebar activeSection={activeSection} />
-      <main className="flex-1 max-w-4xl mx-auto px-2 lg:px-0">
-        <section
-          ref={sectionRefs.current.top}
-          className="bg-accent-50 rounded-2xl shadow-xl p-8 mb-10 flex flex-col items-center text-center animate-fade-in"
-          id="top"
-        >
-          {/* <img src={logo} alt="Logo" className="w-20 h-20 mb-4 rounded-full shadow" /> */}
-          <h1 className="text-4xl font-bold text-accent-700 mb-2">Jaclyn Field Mathai</h1>
-          <div className="text-lg font-semibold text-accent-600 mb-2">Senior Data Science Leader | ML Products | Creative Strategy</div>
-          <div className="text-gray-700 text-base max-w-xl mb-2">I turn complex data and bold ideas into products that save time, unlock revenue, and delight users.</div>
-        </section>
-
+    <div className="bg-gray-50 min-h-screen flex flex-col items-center w-full">
+      {/* Top section: full width, no rounded corners */}
+      <section
+        ref={sectionRefs.current.top}
+        className="bg-accent-50 shadow-xl p-8 mb-0 flex flex-col items-center text-center w-screen"
+        id="top"
+        style={{ left: 0, right: 0 }}
+      >
+        <h1 className="text-4xl font-bold text-accent-700 mb-2">Jaclyn Field Mathai</h1>
+        <div className="text-lg font-semibold text-accent-600 mb-2">Senior Data Science Leader | ML Products | Creative Strategy</div>
+        <div className="text-gray-700 text-base max-w-xl mb-2">I turn complex data and bold ideas into products that save time, unlock revenue, and delight users.</div>
+      </section>
+      <ResumeNavBar activeSection={activeSection} />
+      <main className="w-full max-w-5xl mx-auto px-2 lg:px-0 flex-1">
+        {/* Add margin above Education section */}
         <section
           ref={sectionRefs.current.education}
           id="education"
-          className="mb-12 animate-fade-in"
+          className="mt-8 mb-12 animate-fade-in"
         >
-          <h2 className="text-2xl font-bold text-accent-700 mb-6">Education</h2>
+          <h2
+            id="education-header"
+            className="text-2xl font-bold text-accent-700 mb-6"
+            style={{ scrollMarginTop: "80px" }}
+          >
+            Education
+          </h2>
           {education.map((edu, i) => (
             <div key={i} className="bg-white rounded-2xl shadow-lg mb-8 p-6 border border-accent-100 flex items-center gap-6">
-              <img src={edu.logo} alt={edu.institution} className="w-16 h-16 rounded-lg object-contain" />
+              <img src={edu.logo} alt={edu.institution} className="w-24 h-24 rounded-lg object-contain" />
               <div>
                 <div className="font-bold text-lg text-accent-700">{edu.institution}</div>
                 <div className="text-gray-700 font-semibold">{edu.degree} &mdash; {edu.field}</div>
@@ -373,20 +406,25 @@ function ResumePage() {
             </div>
           ))}
         </section>
-
         <section
           ref={sectionRefs.current.experience}
           id="experience"
           className="mb-12 animate-fade-in"
         >
-          <h2 className="text-2xl font-bold text-accent-700 mb-6">Work Experience</h2>
+          <h2
+            id="experience-header"
+            className="text-2xl font-bold text-accent-700 mb-6"
+            style={{ scrollMarginTop: "80px" }}
+          >
+            Work Experience
+          </h2>
           <div className="relative">
             {/* Timeline vertical line: full height, behind all cards and logos */}
             <div
               className="absolute left-8 top-0 h-full w-1 bg-accent-100 rounded-full z-0"
               aria-hidden="true"
             ></div>
-            <div className="flex flex-col gap-16">
+            <div className="flex flex-col gap-8">
               {workExperience.map((role, i) => (
                 <div key={i} className="relative flex items-start">
                   {/* Timeline logo: floats over the line, left on desktop, centered on mobile */}
@@ -397,7 +435,7 @@ function ResumePage() {
                       -translate-x-1/2
                       top-0
                       sm:top-0
-                      w-14 h-14
+                      w-16 h-16
                       rounded-full
                       bg-white
                       shadow-lg
@@ -424,7 +462,7 @@ function ResumePage() {
                         : {}),
                     }}
                   >
-                    <img src={role.logo} alt={role.company} className="w-8 h-8 object-contain" />
+                    <img src={role.logo} alt={role.company} className="w-12 h-12 object-contain" />
                   </div>
                   {/* Card: add left margin for timeline/logo on desktop */}
                   <div className="flex-1 ml-0 sm:ml-24">
@@ -435,9 +473,14 @@ function ResumePage() {
             </div>
           </div>
         </section>
-
         <section ref={sectionRefs.current.skills} id="skills" className="mb-12 animate-fade-in">
-          <h2 className="text-2xl font-bold text-accent-700 mb-6">Skills & Tech Stack</h2>
+          <h2
+            id="skills-header"
+            className="text-2xl font-bold text-accent-700 mb-6"
+            style={{ scrollMarginTop: "80px" }}
+          >
+            Skills & Tech Stack
+          </h2>
           <div className="bg-white rounded-2xl shadow-lg p-6 border border-accent-100">
             <div className="flex flex-wrap gap-3 justify-center mb-2">
               {skills.technical.map((skill, i) => (
@@ -449,9 +492,14 @@ function ResumePage() {
             </div>
           </div>
         </section>
-
         <section ref={sectionRefs.current.certifications} id="certifications" className="mb-12 animate-fade-in">
-          <h2 className="text-2xl font-bold text-accent-700 mb-6">Certifications</h2>
+          <h2
+            id="certifications-header"
+            className="text-2xl font-bold text-accent-700 mb-6"
+            style={{ scrollMarginTop: "80px" }}
+          >
+            Certifications
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {certifications.map((cert, i) => (
               <div key={i} className="bg-white rounded-2xl shadow-lg p-6 border border-accent-100 flex flex-col items-center">
@@ -464,9 +512,14 @@ function ResumePage() {
             ))}
           </div>
         </section>
-
         <section ref={sectionRefs.current.awards} id="awards" className="mb-12 animate-fade-in">
-          <h2 className="text-2xl font-bold text-accent-700 mb-6">Awards & Honors</h2>
+          <h2
+            id="awards-header"
+            className="text-2xl font-bold text-accent-700 mb-6"
+            style={{ scrollMarginTop: "80px" }}
+          >
+            Awards & Honors
+          </h2>
           <div className="flex flex-wrap gap-6 justify-center">
             {awards.map((item, i) => (
               <div key={i} className="bg-white rounded-2xl shadow-lg p-6 border border-accent-100 flex flex-col items-center min-w-[220px] max-w-[320px]">
@@ -479,9 +532,14 @@ function ResumePage() {
             ))}
           </div>
         </section>
-
         <section ref={sectionRefs.current.speaking} id="speaking" className="mb-12 animate-fade-in">
-          <h2 className="text-2xl font-bold text-accent-700 mb-6">Speaking & Thought Leadership</h2>
+          <h2
+            id="speaking-header"
+            className="text-2xl font-bold text-accent-700 mb-6"
+            style={{ scrollMarginTop: "80px" }}
+          >
+            Speaking & Thought Leadership
+          </h2>
           <div className="flex flex-wrap gap-6 justify-center">
             {speaking.map((item, i) => (
               <div key={i} className="bg-white rounded-2xl shadow-lg p-6 border border-accent-100 flex flex-col items-center min-w-[220px] max-w-[320px]">
@@ -494,10 +552,10 @@ function ResumePage() {
             ))}
           </div>
         </section>
-
-        <section ref={sectionRefs.current.contact} id="contact" className="mb-12 animate-fade-in">
-          <div className="bg-accent-50 rounded-2xl shadow-xl p-8 flex flex-col items-center text-center">
-            <img src={logo} alt="Logo" className="w-16 h-16 mb-2 rounded-full" />
+        <section ref={sectionRefs.current.contact} id="contact" className="mb-0 animate-fade-in">
+          {/* Contact section: match width and style of experience cards */}
+          <div className="bg-accent-50 shadow-xl p-8 flex flex-col items-center text-center rounded-2xl max-w-5xl mx-auto">
+            <img src={logo} alt="Logo" className="w-16 h-16 mb-2" />
             <h2 className="text-2xl font-bold text-accent-700 mb-2">Let’s work together!</h2>
             <div className="text-gray-700 mb-2">Contact me for collaborations, consulting, or speaking.</div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-2">

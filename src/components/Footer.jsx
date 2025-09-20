@@ -1,4 +1,3 @@
-import logo from '../assets/logo.png';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import { FaRegCopyright } from 'react-icons/fa6';
 
