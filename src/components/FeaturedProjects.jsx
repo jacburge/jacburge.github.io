@@ -1,4 +1,6 @@
-import { featuredProjects } from '../data/projects';
+import { projects } from '../data/projects';
+
+const featuredProjects = projects.filter(p => p.featured);
 
 const FeaturedProjects = () => (
   <section id="featured-projects" className="py-20 bg-white">
