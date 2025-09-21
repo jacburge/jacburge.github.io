@@ -9,7 +9,7 @@ import hands from '../assets/art/artforgall/hands.jpg';
 import reverie from '../assets/art/abstract/reverie.jpg';
 import sketch from '../assets/art/artforgall/sketch.jpg';
 import scoliosis from '../assets/art/artforgall/scoliosis.jpg';
-import treble from '../assets/art/abstract/treble.JPG';
+import treble from '../assets/art/abstract/treble.jpg';
 import clairdelune from '../assets/art/abstract/clairdelune.jpeg';
 
 import bamboo from '../assets/art/ink/bamboo.jpg';
