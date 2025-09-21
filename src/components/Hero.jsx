@@ -10,8 +10,6 @@ const Hero = () => {
   // Detect mobile (simple check)
   const isMobile = typeof window !== "undefined" && window.matchMedia("(hover: none)").matches;
 
-  const handleToggle = () => setShowIllustration((prev) => !prev);
-
   return (
     <section
       className="relative py-24 lg:py-20 overflow-hidden"

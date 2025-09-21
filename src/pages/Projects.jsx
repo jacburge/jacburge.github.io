@@ -6,36 +6,10 @@ const accentBg = {
   background: 'linear-gradient(120deg, #e6f4f6 0%, #f8fafc 100%)',
 };
 
-const tagColors = {
-  default: 'bg-accent-100 text-accent-700',
-  active: 'bg-accent-600 text-white',
-};
-
-const roles = Array.from(new Set(projects.map(p => p.role || '')));
-const techs = Array.from(new Set(projects.flatMap(p => p.tags || [])));
-const years = Array.from(new Set(projects.map(p => p.year).filter(Boolean)));
-
-function filterProjects(projectsArr, filters) {
-  return projectsArr.filter(p => {
-    if (filters.role && p.role !== filters.role) return false;
-    if (filters.tech && !(p.tags || []).includes(filters.tech)) return false;
-    if (filters.year && p.year !== filters.year) return false;
-    return true;
-  });
-}
 
 const Projects = () => {
-  const [filters, setFilters] = useState({ role: '', tech: '', year: '' });
-  const [sort, setSort] = useState('featured');
   const [expanded, setExpanded] = useState(null);
   const [modal, setModal] = useState(null);
-
-  const filtered = filterProjects(projects, filters);
-  const sorted = [...filtered].sort((a, b) => {
-    if (sort === 'featured') return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
-    if (sort === 'recent') return (b.year || 0) - (a.year || 0);
-    return 0;
-  });
 
   return (
     <div className="min-h-screen w-full" style={accentBg}>
@@ -66,7 +40,7 @@ const Projects = () => {
       {/* All Projects grid/list */}
       <section className="max-w-7xl mx-auto px-4 mb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {sorted.map((proj, idx) => (
+          {projects.map((proj) => (
             <div
               key={proj.id}
               className="bg-white rounded-3xl shadow-2xl hover:shadow-accent-400 transition-all duration-300 p-8 flex flex-col cursor-pointer group relative"
