@@ -10,8 +10,6 @@ const Hero = () => {
   // Detect mobile (simple check)
   const isMobile = typeof window !== "undefined" && window.matchMedia("(hover: none)").matches;
 
-  const handleToggle = () => setShowIllustration((prev) => !prev);
-
   return (
     <section
       className="relative py-24 lg:py-20 overflow-hidden"
@@ -81,6 +79,7 @@ const Hero = () => {
               onMouseLeave={() => !isMobile && setShowIllustration(false)}
               onFocus={() => !isMobile && setShowIllustration(true)}
               onBlur={() => !isMobile && setShowIllustration(false)}
+              onClick={() => isMobile && setShowIllustration((prev) => !prev)}
             >
               {/* Photo */}
               <img
@@ -96,20 +95,9 @@ const Hero = () => {
                 className={`absolute top-0 left-0 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-xl border-4 border-white transition-opacity duration-500 ${showIllustration ? "opacity-100 z-10" : "opacity-0 z-0"}`}
                 draggable={false}
               />
-              {/* Mobile toggle button */}
-              {isMobile && (
-                <button
-                  type="button"
-                  onClick={handleToggle}
-                  className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-accent-600 text-white px-4 py-2 rounded-full shadow-lg text-sm font-semibold z-20"
-                  style={{ outline: 'none' }}
-                  aria-label={showIllustration ? "Show photo" : "See illustration"}
-                >
-                  {showIllustration ? "Show photo" : "See illustration"}
-                </button>
-              )}
+              {/* Remove mobile toggle button */}
             </div>
-              <span className="text-xs text-accent-400 mt-2 text-center">
+              <span className="text-xs text-accent-400 mb-4 text-center">
               Hover or tap the photo for a surprise!
             </span>
           </div>

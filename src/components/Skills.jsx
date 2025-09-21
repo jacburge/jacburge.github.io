@@ -13,6 +13,17 @@ import gitlabLogo from '../assets/logos/gitlab.png';
 import jiraLogo from '../assets/logos/jira.png';
 import canvaLogo from '../assets/logos/canva.png';
 import datacampLogo from '../assets/logos/datacamp.png';
+import copilotLogo from '../assets/logos/copilot.png';
+import airtableLogo from '../assets/logos/airtable.png';
+import asanaLogo from '../assets/logos/asana.png';
+import balsamiqLogo from '../assets/logos/balsamiq.png';
+import confluenceLogo from '../assets/logos/confluence.jpg';
+import djangoLogo from '../assets/logos/django.png';
+import dockerLogo from '../assets/logos/docker.png';
+import jenkinsLogo from '../assets/logos/jenkins.png';
+import liquibaseLogo from '../assets/logos/liquibase.png';
+import sqlLogo from '../assets/logos/SQL.png';
+import rLogo from '../assets/logos/r.png';
 
 const brands = [
   {
@@ -42,14 +53,30 @@ const techStack = [
     tooltip: 'Python: Data science, ML, automation, applications, APIs',
   },
   {
-    src: snowflakeLogo,
-    alt: 'Snowflake',
-    tooltip: 'Snowflake: Cloud data warehousing, scalable analytics, Streamlit interfaces',
+    src: sqlLogo,
+    alt: 'SQL',
+    tooltip: 'SQL: Data querying, manipulation, ETL processes',
+  },
+  {
+    src: rLogo,
+    alt: 'R',
+    tooltip: 'R: Statistical analysis, data visualization, reporting',
   },
   {
     src: reactLogo,
     alt: 'React',
-    tooltip: 'React: Interactive UIs',
+    tooltip: 'React: Frontend web and mobile development, Interactive UIs',
+  },
+  {
+    src: djangoLogo,
+    alt: 'Django',
+    tooltip: 'Django: Backend frameworks, user management, APIs',
+
+  },
+  {
+    src: snowflakeLogo,
+    alt: 'Snowflake',
+    tooltip: 'Snowflake: Cloud data warehousing, scalable analytics, Streamlit interfaces',
   },
   {
     src: awsLogo,
@@ -57,32 +84,77 @@ const techStack = [
     tooltip: 'AWS: Cloud deployment, scalable infrastructure',
   },
   {
-    src: tableauLogo,
-    alt: 'Tableau',
-    tooltip: 'Tableau: Data visualization, executive reporting',
-  },
-  {
     src: gitlabLogo,
     alt: 'GitLab',
     tooltip: 'GitLab: Version control, CI/CD automation, collaborative DevOps',
+  },
+  {
+    src: jenkinsLogo,
+    alt: 'Jenkins',
+    tooltip: 'Jenkins: CI/CD automation, build pipelines, DevOps',
+  },
+  { 
+    src: liquibaseLogo,
+    alt: 'Liquibase',
+    tooltip: 'Liquibase: Database version control, schema management',
+  },
+  {
+    src: dockerLogo,
+    alt: 'Docker',
+    tooltip: 'Docker: Containerization, microservices, scalable deployment',
   },
   {
     src: jiraLogo,
     alt: 'JIRA',
     tooltip: 'JIRA: Agile project management, sprint planning, issue tracking',
   },
+ {
+    src: asanaLogo,
+    alt: 'Asana',
+    tooltip: 'Asana: Task management, team collaboration, project tracking',
+  },
+  {
+    src: confluenceLogo,
+    alt: 'Confluence',
+    tooltip: 'Confluence: Documentation, team collaboration, knowledge sharing',
+  },
+  {
+    src: airtableLogo,
+    alt: 'Airtable',
+    tooltip: 'Airtable: Flexible databases, project management, collaboration',
+  },
+ {
+    src: tableauLogo,
+    alt: 'Tableau',
+    tooltip: 'Tableau: Data visualization, executive reporting',
+  },
+  {
+    src: balsamiqLogo,
+    alt: 'Balsamiq',
+    tooltip: 'Balsamiq: Wireframing, UI/UX design, prototyping',
+  },
   {
     src: canvaLogo,
     alt: 'Canva',
     tooltip: 'Canva: Visual design and presentations',
   },
+  {
+    src: copilotLogo,
+    alt: 'GitHub Copilot',
+    tooltip: 'GitHub Copilot: AI pair programming, code generation, productivity',
+  }
 ];
 
 const productSkills = [
-  'Agile',
-  'Roadmaps',
-  'Product Strategy',
   'Cross-Functional Leadership',
+  'Hiring Process Design',
+  'Team Culture Building',
+  'Agile Methods',
+  'Roadmaps',
+  'Project Tracking',
+  'Product Strategy',
+  'Stakeholder Communication & Influence',
+  'Mentorship'
 ];
 
 const schools = [
@@ -178,6 +250,32 @@ const brandBullets = [
     "Emphasized effective storytelling with data using real-world data"
   ]
 ];
+
+const techCategories = {
+  python: ["Programming", "Machine Learning", "Data Engineering"],
+  sql: ["Programming", "Data Engineering"],
+  r: ["Programming", "Machine Learning"],
+  react: ["Web App Development"],
+  django: ["Web App Development"],
+  snowflake: ["Data Engineering", "Cloud & DevOps", "AI"],
+  aws: ["Cloud & DevOps"],
+  gitlab: ["Web App Development", "Cloud & DevOps"],
+  jenkins: ["Cloud & DevOps", "Data Engineering"],
+  liquibase: ["Data Engineering"],
+  docker: ["Cloud & DevOps", "Data Engineering"],
+  jira: ["Agile Methods"],
+  asana: ["Agile Methods"],
+  confluence: ["Agile Methods"],
+  airtable: ["Data Engineering"],
+  tableau: ["Visualization"],
+  balsamiq: ["Design"],
+  canva: ["Design", "Visualization", "AI"],
+  githubcopilot: ["Programming", "Machine Learning", "Web App Development", "AI"],
+};
+const allCategories = Array.from(new Set(Object.values(techCategories).flat()));
+function getLogoKey(logo) {
+  return logo.alt.replace(/\s|\.|-/g, '').toLowerCase();
+}
 
 const FlipCard = ({ front, back, accent = "border-accent-100" }) => {
   const [flipped, setFlipped] = useState(false);
@@ -289,28 +387,76 @@ const Card = ({ children }) => (
   </div>
 );
 
-const LogoRow = ({ logos, showDescription = false, tech = false, school = false }) => (
+const TechStackRadio = ({ selectedCategory, setSelectedCategory }) => (
+  <div
+    className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-6"
+    role="radiogroup"
+    aria-label="Tech stack filters"
+    style={{
+      display: 'flex',
+      flexWrap: 'wrap',
+      rowGap: '0.5rem',
+      columnGap: '0.5rem',
+      maxWidth: '700px',
+      margin: '0 auto',
+    }}
+  >
+    {allCategories.map((cat) => (
+      <button
+        key={cat}
+        className={`inline-flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-sm shadow border border-accent-200 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent-400
+          ${selectedCategory === cat ? 'bg-accent-600 text-white ring-2 ring-accent-400' : 'bg-white text-gray-500 hover:bg-accent-100'}`}
+        aria-checked={selectedCategory === cat}
+        role="radio"
+        tabIndex={0}
+        onClick={() => setSelectedCategory(selectedCategory === cat ? null : cat)}
+        style={{ fontWeight: selectedCategory === cat ? 'bold' : 'normal' }}
+      >
+        {cat}
+      </button>
+    ))}
+  </div>
+);
+
+const LogoRow = ({ logos, selectedCategory }) => (
   <div className="flex flex-wrap justify-center items-center gap-8">
-    {logos.map((logo, idx) => (
-      <div key={idx} className="relative group flex flex-col items-center">
-        <img
-          src={logo.src}
-          alt={logo.alt}
-          className="h-12 w-auto grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
-        />
-        {tech && (
+    {logos.map((logo, idx) => {
+      const key = getLogoKey(logo);
+      const logoCats = techCategories[key] || [];
+      const isActive = selectedCategory && logoCats.includes(selectedCategory);
+      return (
+        <div
+          key={idx}
+          className="relative group flex flex-col items-center transition-all duration-300"
+          tabIndex={0}
+          aria-label={logo.alt}
+        >
+          {/* Glow effect when active */}
+          {isActive && (
+            <span
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
+              style={{
+                width: '90px',
+                height: '90px',
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, #e6f4f6 0%, #c3e6ee 70%, transparent 100%)',
+                filter: 'blur(16px)',
+                opacity: 0.7,
+              }}
+            />
+          )}
+          <img
+            src={logo.src}
+            alt={logo.alt}
+            className={`h-12 w-12 object-contain transition-all duration-300 grayscale group-hover:grayscale-0 ${isActive ? 'grayscale-0 z-10' : ''}`}
+            style={{ minWidth: 96, minHeight: 64, maxWidth: 96, maxHeight: 64, position: 'relative' }}
+          />
           <span className="absolute left-1/2 -translate-x-1/2 -top-8 bg-black text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-90 pointer-events-none transition duration-200 whitespace-nowrap z-10">
             {logo.tooltip}
           </span>
-        )}
-        {school && (
-          <span className="text-xs text-gray-500 mt-2 text-center max-w-[140px]">{logo.tooltip}</span>
-        )}
-        {showDescription && (
-          <span className="text-xs text-gray-500 mt-2 text-center max-w-[120px]">{logo.description}</span>
-        )}
-      </div>
-    ))}
+        </div>
+      );
+    })}
   </div>
 );
 
@@ -327,127 +473,144 @@ const BadgeRow = ({ badges }) => (
   </div>
 );
 
-const Skills = () => (
-  <section id="skills" className="py-20 bg-gray-50">
-    <div className="max-w-5xl mx-auto px-4">
-      <h2 className="text-3xl font-bold text-accent-600 mb-10 text-center">Skills & Experience</h2>
-      <Card>
-        <div className="mb-6 text-center text-lg text-gray-700 font-medium">
-          Educated at top institutions:
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {schools.map((school, idx) => (
-            <FlipCard
-              key={idx}
-              accent="border-accent-400"
-              front={
-                <>
-                  <img
-                    src={school.src}
-                    alt={school.alt}
-                    className="h-10 object-contain mb-4"
-                  />
-                  <div className="font-bold text-lg text-gray-900 text-center mb-1">{school.alt}</div>
-                  <div className="text-sm text-gray-500 text-center">{school.description}</div>
-                  <div className="mt-2 text-xs text-accent-400 font-semibold">Click for details</div>
-                </>
-              }
-              back={schoolBullets[idx]}
-            />
-          ))}
-        </div>
-      </Card>
-      <Card>
-        <div className="mb-6 text-center text-lg text-gray-700 font-medium">
-          Trusted by world-class brands:
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {brands.map((brand, idx) => (
-            <FlipCard
-              key={idx}
-              accent="border-accent-400"
-              front={
-                <>
-                  <img
-                    src={brand.src}
-                    alt={brand.alt}
-                    className="h-10 object-contain mb-4"
-                  />
-                  <div className="font-bold text-lg text-gray-900 text-center mb-1">{brand.alt}</div>
-                  <div className="text-sm text-gray-500 text-center">{brand.description}</div>
-                  <div className="mt-2 text-xs text-accent-400 font-semibold">Click for details</div>
-                </>
-              }
-              back={brandBullets[idx]}
-            />
-          ))}
-        </div>
-      </Card>
-      <Card>
-        <div className="mb-6 text-center text-lg text-gray-700 font-medium">
-          Tech stack:
-        </div>
-        <LogoRow logos={techStack} tech />
-        <BadgeRow badges={productSkills} />
-      </Card>
-      {/* <Card>
-        <div className="mb-6 text-center text-lg text-gray-700 font-medium">
-          Certifications:
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {certifications.map((cert, idx) => (
-            <div
-              key={idx}
-              className="relative bg-white rounded-2xl shadow-lg border-2 border-accent-100 p-6 flex flex-col items-center group transition-all duration-200"
-            >
-              <img
-                src={cert.logo}
-                alt={cert.issuer}
-                className="h-10 w-10 object-contain mb-4"
+const Skills = () => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  return (
+    <section id="skills" className="py-20 bg-gray-50">
+      <div className="max-w-5xl mx-auto px-4">
+        <h2 className="text-3xl font-bold text-accent-600 mb-10 text-center">Skills & Experience</h2>
+        <Card>
+          <div className="mb-6 text-center text-lg text-gray-700 font-medium">
+            Educated at top institutions:
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {schools.map((school, idx) => (
+              <FlipCard
+                key={idx}
+                accent="border-accent-400"
+                front={
+                  <>
+                    <img
+                      src={school.src}
+                      alt={school.alt}
+                      className="h-10 object-contain mb-4"
+                    />
+                    <div className="font-bold text-lg text-gray-900 text-center mb-1">{school.alt}</div>
+                    <div className="text-sm text-gray-500 text-center">{school.description}</div>
+                    <div className="mt-2 text-xs text-accent-400 font-semibold">Click for details</div>
+                  </>
+                }
+                back={schoolBullets[idx]}
               />
-              <div className="font-bold text-lg text-gray-900 text-center mb-1">{cert.title}</div>
-              <div className="text-sm text-gray-500 text-center mb-2">
-                {cert.issuer} &middot; <span>{cert.date}</span>
+            ))}
+          </div>
+        </Card>
+        <Card>
+          <div className="mb-6 text-center text-lg text-gray-700 font-medium">
+            Trusted by world-class brands:
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {brands.map((brand, idx) => (
+              <FlipCard
+                key={idx}
+                accent="border-accent-400"
+                front={
+                  <>
+                    <img
+                      src={brand.src}
+                      alt={brand.alt}
+                      className="h-10 object-contain mb-4"
+                    />
+                    <div className="font-bold text-lg text-gray-900 text-center mb-1">{brand.alt}</div>
+                    <div className="text-sm text-gray-500 text-center">{brand.description}</div>
+                    <div className="mt-2 text-xs text-accent-400 font-semibold">Click for details</div>
+                  </>
+                }
+                back={brandBullets[idx]}
+              />
+            ))}
+          </div>
+        </Card>
+        <Card>
+          <div className="text-center text-lg text-gray-700 font-medium">
+            Tech Stack:
+          </div>
+          <div className="py-6">
+          <TechStackRadio selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+          </div>
+          <div className="py-6">
+          <LogoRow logos={techStack} selectedCategory={selectedCategory} />
+          </div>
+          <hr className="py-4" />
+         <div className="mb-8 text-center text-lg text-gray-700 font-medium">
+            Strategy, Leadership & Collaboration Skills:
+          </div>
+          <BadgeRow badges={productSkills} />
+        </Card>
+        {/* <Card>
+          <div className="mb-6 text-center text-lg text-gray-700 font-medium">
+            Certifications:
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {certifications.map((cert, idx) => (
+              <div
+                key={idx}
+                className="relative bg-white rounded-2xl shadow-lg border-2 border-accent-100 p-6 flex flex-col items-center group transition-all duration-200"
+              >
+                <img
+                  src={cert.logo}
+                  alt={cert.issuer}
+                  className="h-10 w-10 object-contain mb-4"
+                />
+                <div className="font-bold text-lg text-gray-900 text-center mb-1">{cert.title}</div>
+                <div className="text-sm text-gray-500 text-center mb-2">
+                  {cert.issuer} &middot; <span>{cert.date}</span>
+                </div>
+                <span className={`px-4 py-1 rounded-full font-semibold text-sm mb-2 ${cert.badgeColor}`}>
+                  {cert.skill}
+                </span>
+                <span className="absolute left-1/2 -translate-x-1/2 -bottom-2 translate-y-full bg-black text-white text-xs rounded px-3 py-2 opacity-0 group-hover:opacity-90 pointer-events-none transition duration-200 whitespace-normal z-10 w-56 text-center">
+                  {cert.description}
+                </span>
               </div>
-              <span className={`px-4 py-1 rounded-full font-semibold text-sm mb-2 ${cert.badgeColor}`}>
-                {cert.skill}
-              </span>
-              <span className="absolute left-1/2 -translate-x-1/2 -bottom-2 translate-y-full bg-black text-white text-xs rounded px-3 py-2 opacity-0 group-hover:opacity-90 pointer-events-none transition duration-200 whitespace-normal z-10 w-56 text-center">
-                {cert.description}
-              </span>
-            </div>
-          ))}
-        </div>
-      </Card> */}
-    </div>
-    <style>
-      {`
-        .flip-card {
-          height: 100%;
-        }
-        .flip-card-inner {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          transition: transform 0.6s cubic-bezier(.4,2,.3,1), height 0.4s, padding 0.4s;
-          transform-style: preserve-3d;
-        }
-        .flip-card-front, .flip-card-back {
-          position: absolute;
-          width: 100%;
-          min-height: 220px;
-          height: auto;
-          left: 0;
-          top: 0;
-          border-radius: 1rem;
-        }
-        .flip-card-back {
-          background: #e6f4f6;
-          color: #234;
-        }
-      `}
-    </style>
-  </section>
-);
+            ))}
+          </div>
+        </Card> */}
+      </div>
+      <style>
+        {`
+          .flip-card {
+            height: 100%;
+          }
+          .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(.4,2,.3,1), height 0.4s, padding 0.4s;
+            transform-style: preserve-3d;
+          }
+          .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            min-height: 220px;
+            height: auto;
+            left: 0;
+            top: 0;
+            border-radius: 1rem;
+          }
+          .flip-card-back {
+            background: #e6f4f6;
+            color: #234;
+          }
+          .logo-active-glow img, .logo-dim img {
+            box-shadow: none;
+            border: none;
+            transition: filter 0.3s;
+          }
+        `}
+      </style>
+    </section>
+  );
+};
 
 export default Skills;

@@ -11,22 +11,29 @@ const education = [
   {
     logo: umdLogo,
     institution: "University of Maryland, College Park",
-    degree: "Executive Master of Business Administration (STEM-Designated)",
-    field: "Business Administration",
+    degree: "Executive Master of Business Administration",
     dates: "Expected May 2026",
-    summary: "STEM-designated EMBA program focused on strategic leadership, analytics, and innovation.",
+    summary: "STEM-designated EMBA program focused on purposeful strategic leadership, analytics, and innovation.",
   },
   {
     logo: berkeleyLogo,
     institution: "University of California, Berkeley",
     degree: "B.A., Cognitive Science",
-    field: "Cognitive Science",
     dates: "Graduated May 2015",
-    summary: "Explored interdisciplinary approaches to cognition, computation, and creative problem-solving.",
+    summary: "Cognitive Science: interdisciplinary study of the mind, blending computer science, neuroscience, linguistics, and more.",
   },
 ];
 
 const workExperience = [
+    {
+    logo: disneyLogo,
+    company: "The Walt Disney Company",
+    title: "Senior Manager, Data Science | Disney Entertainment - Research, Insights & Analytics",
+    dates: "Sept 2025 – Present",
+    bullets: [
+      "Promoted to Senior Manager, leading strategic initiatives to leverage AI and advanced analytics for Digital and Linear television forecasting, content performance and audience insights.",
+    ],
+  },
   {
     logo: disneyLogo,
     company: "The Walt Disney Company",
@@ -35,7 +42,7 @@ const workExperience = [
     bullets: [
       "Expanded charter from optimizing $30M in ad revenue to billions across Disney’s media brands (ESPN, ABC, Disney Channel, NatGeo, etc.)",
       "Launched a self-service ML-powered forecasting platform, automating manual workflows and reducing stakeholder effort by 60+ hours per cycle.",
-      "Co-led a cross-functional team to deliver the first GenAI application, providing contextual analysis of viewership across competitors.",
+      "Co-led a cross-functional team to deliver the first GenAI application in our org, providing contextual analysis of viewership across competitors.",
       "Founded a knowledge sharing initiative for data science and ML, covering topics from K-means to GenAI, LLMs, and Snowflake Tasks.",
       "Partnered with executive leadership and stakeholders to align analytics solutions with strategic goals, increasing trust and adoption.",
     ],
@@ -54,7 +61,7 @@ const workExperience = [
   {
     logo: disneyLogo,
     company: "The Walt Disney Company",
-    title: "Data Product Integration Manager | Disney Decision Science & Integration",
+    title: "Data Product Manager | Disney Decision Science & Integration",
     dates: "Nov 2018 – Sep 2020",
     bullets: [
       "Coordinated cross-team initiatives and supported analytics product feature launches across business units.",
@@ -234,15 +241,15 @@ const sectionAnchors = [
 
 function ResumeNavBar({ activeSection }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  // Find the active section label for scrollspy
   const activeLabel = sectionAnchors.find(s => s.id === activeSection)?.label || "Sections";
 
-  // Collapse to dropdown on mobile, horizontal on desktop
+  // Transparent sticky filter bar style
   return (
-    <nav className="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-accent-100 w-screen" style={{ boxShadow: "0 12px 12px 0 rgba(59,130,246,0.04)" }}>
+    <nav
+      className="max-w-5xl mx-auto px-4 mb-8 flex flex-wrap gap-4 justify-center items-center sticky top-0 z-30 bg-white/80 rounded-xl shadow-lg py-1"
+    >
       {/* Desktop: horizontal nav */}
-      <ul className="hidden lg:flex flex-row flex-nowrap w-full px-2 py-4 justify-center items-center gap-2 sm:gap-6 md:gap-10">
+      <ul className="hidden lg:flex flex-row flex-nowrap w-full px-2 justify-center items-center gap-2 sm:gap-6 md:gap-6">
         {sectionAnchors
           .filter(s => s.id !== "contact")
           .map((s) => (
@@ -365,11 +372,11 @@ function ResumePage() {
   }, []);
 
   return (
-    <div className="bg-gray-50 min-h-screen flex flex-col items-center w-full">
+    <div className="min-h-screen flex flex-col items-center w-full" style={{ background: "#e6f4f6" }}>
       {/* Top section: full width, no rounded corners */}
       <section
         ref={sectionRefs.current.top}
-        className="bg-accent-50 shadow-xl p-8 mb-0 flex flex-col items-center text-center w-screen"
+        className="bg-accent-50 p-8 mb-0 flex flex-col items-center text-center w-screen"
         id="top"
         style={{ left: 0, right: 0 }}
       >
@@ -397,7 +404,7 @@ function ResumePage() {
               <img src={edu.logo} alt={edu.institution} className="w-24 h-24 rounded-lg object-contain" />
               <div>
                 <div className="font-bold text-lg text-accent-700">{edu.institution}</div>
-                <div className="text-gray-700 font-semibold">{edu.degree} &mdash; {edu.field}</div>
+                <div className="text-gray-700 font-semibold">{edu.degree}</div>
                 <div className="text-xs text-accent-400 font-semibold">{edu.dates}</div>
                 <div className="text-gray-600 mt-2">{edu.summary}</div>
               </div>
@@ -552,7 +559,7 @@ function ResumePage() {
         </section>
         <section ref={sectionRefs.current.contact} id="contact" className="mb-0 animate-fade-in">
           {/* Contact section: match width and style of experience cards */}
-          <div className="bg-accent-50 shadow-xl p-8 flex flex-col items-center text-center rounded-2xl max-w-5xl mx-auto">
+          <div className="bg-white shadow-xl p-8 flex flex-col items-center text-center rounded-2xl max-w-5xl mx-auto">
             <img src={logo} alt="Logo" className="w-16 h-16 mb-2" />
             <h2 className="text-2xl font-bold text-accent-700 mb-2">Let’s work together!</h2>
             <div className="text-gray-700 mb-2">Contact me for collaborations, consulting, or speaking.</div>
