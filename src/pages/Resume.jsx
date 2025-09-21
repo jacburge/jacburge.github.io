@@ -11,18 +11,16 @@ const education = [
   {
     logo: umdLogo,
     institution: "University of Maryland, College Park",
-    degree: "Executive Master of Business Administration (STEM-Designated)",
-    field: "Business Administration",
+    degree: "Executive Master of Business Administration",
     dates: "Expected May 2026",
-    summary: "STEM-designated EMBA program focused on strategic leadership, analytics, and innovation.",
+    summary: "STEM-designated EMBA program focused on purposeful strategic leadership, analytics, and innovation.",
   },
   {
     logo: berkeleyLogo,
     institution: "University of California, Berkeley",
     degree: "B.A., Cognitive Science",
-    field: "Cognitive Science",
     dates: "Graduated May 2015",
-    summary: "Cognitive Science: interdisciplinary study of the mind, blending Computer Science, Neuroscience, Linguistics, and more.",
+    summary: "Cognitive Science: interdisciplinary study of the mind, blending computer science, neuroscience, linguistics, and more.",
   },
 ];
 
@@ -406,7 +404,7 @@ function ResumePage() {
               <img src={edu.logo} alt={edu.institution} className="w-24 h-24 rounded-lg object-contain" />
               <div>
                 <div className="font-bold text-lg text-accent-700">{edu.institution}</div>
-                <div className="text-gray-700 font-semibold">{edu.degree} &mdash; {edu.field}</div>
+                <div className="text-gray-700 font-semibold">{edu.degree}</div>
                 <div className="text-xs text-accent-400 font-semibold">{edu.dates}</div>
                 <div className="text-gray-600 mt-2">{edu.summary}</div>
               </div>
