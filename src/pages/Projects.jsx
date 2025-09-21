@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { projects } from '../data/projects';
-import maxwellWide from '../assets/projects/maxwell-wide.png';
-import libraryImg from '../assets/projects/library.png';
 // ...import other project images/videos as needed...
 
 const accentBg = {
@@ -43,11 +41,11 @@ const Projects = () => {
     <div className="min-h-screen w-full" style={accentBg}>
       {/* Top headline and intro */}
       <div className="max-w-5xl mx-auto px-4 pt-16 pb-8 text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold text-accent-700 mb-4 drop-shadow-lg">Selected Works</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold text-accent-700 mb-4">Selected Works</h1>
         <p className="text-lg text-gray-700 mb-6 font-medium">A showcase of my favorite passion projects—exploring data, design, and community building. Click any card to learn more!</p>
       </div>
       {/* Filter/sort controls */}
-      <div className="max-w-5xl mx-auto px-4 mb-8 flex flex-wrap gap-4 justify-center items-center sticky top-0 z-30 bg-white/80 rounded-xl shadow-lg py-4">
+      {/* <div className="max-w-5xl mx-auto px-4 mb-8 flex flex-wrap gap-4 justify-center items-center sticky top-0 z-30 bg-white/80 rounded-xl shadow-lg py-4">
         <select className="rounded-lg px-4 py-2 border border-accent-200 text-accent-700" value={filters.role} onChange={e => setFilters(f => ({ ...f, role: e.target.value }))}>
           <option value="">All Roles</option>
           {roles.map(r => r && <option key={r} value={r}>{r}</option>)}
@@ -64,7 +62,7 @@ const Projects = () => {
           <option value="featured">Featured First</option>
           <option value="recent">Most Recent</option>
         </select>
-      </div>
+      </div> */}
       {/* All Projects grid/list */}
       <section className="max-w-7xl mx-auto px-4 mb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

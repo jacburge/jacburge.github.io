@@ -27,6 +27,15 @@ const education = [
 ];
 
 const workExperience = [
+    {
+    logo: disneyLogo,
+    company: "The Walt Disney Company",
+    title: "Senior Manager, Data Science | Disney Entertainment - Research, Insights & Analytics",
+    dates: "Sept 2025 – Present",
+    bullets: [
+      "Promoted to Senior Manager, leading strategic initiatives to leverage AI and advanced analytics for Digital and Linear television forecasting, content performance and audience insights.",
+    ],
+  },
   {
     logo: disneyLogo,
     company: "The Walt Disney Company",
@@ -35,7 +44,7 @@ const workExperience = [
     bullets: [
       "Expanded charter from optimizing $30M in ad revenue to billions across Disney’s media brands (ESPN, ABC, Disney Channel, NatGeo, etc.)",
       "Launched a self-service ML-powered forecasting platform, automating manual workflows and reducing stakeholder effort by 60+ hours per cycle.",
-      "Co-led a cross-functional team to deliver the first GenAI application, providing contextual analysis of viewership across competitors.",
+      "Co-led a cross-functional team to deliver the first GenAI application in our org, providing contextual analysis of viewership across competitors.",
       "Founded a knowledge sharing initiative for data science and ML, covering topics from K-means to GenAI, LLMs, and Snowflake Tasks.",
       "Partnered with executive leadership and stakeholders to align analytics solutions with strategic goals, increasing trust and adoption.",
     ],
@@ -54,7 +63,7 @@ const workExperience = [
   {
     logo: disneyLogo,
     company: "The Walt Disney Company",
-    title: "Data Product Integration Manager | Disney Decision Science & Integration",
+    title: "Data Product Manager | Disney Decision Science & Integration",
     dates: "Nov 2018 – Sep 2020",
     bullets: [
       "Coordinated cross-team initiatives and supported analytics product feature launches across business units.",
