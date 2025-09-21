@@ -2,19 +2,20 @@ import logo from '../assets/logo.png';
 import { FaLightbulb, FaHeart, FaRocket } from 'react-icons/fa';
 
 const AboutMeCard = () => (
-  <div className="w-full flex justify-center py-20 bg-gradient-to-br from-accent-50 via-white to-gray-100"
+  <div
+    className="w-full flex justify-center py-20 bg-gradient-to-br from-accent-50 via-white to-gray-100"
     style={{
       background: 'linear-gradient(120deg, #e6f4f6 0%, #f8fafc 100%)',
     }}
   >
-    <div className="w-full max-w-5xl flex flex-col items-center relative bg-transparent overflow-hidden">
+    <div className="w-full max-w-5xl flex flex-col items-center relative bg-transparent overflow-hidden px-4 sm:px-8">
       {/* Logo overlay as background */}
-        <img
+      <img
         src={logo}
         alt="Logo"
         className="absolute inset-0 m-auto opacity-10 w-full h-full object-contain pointer-events-none select-none z-0"
         style={{ filter: 'blur(0.5px)' }}
-        />
+      />
       {/* Main content */}
       <div className="w-full max-w-5xl text-center flex flex-col gap-10 relative z-10">
         {/* Large Heading */}

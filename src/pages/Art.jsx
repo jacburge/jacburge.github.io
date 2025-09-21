@@ -67,9 +67,9 @@ import wedding_card from '../assets/art/artforgall/wedding_card.jpg';
 import whale from '../assets/art/artforgall/whale.jpg';
 
 import jaclyntejas from '../assets/art/today/jaclyntejas.jpg';
-import elise from '../assets/art/today/elise.jpeg';
 import pink from '../assets/art/today/pink.jpg';
 import yinyang from '../assets/art/today/yinyang.jpg';
+// import farm from '../assets/art/artforgall/farm.jpg';
 
 // Art gallery sections using only real images from assets/art
 const artSections = [
@@ -116,6 +116,7 @@ const artSections = [
       { src: tea_time, title: "Tea Time", caption: "Afternoon tea in abstract acrylic" },
       { src: origami, title: "Origami Crane", caption: "Symbol of peace and hope, in watercolor" }, 
       { src: whale, title: "Whale", caption: "Dreamy beluga whale card for a friend" },
+      // { src: farm, title: "Farm", caption: "Acrylic landscape of a photo I took in rural California" },
       
     ],
   },
