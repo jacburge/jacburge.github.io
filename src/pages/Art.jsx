@@ -17,6 +17,7 @@ import blossom_branch from '../assets/art/ink/blossom_branch.jpg';
 import blossoms_close from '../assets/art/ink/blossoms-close.jpg';
 import crane_sumi from '../assets/art/ink/crane_sumi.jpg';
 import fan1 from '../assets/art/ink/fan1.jpg';
+import fan2 from '../assets/art/ink/fan2.jpg';
 import lily from '../assets/art/ink/lily.jpg';
 import blossoms from '../assets/art/ink/blossoms-small_Original.jpg';
 import love_sumi_card from '../assets/art/ink/love_sumi_card.jpg';
@@ -50,7 +51,6 @@ import yin_yang_macrame from '../assets/art/textiles/yin_yang_macrame.jpg';
 import yosemite from '../assets/art/textiles/yosemite.jpg';
 
 import sierravista from '../assets/art/abstract/sierravista.jpg';
-import splatter2 from '../assets/art/abstract/splatter2.png';
 import boniver from '../assets/art/artforgall/boniver.jpg';
 import calpoly from '../assets/art/artforgall/calpoly.jpg';
 import fish from '../assets/art/artforgall/fish.jpg';
@@ -78,41 +78,44 @@ const artSections = [
     description:
       "In 2013, I spent a summer studying Traditional East Asian Painting at Ewha Women’s University in Seoul, retracing the steps of my grandmother and grand aunt. I fell in love with the Four Noble Plants—especially the plum blossom, a symbol of hope and endurance through hardship. These pieces reflect what I learned there, as well as years later in a Sumi Ink class in Seattle (Sumi is also my Korean name).",
     images: [
-      { src: bamboo, title: "Bamboo", caption: "Bamboo represents integrity and righteousness" },
-      { src: blossom_branch, title: "Blossom Branch", caption: "Plum blossom on rice paper, representing resiliency in the face of adversity" },
-      { src: fan1, title: "Fan 1", caption: "Plum blossom on fan" },
-      { src: blossoms_close, title: "Blossoms Close", caption: "Detail of plum blossom ink work" },
+      { src: bamboo, title: "Bamboo", caption: "Bamboo represents integrity and righteousness (Ewha)" },
+      { src: blossoms_close, title: "Blossoms Close", caption: "Detail of plum blossom ink work (Ewha)" },
+      { src: blossom_branch, title: "Blossom Branch", caption: "Plum blossom on rice paper in color" },
+      { src: fan1, title: "Fan", caption: "First Plum blossom on fan, representing resiliency in the face of adversity (Ewha)" },
+      { src: orchid, title: "Orchid", caption: "Traditional wild orchid, representing humility, nobility, and grace (Ewha)" },
+      { src: fan2, title: "Fan", caption: "Another rendition of plum blossom on fan" },
       { src: crane_sumi, title: "Crane Sumi", caption: "Sumi-e style crane" },
       { src: lily, title: "Lily", caption: "Lilies in light blue" },
       { src: blossoms, title: "Blossoms", caption: "Plum blossoms on rice paper" },
       { src: love_sumi_card, title: "Love, Sumi", caption: "Card to my grandmother with plum blossoms" },
-      { src: orchid, title: "Orchid", caption: "Traditional wild orchid, representing humility, nobility, and grace" },
+      
     ],
   },
   {
-    title: "Art for Gall: Watercolor, Sketching, Acrylic, Pastel",
+    title: "Art for Gall: Watercolor, Sketching, Acrylic, Pastel, Oil",
     description:
-      "In 2017, I set a New Year’s resolution to make art once a week, even if it was a simple sketch. The point wasn't perfection, it was consistency. Many of these pieces come from that project, which I called “Art For Gall.” Inspired by qigong and Chinese medicine, the gallbladder channel boosts confidence. I believe creativity isn’t just for the innately talented, it’s a skill anyone can cultivate with a little boldness and practice.",
+      "In 2017, I set a New Year’s resolution to make art once a week, even if it was a simple sketch. The goal was consistency, not perfection. Many of these pieces come from that project, which I called “Art For Gall.” Inspired by qigong and Chinese medicine, the gallbladder channel boosts confidence. I believe creativity isn’t just for the innately talented, it’s a skill anyone can cultivate with a little boldness and practice.",
     images: [
       { src: italy, title: "Travastere", caption: "Watercolor inspired by a photo I took in Rome" },
       { src: arirang, title: "Arirang", caption: "Korean heritage and movement in pastel" },
-      { src: blackgoldsplatter, title: "Black & Gold", caption: "Exploring texture and contrast in drip" },
       { src: hands, title: "Universe", caption: "Inspired by Sleeping at Last's Atlas 5 (exploration of the Enneagram)" },
       { src: sketch, title: "California Coast", caption: "Quick sketch of a scenic view" },
       { src: scoliosis, title: "Scoliosis", caption: "Inspired by my own journey with scoliosis and dance" },
+      { src: calpoly, title: "Cal Poly SLO", caption: "Card for my sister's graduation, in pen and watercolor" },
+
+      { src: live_artfully, title: "Live Artfully", caption: "Watercolor and pen, the first Art for Gall piece" },
+      { src: fish, title: "Yin Yang Fish", caption: "Yin Yang fish in acrylic" },
       { src: boniver, title: "Bon Iver", caption: "Inspired by Bon Iver's 22, A Million album art" },
-      { src: calpoly, title: "Cal Poly SLO", caption: "Acrylic study of campus" },
-      { src: fish, title: "Koi Fish", caption: "Koi fish in watercolor" },
-      { src: flaxenhair, title: "Flaxen Hair", caption: "Inspired by the song 'Flaxen Hair' by Sleeping at Last" },
+      { src: flaxenhair, title: "Flaxen Hair", caption: "Inspired by Debussy's Girl with the Flaxen Hair" },
       { src: jelly, title: "Jellyfish", caption: "Ethereal jellyfish in watercolor" },
-      { src: live_artfully, title: "Live Artfully", caption: "Bold brushstrokes and colors" },
-      { src: mountains, title: "Mountains", caption: "Acrylic landscape" },
-      { src: ocean, title: "Ocean", caption: "Watercolor seascape" },
-      { src: origami, title: "Origami Crane", caption: "Symbol of peace and hope" },    
-      { src: tattoo, title: "Tattoo Design", caption: "Bold blackwork design" },
-      { src: tea_time, title: "Tea Time", caption: "Afternoon tea in pastel" },
-      { src: wedding_card, title: "Wedding Card", caption: "Custom card design" },
-      { src: whale, title: "Whale", caption: "Graceful whale in motion" },
+      { src: wedding_card, title: "Wedding Card", caption: "Card for a friend's wedding in her homestate of Hawaii" },
+
+      { src: ocean, title: "Ocean", caption: "Watercolor seascape in oil" },
+      { src: mountains, title: "Mountains", caption: "Sunrise over the mountain tops, in acrylic" },
+      { src: tattoo, title: "Yin Yang Landscape", caption: "Bold blackwork design" },
+      { src: tea_time, title: "Tea Time", caption: "Afternoon tea in abstract acrylic" },
+      { src: origami, title: "Origami Crane", caption: "Symbol of peace and hope, in watercolor" }, 
+      { src: whale, title: "Whale", caption: "Dreamy beluga whale card for a friend" },
       
     ],
   },
@@ -127,12 +130,12 @@ const artSections = [
       { src: grandpa, title: "Love, Sumi", caption: "Mixed media composition with pen pal letters from my late grandfather and pieces of 'hwatu' - the Korean card game we used to play together." },
       { src: seattle_gallery, title: "Seattle Gallery", caption: "A/NT Gallery in Seattle featuring my work" },
       { src: waterdrip, title: "Water Drip", caption: "Be like water" },
-      { src: lemon, title: "Zest", caption: "Lemons in pastel. As a farmer's daughter, and grew up working on the farm whether picking grapes, planting lemon trees, or pruning almond trees. I love painting lemons for their bright colors, zesty symbolism, and familial relevance." },
+      { src: lemon, title: "Zest", caption: "Lemons in pastel. As a farmer's daughter, I grew up working on the farm whether picking grapes, planting lemon trees, or pruning almond trees. I love painting lemons for their bright colors, zesty symbolism, and familial relevance." },
       { src: treble, title: "Music Heals", caption: "Woven in the lines are symbols of scoliosis and spinal fusion" },
       { src: reverie, title: "Reverie", caption: "Movement, texture, and bold colors" },
       { src: clairdelune, title: "Clair de Lune", caption: "Inspired by Debussy's Claire de Lune" },
-      { src: sierravista, title: "Sierra Vista", caption: "Acrylic landscape of Sierra Vista" },
-      // { src: splatter2, title: "Splatter 2", caption: "Energetic splatter and drip" },
+      { src: sierravista, title: "Sierra Vista", caption: "Acrylic landscape of California wildflowers and foothills" },
+      { src: blackgoldsplatter, title: "Black & Gold", caption: "Exploring texture and contrast in drip" },
     ],
   },
   {
@@ -143,10 +146,10 @@ const artSections = [
       { src: blossom_embroidery, title: "Hope of Spring", caption: "Bringing plum blossoms to another medium" },
       { src: hellokitty, title: "Hello Kitty With a Knife", caption: "Playful embroidery." },
       { src: macrame, title: "Macrame", caption: "Knotted wall hanging." },
-      { src: okaytonotbeokay, title: "It's Okay to Not Be Okay", caption: "Inspired by the K-Drama" },
-      { src: okaytonotbeokay2, title: "It's Okay to Not Be Okay", caption: "Detailed view" },
+      { src: okaytonotbeokay, title: "It's Okay to Not Be Okay", caption: "'I like magnolia's, the whole flower falls at once without hesitation' - It's Okay to Not Be Okay (K-Drama)" },
+      { src: okaytonotbeokay2, title: "It's Okay to Not Be Okay", caption: "Inspired by the K-Drama" },
       { src: tropical, title: "Tropical Threads", caption: "Inspired by Hawaiian vegetation" },
-      { src: ficus, title: "Ficus", caption: "Macrame plant hanger with ficus" },
+      { src: ficus, title: "Ficus", caption: "Colorful ficus elastica" },
       { src: plants, title: "Plants", caption: "Embroidery of various houseplants" },
       { src: yin_yang_macrame, title: "Yin Yang", caption: "Symbol of balance in macrame" },
       { src: yosemite, title: "Yosemite", caption: "Yosemite landscape in embroidery" },
@@ -160,9 +163,8 @@ const artSections = [
       
       { src: lemoncello, title: "Lemoncello on ice", caption: "Inspired by Italian summer, photographed on snow" },
       { src: lemon_oil, title: "Yellow", caption: "Study of lemons, from my first oil painting class" },
-      { src: joshua, title: "Joshua", caption: "Joshua Tree National Park" },
+      { src: joshua, title: "Joshua", caption: "Joshua Tree National Park, for a friend's newborn's nursery" },
       { src: jaclyntejas, title: "Jaclyn & Tejas", caption: "Welcome sign for our wedding in a garden by the water" },
-      // { src: elise, title: "Elise", caption: "Acrylic portrait of my friend Elise" },
       { src: green_geom, title: "Green Geometry", caption: "Geometric abstraction, green nature vibes" },
       { src: pink, title: "Pink", caption: "Exploring shades of pink in acrylic" },
       { src: yinyang, title: "Yin Yang", caption: "Balance and harmony in acrylic" },
@@ -224,7 +226,7 @@ const Art = () => {
         {/* Personal Intro */}
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold text-accent-700 mb-4">Art & Creative Pursuits</h1>
-          <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed"><b><i>“Art reaches its greatest peak when devoid of self-consciousness.” - Bruce Lee</i></b></p>
+          <p><b><i>“Art reaches its greatest peak when devoid of self-consciousness.”</i>- Bruce Lee</b> </p>
           <p className="text-xl text-gray-700 max-w-6xl mx-auto leading-relaxed">
             Creativity is both a practice and a form of self-discovery. I believe anyone can be creative with a little courage and a willingness to experiment. My own journey is proof that you don’t have to be a “born artist” to make something beautiful. Some people look at a piece of art and say, “I could have done that,” but an artist actually did. To me, the act of creating is what truly matters.
           </p>

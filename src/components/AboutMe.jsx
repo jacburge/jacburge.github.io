@@ -27,7 +27,7 @@ const AboutMeCard = () => (
           </h1>
         </div>
           <p className="text-lg text-gray-700 font-medium leading-relaxed mb-2">
-            I am a product-minded data science leader, blending creativity and technology to convert ambiguity into action. Over the last decade, I’ve scaled ML-driven platforms and frameworks that automated <span className="text-accent-600 font-semibold">60+ hours of monthly forecasting</span> while supporting <span className="text-accent-600 font-semibold">hundreds of millions in ad revenue</span>, migrated legacy stacks to cloud pipelines, and led cross-functional teams that convert ambiguity into action. Rooted in an interdisciplinary background, I bring a <span className="text-accent-600 font-semibold">maker’s mindset</span> to everything I do.
+            I am a product-minded data science leader, blending creativity and technology to distill clarity from complexity. Over the last decade, I’ve scaled ML-driven platforms and frameworks that automated <span className="text-accent-600 font-semibold">60+ hours of monthly forecasting</span> while supporting <span className="text-accent-600 font-semibold">hundreds of millions in ad revenue</span>, migrated legacy stacks to cloud pipelines, and led cross-functional teams that convert ambiguity into action. Rooted in an interdisciplinary background, I bring a <span className="text-accent-600 font-semibold">maker’s mindset</span> to everything I do.
           </p>
         </div>
         {/* Philosophy */}
@@ -37,7 +37,7 @@ const AboutMeCard = () => (
             <h2 className="font-bold text-2xl text-accent-700">Philosophy</h2>
           </div>
           <p className="text-lg text-gray-700 font-medium leading-relaxed mb-2">
-            I believe <span className="text-accent-600 font-semibold">creativity is for everyone</span>—it just takes courage, practice, and the willingness to learn from failure. Building products and communities is like making art or practicing martial arts: it’s messy, dynamic, and demands resilience. Whether I’m scaling ML platforms or painting on a Sunday, I’m driven by curiosity, empathy, and the joy of turning ideas into reality.
+            I believe <span className="text-accent-600 font-semibold">creativity is for everyone</span>—it just takes courage, practice, and the willingness to learn from failure. Building products and communities is like making art or practicing martial arts: it’s messy, dynamic, and demands resilience. Whether I’m leading a technical team or painting on a Sunday, I’m driven by curiosity, empathy, and the joy of turning ideas into reality.
           </p>
         </div>
         {/* Mission */}
