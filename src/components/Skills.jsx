@@ -22,7 +22,7 @@ import djangoLogo from '../assets/logos/django.png';
 import dockerLogo from '../assets/logos/docker.png';
 import jenkinsLogo from '../assets/logos/jenkins.png';
 import liquibaseLogo from '../assets/logos/liquibase.png';
-import sqlLogo from '../assets/logos/sql.png';
+import sqlLogo from '../assets/logos/SQL.png';
 import rLogo from '../assets/logos/r.png';
 
 const brands = [
