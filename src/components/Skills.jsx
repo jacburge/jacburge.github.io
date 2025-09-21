@@ -431,11 +431,25 @@ const LogoRow = ({ logos, selectedCategory }) => (
           tabIndex={0}
           aria-label={logo.alt}
         >
+          {/* Glow effect when active */}
+          {isActive && (
+            <span
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
+              style={{
+                width: '90px',
+                height: '90px',
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, #e6f4f6 0%, #c3e6ee 70%, transparent 100%)',
+                filter: 'blur(16px)',
+                opacity: 0.7,
+              }}
+            />
+          )}
           <img
             src={logo.src}
             alt={logo.alt}
-            className={`h-12 w-12 object-contain transition-all duration-300 grayscale group-hover:grayscale-0 ${isActive ? 'grayscale-0' : ''}`}
-            style={{ minWidth: 96, minHeight: 64, maxWidth: 96, maxHeight: 64 }}
+            className={`h-12 w-12 object-contain transition-all duration-300 grayscale group-hover:grayscale-0 ${isActive ? 'grayscale-0 z-10' : ''}`}
+            style={{ minWidth: 96, minHeight: 64, maxWidth: 96, maxHeight: 64, position: 'relative' }}
           />
           <span className="absolute left-1/2 -translate-x-1/2 -top-8 bg-black text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-90 pointer-events-none transition duration-200 whitespace-nowrap z-10">
             {logo.tooltip}

@@ -28,6 +28,7 @@ const Navigation = () => {
   return (
     <nav className="bg-white shadow-md py-4 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
+        {/* Logo (left) */}
         <div className="flex items-center gap-3">
           <a href="/" className="block">
             <img
@@ -37,8 +38,8 @@ const Navigation = () => {
             />
           </a>
         </div>
-        {/* Desktop Nav */}
-        <div className="hidden md:flex gap-8">
+        {/* Desktop Nav (centered) */}
+        <div className="hidden md:flex flex-1 justify-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -48,6 +49,25 @@ const Navigation = () => {
               {/* <span className="text-xl">{link.icon}</span> */}
               {link.name}
             </a>
+          ))}
+        </div>
+        {/* Desktop Social Icons (right) */}
+        <div className="hidden md:flex items-center gap-4">
+          {socialLinks.map((social, i) => (
+            <div key={i} className="relative group flex items-center">
+              <a
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent-600 hover:bg-accent-100 rounded-full p-2 transition"
+                aria-label={social.label}
+              >
+                {social.icon}
+              </a>
+              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-black text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-90 pointer-events-none transition duration-200 whitespace-nowrap z-10">
+                {social.label}
+              </span>
+            </div>
           ))}
         </div>
         {/* Mobile Social Icons + Menu Button */}
