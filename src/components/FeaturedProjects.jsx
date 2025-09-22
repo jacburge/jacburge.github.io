@@ -26,7 +26,7 @@ const FeaturedProjects = () => (
             <a
               href={proj.link}
               className="mt-auto bg-accent-600 text-white px-6 py-2 rounded-2xl font-semibold text-base hover:bg-accent-700 transition shadow"
-              target="_blank" rel="noopener noreferrer"
+              target={proj.links[0].url} rel="noopener noreferrer"
             >
               View Project
             </a>
