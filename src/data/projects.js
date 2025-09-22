@@ -126,7 +126,7 @@ export const projects = [
     media: [wudangImg],
     tags: ["Web Design", "Consulting", "Freelancing", "Martial Arts"],
     links: [
-      { url: "WudangDanPai.com", type: "website", label: "Website" }
+      { url: "https://WudangDanPai.com", type: "website", label: "Website" }
     ],
     details: `I redesigned their website with a bright, simpler, more modern look in alignment with the academy's desired aesthetic. I also served as webmaster, designer, and consultant for the managing of new content and online presence as they continue to advertise internal Chinese martial arts classes in Seattle, WA for several years.`,
     reflection: `The mission of the Wudang Internal Martial Arts Academy is to spread awareness of Chinese internal martial arts, promote health and spiritual cultivation, and to teach serious and practical fighting techniques for self-defense.`,
