@@ -2,7 +2,7 @@ import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import { FaRegCopyright } from 'react-icons/fa6';
 
 const Footer = () => (
-  <footer className="w-full mt-16 rounded-t-2xl shadow-t-lg"
+  <footer className="w-full rounded-t-2xl shadow-t-lg"
     style={{
       background: 'linear-gradient(90deg, #e6f4f6 0%, #f8fafc 100%)',
       boxShadow: '0 -6px 24px -8px rgba(76, 110, 129, 0.12)',

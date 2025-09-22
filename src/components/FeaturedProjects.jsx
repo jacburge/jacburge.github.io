@@ -1,6 +1,6 @@
 import { projects } from '../data/projects';
 
-const featuredProjects = projects.filter(p => p.featured);
+const featuredProjects = projects.filter(proj => proj.featured);
 
 const FeaturedProjects = () => (
   <section id="featured-projects" className="py-20 bg-white">
@@ -24,7 +24,7 @@ const FeaturedProjects = () => (
               ))}
             </div>
             <a
-              href={proj.link}
+              href={proj.links && proj.links.length > 0 ? proj.links[0].url : "#"}
               className="mt-auto bg-accent-600 text-white px-6 py-2 rounded-2xl font-semibold text-base hover:bg-accent-700 transition shadow"
               target="_blank" rel="noopener noreferrer"
             >

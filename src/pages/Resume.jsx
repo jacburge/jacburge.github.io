@@ -559,7 +559,7 @@ function ResumePage() {
         </section>
         <section ref={sectionRefs.current.contact} id="contact" className="mb-0 animate-fade-in">
           {/* Contact section: match width and style of experience cards */}
-          <div className="bg-white shadow-xl p-8 flex flex-col items-center text-center rounded-2xl max-w-5xl mx-auto">
+          <div className="bg-white shadow-xl p-8 mb-12 flex flex-col items-center text-center rounded-2xl max-w-5xl mx-auto">
             <img src={logo} alt="Logo" className="w-16 h-16 mb-2" />
             <h2 className="text-2xl font-bold text-accent-700 mb-2">Let’s work together!</h2>
             <div className="text-gray-700 mb-2">Contact me for collaborations, consulting, or speaking.</div>
