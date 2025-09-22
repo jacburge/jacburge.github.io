@@ -111,7 +111,7 @@ export const projects = [
     media: [kilt_kimonoImg],
     tags: ["Art", "Graphic Design", "Freelancing", "Creativity"],
     links: [
-      { url: "https://github.com/jacburge/Degrees-That-Pay-You-Back/blob/master/Degrees%20That%20Pay%20You%20Back%20(Datacamp).ipynb", type: "github", label: "GitHub Repo" }
+      { url: "https://mightyquinnwalker.bandcamp.com/", type: "website", label: "Website" }
     ],
     details: `I created album cover artwork (drawn by hand) and graphic design edits for 4 of Oakland musician Mighty Quinn's releases and provide occasional website updates for his website. You can listen to his punk rock jams at mightyquinnwalker.bandcamp.com! These are my favorite designs.`,
     reflection: `This was a fun creative outlet alongside my technical work. I enjoyed collaborating with an artist to visually represent his music.`,
@@ -126,7 +126,7 @@ export const projects = [
     media: [wudangImg],
     tags: ["Web Design", "Consulting", "Freelancing", "Martial Arts"],
     links: [
-      { url: "WudangDanPai.com", type: "website", label: "Website" }
+      { url: "https://WudangDanPai.com", type: "website", label: "Website" }
     ],
     details: `I redesigned their website with a bright, simpler, more modern look in alignment with the academy's desired aesthetic. I also served as webmaster, designer, and consultant for the managing of new content and online presence as they continue to advertise internal Chinese martial arts classes in Seattle, WA for several years.`,
     reflection: `The mission of the Wudang Internal Martial Arts Academy is to spread awareness of Chinese internal martial arts, promote health and spiritual cultivation, and to teach serious and practical fighting techniques for self-defense.`,
@@ -141,7 +141,7 @@ export const projects = [
     media: [stephanieImg],
     tags: ["Web Design", "Consulting", "Freelancing"],
     links: [
-      { url: "StephanieJordanCounseling.com", type: "website", label: "Website" }
+      { url: "https://StephanieJordanCounseling.com", type: "website", label: "Website" }
     ],
     details: `I designed a new website for a private practice therapist in the Seattle area after providing consultation to understand the goals and desired feel of the site. Produced a full draft within 2 hours which was well-received, and quickly completed the minor tweaks requested before putting into production.`,
     // reflection: `<p>This project taught me the value of iterative prototyping and direct customer feedback. I learned to balance technical feasibility with user needs and business goals.</p>`,
