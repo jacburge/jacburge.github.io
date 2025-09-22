@@ -156,7 +156,7 @@ export const projects = [
     media: [swordImg],
     tags: ["Martial Arts", "Community", "Performance", "Competition"],
     links: [
-      { url: "https://github.com/jacburge/Degrees-That-Pay-You-Back/blob/master/Degrees%20That%20Pay%20You%20Back%20(Datacamp).ipynb", type: "github", label: "GitHub Repo" }
+      // { url: "", type: "github", label: "GitHub Repo" }
     ],
     details: `I started studying tai chi in 2013 with Starfire in Berkeley. For 5 years, I studied baguazhang, taijiquan, and qigong at the International Wudang Internal Martial Arts Academy and was a member of the demonstration team which regularly performs around Seattle, WA. I also competed in several competitions.`,
     // reflection: `<p>This project taught me the value of iterative prototyping and direct customer feedback. I learned to balance technical feasibility with user needs and business goals.</p>`,
