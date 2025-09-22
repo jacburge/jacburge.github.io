@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <Router basename="/jaclynfieldmath.ai">
+    <Router basename="/">
       <div className="min-h-screen bg-white">
         <Navigation />
         <main>
