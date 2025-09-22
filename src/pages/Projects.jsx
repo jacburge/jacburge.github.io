@@ -85,7 +85,7 @@ const Projects = () => {
   }, [modal, carouselIdx]);
 
   return (
-    <div className="min-h-screen w-full" style={accentBg}>
+    <div className="min-h-screen w-full py-8" style={accentBg}>
       {/* Top headline and intro */}
       <div className="max-w-5xl mx-auto px-4 pt-16 pb-8 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold text-accent-700 mb-4">Selected Works</h1>
