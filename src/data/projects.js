@@ -96,7 +96,7 @@ export const projects = [
     media: [slammmImg],
     tags: ["Community Building", "Event Planning", "Creativity", "Leadership", "Diversity & Inclusion"],
     links: [
-      { url: "https://www.youtube.com/watch?v=eo6q5U0X6-0", type: "youtube", label: "Video" }
+      { url: "https://www.youtube.com/watch?v=eo6q5U0X6-0", type: "video", label: "Video" }
     ],
     details: `During my time in Seattle, I hosted this group as a monthly open community fostering the sharing of art, ideas, and passions, alongside the interactive blending of talents for new creative mashups. The only requirement to attend was bringing a 'creative contribution' of your choice to share in a casual jam-setting - the opportunities were endless.`,
     reflection: `I am passionate about empowering people to unlock their creativity. I recall a friend saying she didn't have anything creative to contribute, but then learned she designs and makes her own clothes! We enjoyed a wide range of creative expressions including poetry, music, salsa, visual art, fire dancing, tarot readings, and more.`,
