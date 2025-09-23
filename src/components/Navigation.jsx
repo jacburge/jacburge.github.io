@@ -15,7 +15,6 @@ const navLinks = [
 
 const socialLinks = [
   { icon: <FaLinkedin />, url: 'https://linkedin.com/in/jacburge', label: 'LinkedIn' },
-  { icon: <FaEnvelope />, url: 'mailto:hello@jaclynfieldmath.ai', label: 'Email' },
   { icon: <FaGithub />, url: 'https://github.com/jacburge', label: 'GitHub' },
   { icon: <FaInstagram />, url: 'https://instagram.com/sumi_field', label: 'Instagram' },
 ];

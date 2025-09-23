@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { personalInfo } from '../data/projects';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -140,8 +140,8 @@ const Contact = () => {
           </div>
 
           {/* Contact Info & Social */}
-          <div className="space-y-8">
-            {/* Contact Information */}
+          {/* <div className="space-y-8">
+      
             <div className="bg-white rounded-2xl shadow-lg p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
               <div className="space-y-4">
@@ -170,7 +170,7 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* What I'm Looking For */}
             <div className="bg-white rounded-2xl shadow-lg p-8">
@@ -190,26 +190,17 @@ const Contact = () => {
                   </div>
                 ))}
               </div>
+              <div className="w-full flex flex-col sm:flex-row gap-4 items-center mt-4">
+                <a href="https://linkedin.com/in/jacburge" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-accent-100 text-accent-700 font-semibold px-4 py-2 rounded-lg shadow hover:bg-accent-200 transition"><FaLinkedin /> LinkedIn</a>
+                <a href="https://github.com/jacburge" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-accent-100 text-accent-700 font-semibold px-4 py-2 rounded-lg shadow hover:bg-accent-200 transition"><FaGithub /> GitHub</a>
+                <a href="https://instagram.com/sumi_field" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-accent-100 text-accent-700 font-semibold px-4 py-2 rounded-lg shadow hover:bg-accent-200 transition"><FaInstagram /> Instagram</a>
+              </div>
             </div>
 
-            {/* Response Time */}
-            {/* <div className="bg-accent-50 rounded-2xl p-6">
-              <div className="flex items-center">
-                <div className="w-8 h-8 bg-accent-600 rounded-full flex items-center justify-center mr-3">
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">Quick Response</h3>
-                  <p className="text-sm text-gray-600">I typically respond within 24 hours</p>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 
