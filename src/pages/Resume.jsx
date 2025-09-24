@@ -395,7 +395,7 @@ function ResumePage() {
           <h2
             id="education-header"
             className="text-2xl font-bold text-accent-700 mb-6"
-            style={{ scrollMarginTop: "80px" }}
+            style={{ scrollMarginTop: "120px" }}
           >
             Education
           </h2>
@@ -419,7 +419,7 @@ function ResumePage() {
           <h2
             id="experience-header"
             className="text-2xl font-bold text-accent-700 mb-6"
-            style={{ scrollMarginTop: "80px" }}
+            style={{ scrollMarginTop: "120px" }}
           >
             Work Experience
           </h2>
@@ -482,7 +482,7 @@ function ResumePage() {
           <h2
             id="skills-header"
             className="text-2xl font-bold text-accent-700 mb-6"
-            style={{ scrollMarginTop: "80px" }}
+            style={{ scrollMarginTop: "120px" }}
           >
             Skills & Tech Stack
           </h2>
@@ -501,7 +501,7 @@ function ResumePage() {
           <h2
             id="certifications-header"
             className="text-2xl font-bold text-accent-700 mb-6"
-            style={{ scrollMarginTop: "80px" }}
+            style={{ scrollMarginTop: "120px" }}
           >
             Certifications
           </h2>
@@ -521,7 +521,7 @@ function ResumePage() {
           <h2
             id="awards-header"
             className="text-2xl font-bold text-accent-700 mb-6"
-            style={{ scrollMarginTop: "80px" }}
+            style={{ scrollMarginTop: "120px" }}
           >
             Awards & Honors
           </h2>
@@ -541,7 +541,7 @@ function ResumePage() {
           <h2
             id="speaking-header"
             className="text-2xl font-bold text-accent-700 mb-6"
-            style={{ scrollMarginTop: "80px" }}
+            style={{ scrollMarginTop: "120px" }}
           >
             Speaking & Thought Leadership
           </h2>
@@ -557,18 +557,24 @@ function ResumePage() {
             ))}
           </div>
         </section>
-        <section ref={sectionRefs.current.contact} id="contact" className="mb-0 animate-fade-in">
+        <section ref={sectionRefs.current.contact} id="contact" className="mb-20 animate-fade-in">
           {/* Contact section: match width and style of experience cards */}
-          <div className="bg-white shadow-xl p-8 mb-12 flex flex-col items-center text-center rounded-2xl max-w-5xl mx-auto">
-            <img src={logo} alt="Logo" className="w-16 h-16 mb-2" />
-            <h2 className="text-2xl font-bold text-accent-700 mb-2">Let’s work together!</h2>
+          <div className="bg-white shadow-xl p-8 mb-8 flex flex-col items-center text-center rounded-2xl max-w-5xl mx-auto">
+            <img src={logo} alt="Logo" className="w-16 h-16 mx-auto" />
+            <h2 className="text-2xl font-bold text-accent-700 mt-2 mb-2">Let’s work together!</h2>
             <div className="text-gray-700 mb-2">Contact me for collaborations, consulting, or speaking.</div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-2">
-              <a href="mailto:jacburge@gmail.com" className="flex items-center gap-2 bg-accent-600 text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-accent-700 transition"><FaEnvelope /> jacburge@gmail.com</a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-4">
               <a href="https://linkedin.com/in/jacburge" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-accent-100 text-accent-700 font-semibold px-4 py-2 rounded-lg shadow hover:bg-accent-200 transition"><FaLinkedin /> LinkedIn</a>
             </div>
           </div>
         </section>
+        <button
+        className="fixed bottom-8 right-8 bg-accent-600 text-white px-6 py-3 rounded-full shadow-lg font-semibold text-lg hover:bg-accent-700 transition z-50"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Back to Top"
+      >
+        ↑ Top
+      </button>
       </main>
     </div>
   );

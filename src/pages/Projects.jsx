@@ -254,7 +254,7 @@ const Projects = () => {
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         aria-label="Back to Top"
       >
-        ↑ Back to Top
+        ↑ Top
       </button>
       {/* Microanimations and custom styles */}
       <style>{`
