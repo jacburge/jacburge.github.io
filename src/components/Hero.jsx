@@ -53,17 +53,25 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
               <button
                 onClick={() => {
-                  const projectsSection = document.getElementById('featured-projects');
-                  if (projectsSection) {
-                    projectsSection.scrollIntoView({ behavior: 'smooth' });
-                  }
+                  window.location.href = "/art";
+                  // const projectsSection = document.getElementById('featured-projects');
+                  // if (projectsSection) {
+                  //   projectsSection.scrollIntoView({ behavior: 'smooth' });
+                  // }
                 }}
                 className="bg-white text-accent-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-accent-200 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
-                See My Work
+                Creative Pursuits
               </button>
               <button
-                onClick={() => window.open('/resume.pdf', '_blank')}
+              onClick={() => {
+                    const aboutSection = document.getElementById('about-me');
+                    if (aboutSection) {
+                      const navOffset = 96;
+                      const y = aboutSection.getBoundingClientRect().top + window.pageYOffset - navOffset;
+                      window.scrollTo({ top: y, behavior: 'smooth' });
+                    }
+                }}
                 className="bg-accent-700 text-white px-8 py-4 rounded-2xl font-semibold text-lg border-2 border-white hover:bg-white hover:text-accent-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 About Me

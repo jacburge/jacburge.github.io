@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaLinkedin, FaEnvelope, FaAward, FaMicrophone, FaFilePdf, FaGraduationCap, FaBriefcase, FaTools, FaCertificate, FaStar, FaComments, FaChevronDown, FaList } from "react-icons/fa";
+import TechStackCard from "../components/TechStack";
+import { FaLinkedin, FaEnvelope, FaAward, FaMicrophone, FaGraduationCap, FaBriefcase, FaTools, FaCertificate, FaStar, FaComments, FaChevronDown, FaList, FaFilePdf } from "react-icons/fa";
 import logo from "../assets/logo.png";
 import disneyLogo from "../assets/logos/Disney.png";
 import libertyLogo from "../assets/logos/liberty.png";
@@ -154,20 +155,6 @@ const certifications = [
   },
 ];
 
-const skills = {
-  technical: [
-    "Machine Learning & Predictive Analytics (XGBoost, GLM, Prophet, K-Means)",
-    "Programming (Python, SQL, R, SAS)",
-    "Data Engineering (Snowflake, Liquibase, ETL pipelines)",
-    "Cloud & DevOps (AWS, Jenkins, Docker, GitLab CI/CD)",
-    "Web Application Development (Django, Flask, React, REST APIs)",
-    "Visualization (Tableau)",
-  ],
-  leadership: [
-    "Team Building", "Cross-Functional Leadership", "Agile Methods", "Product Strategy & Roadmapping", "Stakeholder Communication & Influence", "User-Centered Design", "Mentorship"
-  ],
-};
-
 const speaking = [
   {
     title: "Industry Expert Interviewee",
@@ -246,7 +233,7 @@ function ResumeNavBar({ activeSection }) {
   // Transparent sticky filter bar style
   return (
     <nav
-      className="max-w-5xl mx-auto px-4 mb-8 flex flex-wrap gap-4 justify-center items-center sticky top-0 z-30 bg-white/80 rounded-xl shadow-lg py-1"
+      className="max-w-5xl mx-auto px-4 mb-8 flex flex-wrap gap-4 justify-center items-center sticky top-0 z-30"
     >
       {/* Desktop: horizontal nav */}
       <ul className="hidden lg:flex flex-row flex-nowrap w-full px-2 justify-center items-center gap-2 sm:gap-6 md:gap-6">
@@ -458,7 +445,7 @@ function ResumePage() {
                     style={{
                       // On mobile, center above card
                       position: 'absolute',
-                      top: '-1.75rem',
+                      top: '-2.75rem',
                       left: '50%',
                       transform: 'translateX(-50%)',
                       // On desktop, left over timeline
@@ -470,7 +457,7 @@ function ResumePage() {
                     <img src={role.logo} alt={role.company} className="w-12 h-12 object-contain" />
                   </div>
                   {/* Card: add left margin for timeline/logo on desktop */}
-                  <div className="flex-1 ml-0 sm:ml-24">
+                  <div className="flex-1 ml-0 sm:ml-24 pt-12 sm:pt-0">
                     <ExpandableExperience role={role} />
                   </div>
                 </div>
@@ -486,16 +473,7 @@ function ResumePage() {
           >
             Skills & Tech Stack
           </h2>
-          <div className="bg-white rounded-2xl shadow-lg p-6 border border-accent-100">
-            <div className="flex flex-wrap gap-3 justify-center mb-2">
-              {skills.technical.map((skill, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-100 text-accent-700 font-semibold text-sm shadow">{skill}</span>
-              ))}
-              {skills.leadership.map((skill, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 font-semibold text-sm shadow">{skill}</span>
-              ))}
-            </div>
-          </div>
+          <TechStackCard />
         </section>
         <section ref={sectionRefs.current.certifications} id="certifications" className="mb-12 animate-fade-in">
           <h2
@@ -559,7 +537,7 @@ function ResumePage() {
         </section>
         <section ref={sectionRefs.current.contact} id="contact" className="mb-20 animate-fade-in">
           {/* Contact section: match width and style of experience cards */}
-          <div className="bg-white shadow-xl p-8 mb-8 flex flex-col items-center text-center rounded-2xl max-w-5xl mx-auto">
+          <div className="bg-white shadow-xl p-8 mb-8flex flex-col items-center text-center rounded-2xl max-w-5xl mx-auto">
             <img src={logo} alt="Logo" className="w-16 h-16 mx-auto" />
             <h2 className="text-2xl font-bold text-accent-700 mt-2 mb-2">Let’s work together!</h2>
             <div className="text-gray-700 mb-2">Contact me for collaborations, consulting, or speaking.</div>

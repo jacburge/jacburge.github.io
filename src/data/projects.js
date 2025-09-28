@@ -158,7 +158,27 @@ export const projects = [
     links: [
       // { url: "", type: "github", label: "GitHub Repo" }
     ],
-    details: `I started studying tai chi in 2013 with Starfire in Berkeley. For 5 years, I studied baguazhang, taijiquan, and qigong at the International Wudang Internal Martial Arts Academy and was a member of the demonstration team which regularly performs around Seattle, WA. I also competed in several competitions.`,
+    details: `I started studying tai chi in 2013 with Starfire in Berkeley. For 5 years, I studied baguazhang, taijiquan, and qigong at the International Wudang Internal Martial Arts Academy and was a member of the demonstration team which regularly performs around Seattle, WA. I also competed in several competitions. Most recently, I studied Wing Chun in Maryland.
+        <ul>
+      <li><strong>March 2015:</strong> Chinese Martial Arts Tournament (CMAT) in Berkeley, CA<br/>
+        Gold in Beginner's Tai Chi Short Weapon
+      </li>
+      <li><strong>March 2016:</strong> CMAT in Berkeley, CA<br/>
+        Gold in Intermediate Tai Chi Short Weapon, and Gold in Intermediate Tai Chi Partner Form
+      </li>
+      <li><strong>May 2018:</strong> Can-Am International Martial Arts Tournament in Vancouver, BC, Canada<br/>
+        Gold in Advanced Baguazhang Hand Form
+      </li>
+      <li><strong>June 2018:</strong> International Chinese Martial Arts Tournament (ICMAC) in Orlando, FL<br/>
+        Gold in Advanced Baguazhang Weapon and Silver in Advanced Baguazhang Hand Form
+      </li>
+      <li><strong>March 2019:</strong> CMAT in Berkeley, CA<br/>
+        Gold in Advanced Baguazhang Hand Form and Gold in Advanced Internal Long Weapon
+      </li>
+      <li><strong>August 2019:</strong> Seattle International Chinese Martial Arts Tournament in Seattle, WA<br/>
+        Gold in Advanced Baguazhang Dao (broadsword), Silver in Advanced Baguazhang Hand Form, and Silver in Advanced Other Traditional Weapon Form (baguazhang crescent moon knives)
+      </li>
+    </ul>`,
     // reflection: `<p>This project taught me the value of iterative prototyping and direct customer feedback. I learned to balance technical feasibility with user needs and business goals.</p>`,
     role: "Competitive Martial Artist",
     featured: false,

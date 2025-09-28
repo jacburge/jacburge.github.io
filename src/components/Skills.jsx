@@ -1,29 +1,13 @@
 import { useState } from 'react';
-import disneyLogo from '../assets/logos/Disney.png';
-import libertyLogo from '../assets/logos/liberty.png';
-import pythonLogo from '../assets/logos/python.png';
-import reactLogo from '../assets/logos/react.png';
-import awsLogo from '../assets/logos/aws.png';
-import tableauLogo from '../assets/logos/tableau.png';
+import TechStackCard from './TechStack';
+
 import berkeleyLogo from '../assets/logos/berkeley.png';
 import ewhaLogo from '../assets/logos/ewha.png';
 import umdLogo from '../assets/logos/umd.png';
-import snowflakeLogo from '../assets/logos/snowflake.png';
-import gitlabLogo from '../assets/logos/gitlab.png';
-import jiraLogo from '../assets/logos/jira.png';
-import canvaLogo from '../assets/logos/canva.png';
+import disneyLogo from '../assets/logos/Disney.png';
+import libertyLogo from '../assets/logos/liberty.png';
 import datacampLogo from '../assets/logos/datacamp.png';
-import copilotLogo from '../assets/logos/copilot.png';
-import airtableLogo from '../assets/logos/airtable.png';
-import asanaLogo from '../assets/logos/asana.png';
-import balsamiqLogo from '../assets/logos/balsamiq.png';
-import confluenceLogo from '../assets/logos/confluence.jpg';
-import djangoLogo from '../assets/logos/django.png';
-import dockerLogo from '../assets/logos/docker.png';
-import jenkinsLogo from '../assets/logos/jenkins.png';
-import liquibaseLogo from '../assets/logos/liquibase.png';
-import sqlLogo from '../assets/logos/SQL.png';
-import rLogo from '../assets/logos/r.png';
+
 
 const brands = [
   {
@@ -46,116 +30,6 @@ const brands = [
   },
 ];
 
-const techStack = [
-  {
-    src: pythonLogo,
-    alt: 'Python',
-    tooltip: 'Python: Data science, ML, automation, applications, APIs',
-  },
-  {
-    src: sqlLogo,
-    alt: 'SQL',
-    tooltip: 'SQL: Data querying, manipulation, ETL processes',
-  },
-  {
-    src: rLogo,
-    alt: 'R',
-    tooltip: 'R: Statistical analysis, data visualization, reporting',
-  },
-  {
-    src: reactLogo,
-    alt: 'React',
-    tooltip: 'React: Frontend web and mobile development, Interactive UIs',
-  },
-  {
-    src: djangoLogo,
-    alt: 'Django',
-    tooltip: 'Django: Backend frameworks, user management, APIs',
-
-  },
-  {
-    src: snowflakeLogo,
-    alt: 'Snowflake',
-    tooltip: 'Snowflake: Cloud data warehousing, scalable analytics, Streamlit interfaces',
-  },
-  {
-    src: awsLogo,
-    alt: 'AWS',
-    tooltip: 'AWS: Cloud deployment, scalable infrastructure',
-  },
-  {
-    src: gitlabLogo,
-    alt: 'GitLab',
-    tooltip: 'GitLab: Version control, CI/CD automation, collaborative DevOps',
-  },
-  {
-    src: jenkinsLogo,
-    alt: 'Jenkins',
-    tooltip: 'Jenkins: CI/CD automation, build pipelines, DevOps',
-  },
-  { 
-    src: liquibaseLogo,
-    alt: 'Liquibase',
-    tooltip: 'Liquibase: Database version control, schema management',
-  },
-  {
-    src: dockerLogo,
-    alt: 'Docker',
-    tooltip: 'Docker: Containerization, microservices, scalable deployment',
-  },
-  {
-    src: jiraLogo,
-    alt: 'JIRA',
-    tooltip: 'JIRA: Agile project management, sprint planning, issue tracking',
-  },
- {
-    src: asanaLogo,
-    alt: 'Asana',
-    tooltip: 'Asana: Task management, team collaboration, project tracking',
-  },
-  {
-    src: confluenceLogo,
-    alt: 'Confluence',
-    tooltip: 'Confluence: Documentation, team collaboration, knowledge sharing',
-  },
-  {
-    src: airtableLogo,
-    alt: 'Airtable',
-    tooltip: 'Airtable: Flexible databases, project management, collaboration',
-  },
- {
-    src: tableauLogo,
-    alt: 'Tableau',
-    tooltip: 'Tableau: Data visualization, executive reporting',
-  },
-  {
-    src: balsamiqLogo,
-    alt: 'Balsamiq',
-    tooltip: 'Balsamiq: Wireframing, UI/UX design, prototyping',
-  },
-  {
-    src: canvaLogo,
-    alt: 'Canva',
-    tooltip: 'Canva: Visual design and presentations',
-  },
-  {
-    src: copilotLogo,
-    alt: 'GitHub Copilot',
-    tooltip: 'GitHub Copilot: AI pair programming, code generation, productivity',
-  }
-];
-
-const productSkills = [
-  'Cross-Functional Leadership',
-  'Hiring Process Design',
-  'Team Culture Building',
-  'Agile Methods',
-  'Roadmaps',
-  'Project Tracking',
-  'Product Strategy',
-  'Stakeholder Communication & Influence',
-  'Mentorship'
-];
 
 const schools = [
   { src: umdLogo, alt: 'University of Maryland, College Park', description: 'Executive Master of Business Administration' },
@@ -163,62 +37,6 @@ const schools = [
   { src: ewhaLogo, alt: 'Ewha Womans University', description: 'Summer International Program' },
 ];
 
-// const certifications = [
-//   {
-//     title: 'Prediction and Machine Learning',
-//     issuer: 'BerkeleyX (edX)',
-//     logo: edxLogo,
-//     date: 'Jul 2019',
-//     skill: 'Machine Learning',
-//     badgeColor: 'bg-teal-200 text-teal-800',
-//     description: 'Covers supervised learning, regression, classification, and prediction techniques.',
-//   },
-//   {
-//     title: 'Professional Certificate in Foundations of Data Science',
-//     issuer: 'BerkeleyX (edX)',
-//     logo: edxLogo,
-//     date: 'Jul 2019',
-//     skill: 'Data Science',
-//     badgeColor: 'bg-blue-100 text-blue-800',
-//     description: 'Comprehensive introduction to data science, including Python, statistics, and data analysis.',
-//   },
-//   {
-//     title: 'Computational Thinking with Python',
-//     issuer: 'BerkeleyX (edX)',
-//     logo: edxLogo,
-//     date: 'Jun 2019',
-//     skill: 'Python',
-//     badgeColor: 'bg-yellow-100 text-yellow-800',
-//     description: 'Focuses on problem solving and computational thinking using Python.',
-//   },
-//   {
-//     title: 'Inferential Thinking by Resampling',
-//     issuer: 'BerkeleyX (edX)',
-//     logo: edxLogo,
-//     date: 'Jun 2019',
-//     skill: 'Statistics',
-//     badgeColor: 'bg-purple-100 text-purple-800',
-//     description: 'Explores inferential statistics, hypothesis testing, and resampling methods.',
-//   },
-//   {
-//     title: 'Programming with Python for Data Science (DAT210x)',
-//     issuer: 'Microsoft (edX)',
-//     logo: edxLogo,
-//     date: 'Feb 2018',
-//     skill: 'Python',
-//     badgeColor: 'bg-yellow-100 text-yellow-800',
-//     description: 'Covers Python programming for data science, including libraries and data manipulation.',
-//   },
-//   {
-//     title: 'Machine Learning for Data Science and Analytics',
-//     issuer: 'ColumbiaX (edX)',
-//     logo: edxLogo,
-//     date: 'Mar 2016',
-//     skill: 'Machine Learning',
-//     badgeColor: 'bg-teal-200 text-teal-800',
-//     description: 'Introduces machine learning concepts, algorithms, and analytics applications.',
-//   },
-// ];
 
 const schoolBullets = [
   [
@@ -251,31 +69,6 @@ const brandBullets = [
   ]
 ];
 
-const techCategories = {
-  python: ["Programming", "Machine Learning", "Data Engineering"],
-  sql: ["Programming", "Data Engineering"],
-  r: ["Programming", "Machine Learning"],
-  react: ["Web App Development"],
-  django: ["Web App Development"],
-  snowflake: ["Data Engineering", "Cloud & DevOps", "AI"],
-  aws: ["Cloud & DevOps"],
-  gitlab: ["Web App Development", "Cloud & DevOps"],
-  jenkins: ["Cloud & DevOps", "Data Engineering"],
-  liquibase: ["Data Engineering"],
-  docker: ["Cloud & DevOps", "Data Engineering"],
-  jira: ["Agile Methods"],
-  asana: ["Agile Methods"],
-  confluence: ["Agile Methods"],
-  airtable: ["Data Engineering"],
-  tableau: ["Visualization"],
-  balsamiq: ["Design"],
-  canva: ["Design", "Visualization", "AI"],
-  githubcopilot: ["Programming", "Machine Learning", "Web App Development", "AI"],
-};
-const allCategories = Array.from(new Set(Object.values(techCategories).flat()));
-function getLogoKey(logo) {
-  return logo.alt.replace(/\s|\.|-/g, '').toLowerCase();
-}
 
 const FlipCard = ({ front, back, accent = "border-accent-100" }) => {
   const [flipped, setFlipped] = useState(false);
@@ -387,101 +180,16 @@ const Card = ({ children }) => (
   </div>
 );
 
-const TechStackRadio = ({ selectedCategory, setSelectedCategory }) => (
-  <div
-    className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-6"
-    role="radiogroup"
-    aria-label="Tech stack filters"
-    style={{
-      display: 'flex',
-      flexWrap: 'wrap',
-      rowGap: '0.5rem',
-      columnGap: '0.5rem',
-      maxWidth: '700px',
-      margin: '0 auto',
-    }}
-  >
-    {allCategories.map((cat) => (
-      <button
-        key={cat}
-        className={`inline-flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-sm shadow border border-accent-200 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent-400
-          ${selectedCategory === cat ? 'bg-accent-600 text-white ring-2 ring-accent-400' : 'bg-white text-gray-500 hover:bg-accent-100'}`}
-        aria-checked={selectedCategory === cat}
-        role="radio"
-        tabIndex={0}
-        onClick={() => setSelectedCategory(selectedCategory === cat ? null : cat)}
-        style={{ fontWeight: selectedCategory === cat ? 'bold' : 'normal' }}
-      >
-        {cat}
-      </button>
-    ))}
-  </div>
-);
 
-const LogoRow = ({ logos, selectedCategory }) => (
-  <div className="flex flex-wrap justify-center items-center gap-8">
-    {logos.map((logo, idx) => {
-      const key = getLogoKey(logo);
-      const logoCats = techCategories[key] || [];
-      const isActive = selectedCategory && logoCats.includes(selectedCategory);
-      return (
-        <div
-          key={idx}
-          className="relative group flex flex-col items-center transition-all duration-300"
-          tabIndex={0}
-          aria-label={logo.alt}
-        >
-          {/* Glow effect when active */}
-          {isActive && (
-            <span
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
-              style={{
-                width: '90px',
-                height: '90px',
-                borderRadius: '50%',
-                background: 'radial-gradient(circle, #e6f4f6 0%, #c3e6ee 70%, transparent 100%)',
-                filter: 'blur(16px)',
-                opacity: 0.7,
-              }}
-            />
-          )}
-          <img
-            src={logo.src}
-            alt={logo.alt}
-            className={`h-12 w-12 object-contain transition-all duration-300 grayscale group-hover:grayscale-0 ${isActive ? 'grayscale-0 z-10' : ''}`}
-            style={{ minWidth: 96, minHeight: 64, maxWidth: 96, maxHeight: 64, position: 'relative' }}
-          />
-          <span className="absolute left-1/2 -translate-x-1/2 -top-8 bg-black text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-90 pointer-events-none transition duration-200 whitespace-nowrap z-10">
-            {logo.tooltip}
-          </span>
-        </div>
-      );
-    })}
-  </div>
-);
-
-const BadgeRow = ({ badges }) => (
-  <div className="flex flex-wrap justify-center gap-3 mt-4">
-    {badges.map((skill, idx) => (
-      <span
-        key={idx}
-        className="inline-block bg-teal-100 text-teal-800 font-semibold px-4 py-2 rounded-full shadow-sm text-sm"
-      >
-        {skill}
-      </span>
-    ))}
-  </div>
-);
 
 const Skills = () => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
   return (
     <section id="skills" className="py-20 bg-gray-50">
       <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-accent-600 mb-10 text-center">Skills & Experience</h2>
         <Card>
           <div className="mb-6 text-center text-lg text-gray-700 font-medium">
-            Educated at top institutions:
+            Education:
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {schools.map((school, idx) => (
@@ -507,7 +215,7 @@ const Skills = () => {
         </Card>
         <Card>
           <div className="mb-6 text-center text-lg text-gray-700 font-medium">
-            Trusted by world-class brands:
+            Experience:
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {brands.map((brand, idx) => (
@@ -531,51 +239,8 @@ const Skills = () => {
             ))}
           </div>
         </Card>
-        <Card>
-          <div className="text-center text-lg text-gray-700 font-medium">
-            Tech Stack:
-          </div>
-          <div className="py-6">
-          <TechStackRadio selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
-          </div>
-          <div className="py-6">
-          <LogoRow logos={techStack} selectedCategory={selectedCategory} />
-          </div>
-          <hr className="py-4" />
-         <div className="mb-8 text-center text-lg text-gray-700 font-medium">
-            Strategy, Leadership & Collaboration Skills:
-          </div>
-          <BadgeRow badges={productSkills} />
-        </Card>
-        {/* <Card>
-          <div className="mb-6 text-center text-lg text-gray-700 font-medium">
-            Certifications:
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {certifications.map((cert, idx) => (
-              <div
-                key={idx}
-                className="relative bg-white rounded-2xl shadow-lg border-2 border-accent-100 p-6 flex flex-col items-center group transition-all duration-200"
-              >
-                <img
-                  src={cert.logo}
-                  alt={cert.issuer}
-                  className="h-10 w-10 object-contain mb-4"
-                />
-                <div className="font-bold text-lg text-gray-900 text-center mb-1">{cert.title}</div>
-                <div className="text-sm text-gray-500 text-center mb-2">
-                  {cert.issuer} &middot; <span>{cert.date}</span>
-                </div>
-                <span className={`px-4 py-1 rounded-full font-semibold text-sm mb-2 ${cert.badgeColor}`}>
-                  {cert.skill}
-                </span>
-                <span className="absolute left-1/2 -translate-x-1/2 -bottom-2 translate-y-full bg-black text-white text-xs rounded px-3 py-2 opacity-0 group-hover:opacity-90 pointer-events-none transition duration-200 whitespace-normal z-10 w-56 text-center">
-                  {cert.description}
-                </span>
-              </div>
-            ))}
-          </div>
-        </Card> */}
+        <TechStackCard />
+     
       </div>
       <style>
         {`
