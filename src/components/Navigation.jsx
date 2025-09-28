@@ -7,8 +7,8 @@ import logo from '../assets/logo.png';
 
 const navLinks = [
   { name: 'Home', href: '/', icon: <FaHome /> },
-  { name: 'Projects', href: '/projects', icon: <FaFolderOpen /> },
   { name: 'Art', href: '/art', icon: <FaPalette /> },
+  { name: 'Projects', href: '/projects', icon: <FaFolderOpen /> },
   { name: 'Resume', href: '/resume', icon: <FaFileAlt /> },
   { name: 'Contact', href: '/contact', icon: <FaPaperPlane /> },
 ];
