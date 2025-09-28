@@ -155,11 +155,16 @@ const Projects = () => {
             <button className="absolute top-4 right-4 text-gray-500 hover:text-accent-700 text-2xl" onClick={() => setModal(null)} aria-label="Close">&times;</button>
             {/* Carousel/gallery */}
             {modal.media?.length > 1 ? (
-              <div className="relative mb-6 rounded-2xl overflow-hidden aspect-video shadow-lg flex items-center justify-center">
+              <div className="relative mb-6 rounded-2xl overflow-auto max-h-[70vh] bg-gray-50 shadow-lg flex items-center justify-center">
                 {getMediaType(modal.media[carouselIdx]) === 'video' ? (
-                  <video src={modal.media[carouselIdx]} className="w-full h-full object-cover" controls />
+                  <video src={modal.media[carouselIdx]} className="w-full h-auto max-h-[70vh] object-contain" controls />
                 ) : (
-                  <img src={modal.media[carouselIdx]} alt={modal.title} className="w-full h-full object-cover" style={{ aspectRatio: '16/9' }} />
+                  <img
+                    src={modal.media[carouselIdx]}
+                    alt={modal.title}
+                    className="w-auto h-auto max-h-[70vh] max-w-full object-contain mx-auto"
+                    style={{ display: 'block' }}
+                  />
                 )}
                 <button
                   className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 text-accent-700 rounded-full p-2 shadow hover:bg-accent-100"
@@ -184,11 +189,16 @@ const Projects = () => {
                 </div>
               </div>
             ) : (
-              <div className="mb-6 rounded-2xl overflow-hidden aspect-video shadow-lg">
+              <div className="mb-6 rounded-2xl overflow-auto max-h-[70vh] bg-gray-50 shadow-lg flex items-center justify-center">
                 {getMediaType(modal.media?.[0]) === 'video' ? (
-                  <video src={modal.media?.[0]} className="w-full h-full object-cover" controls />
+                  <video src={modal.media?.[0]} className="w-full h-auto max-h-[70vh] object-contain" controls />
                 ) : (
-                  <img src={modal.media?.[0]} alt={modal.title} className="w-full h-full object-cover" style={{ aspectRatio: '16/9' }} />
+                  <img
+                    src={modal.media?.[0]}
+                    alt={modal.title}
+                    className="w-auto h-auto max-h-[70vh] max-w-full object-contain mx-auto"
+                    style={{ display: 'block' }}
+                  />
                 )}
               </div>
             )}
