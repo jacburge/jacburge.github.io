@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import TechStackCard from "../components/TechStack";
 import { FaLinkedin, FaEnvelope, FaAward, FaMicrophone, FaGraduationCap, FaBriefcase, FaTools, FaCertificate, FaStar, FaComments, FaChevronDown, FaList } from "react-icons/fa";
 import logo from "../assets/logo.png";
 import disneyLogo from "../assets/logos/Disney.png";
@@ -486,16 +487,7 @@ function ResumePage() {
           >
             Skills & Tech Stack
           </h2>
-          <div className="bg-white rounded-2xl shadow-lg p-6 border border-accent-100">
-            <div className="flex flex-wrap gap-3 justify-center mb-2">
-              {skills.technical.map((skill, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-100 text-accent-700 font-semibold text-sm shadow">{skill}</span>
-              ))}
-              {skills.leadership.map((skill, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 font-semibold text-sm shadow">{skill}</span>
-              ))}
-            </div>
-          </div>
+          <TechStackCard />
         </section>
         <section ref={sectionRefs.current.certifications} id="certifications" className="mb-12 animate-fade-in">
           <h2
