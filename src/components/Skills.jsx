@@ -146,9 +146,9 @@ const techStack = [
 ];
 
 const productSkills = [
-  'Cross-Functional Leadership',
   'Hiring Process Design',
   'Team Culture Building',
+  'Cross-Functional Leadership',
   'Agile Methods',
   'Roadmaps',
   'Project Tracking',
@@ -156,6 +156,18 @@ const productSkills = [
   'Stakeholder Communication & Influence',
   'Mentorship'
 ];
+
+const productSkillTooltips = {
+  'Hiring Process Design': 'Designed and executed effective remote behavioral and technical hiring process, with experience conducting hundreds of interviews for multiple teams.',
+  'Team Culture Building': 'Foster positive, inclusive, and high-performing team cultures with strong morale, collaboration, and rituals, with experience onboarding 20+ team members.',
+  'Cross-Functional Leadership': 'Lead teams across disciplines (software engineering, UX design, data science, data engineering, financial analysts) to achieve shared goals and development initiatives.',
+  'Agile Methods': 'Apply agile frameworks for iterative product development (Scrum, Kanban, Retrospectives, etc).',
+  'Roadmaps': 'Develop and communicate strategic product roadmaps to stakeholders and executives.',
+  'Project Tracking': 'Track progress and deliverables using modern tools with weekly updates to stakeholders and monthly prioritization meetings.',
+  'Product Strategy': 'Define vision, goals, and priorities for data science initiatives and products.',
+  'Stakeholder Communication & Influence': 'Engage and influence stakeholders at all levels across multiple teams.',
+  'Mentorship': 'Coach and mentor team members and mentees for professional growth and ongoing career conversations.',
+};
 
 const schools = [
   { src: umdLogo, alt: 'University of Maryland, College Park', description: 'Executive Master of Business Administration' },
@@ -463,12 +475,16 @@ const LogoRow = ({ logos, selectedCategory }) => (
 const BadgeRow = ({ badges }) => (
   <div className="flex flex-wrap justify-center gap-3 mt-4">
     {badges.map((skill, idx) => (
-      <span
-        key={idx}
-        className="inline-block bg-teal-100 text-teal-800 font-semibold px-4 py-2 rounded-full shadow-sm text-sm"
-      >
-        {skill}
-      </span>
+      <div key={idx} className="relative group">
+        <span
+          className="inline-block bg-teal-100 text-teal-800 font-semibold px-4 py-2 rounded-full shadow-sm text-sm cursor-default"
+        >
+          {skill}
+        </span>
+        <span className="absolute left-1/2 -translate-x-1/2 -top-2 translate-y-[-100%] bg-black text-white text-xs rounded px-3 py-2 opacity-0 group-hover:opacity-90 pointer-events-none transition duration-200 whitespace-normal z-10 w-56 text-center">
+          {productSkillTooltips[skill]}
+        </span>
+      </div>
     ))}
   </div>
 );
