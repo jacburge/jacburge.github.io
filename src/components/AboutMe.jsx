@@ -2,6 +2,7 @@ import logo from '../assets/logo.png';
 import { FaLightbulb, FaHeart, FaRocket } from 'react-icons/fa';
 
 const AboutMeCard = () => (
+  <section id='about-me'>
   <div
     className="w-full flex justify-center py-20 bg-gradient-to-br from-accent-50 via-white to-gray-100"
     style={{
@@ -54,6 +55,7 @@ const AboutMeCard = () => (
       </div>
     </div>
   </div>
+  </section>
 );
 
 export default AboutMeCard;
