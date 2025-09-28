@@ -189,7 +189,7 @@ const anchorIds = ["ink", "gall", "abstract", "textile", "today"];
 
 function ArtNavBar({ activeSection, setActiveSection }) {
   return (
-    <div className="relative bg-accent-50 py-2 rounded-xl mb-8">
+    <div className="relative mb-8">
       {/* Remove fade gradients and horizontal scroll */}
       <ul
         className="
@@ -317,8 +317,17 @@ const Art = () => {
             </button>
           </div>
         </div>
+              {/* Sticky Back to Top button */}
+      <button
+        className="fixed bottom-8 right-8 bg-accent-600 text-white px-6 py-3 rounded-full shadow-lg font-semibold text-lg hover:bg-accent-700 transition z-50"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Back to Top"
+      >
+        ↑ Top
+      </button>
       </div>
     </div>
+    
   );
 };
 
