@@ -189,13 +189,24 @@ const anchorIds = ["ink", "gall", "abstract", "textile", "today"];
 
 function ArtNavBar({ activeSection, setActiveSection }) {
   return (
-      <ul className="flex flex-row flex-nowrap w-full px-2 justify-center items-center gap-4 sm:gap-8 md:gap-10">
+    <div className="relative bg-accent-50 py-2 rounded-xl mb-8">
+      {/* Remove fade gradients and horizontal scroll */}
+      <ul
+        className="
+          flex flex-row flex-wrap w-full
+          gap-3 sm:gap-6 md:gap-8
+          justify-center
+        "
+      >
         {artSectionAnchors.map((s) => (
-          <li key={s.id} className="flex-shrink-0 flex justify-center">
+          <li
+            key={s.id}
+            className="flex-shrink-0 flex justify-center"
+          >
             <button
               type="button"
               onClick={() => setActiveSection(s.id)}
-              className={`flex items-center gap-3 px-8 py-4 rounded-full font-bold text-lg shadow border-2 border-accent-200 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-400
+              className={`flex items-center gap-4 px-4 py-2 rounded-full font-bold text-sm shadow border-2 border-accent-200 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-400
                 ${activeSection === s.id
                   ? "bg-accent-600 text-white ring-2 ring-accent-400"
                   : "bg-white text-accent-700 hover:bg-accent-100"}
@@ -203,6 +214,10 @@ function ArtNavBar({ activeSection, setActiveSection }) {
               aria-current={activeSection === s.id ? "section" : undefined}
               aria-label={s.label}
               tabIndex={0}
+              style={{
+                minWidth: "max-content",
+                touchAction: "manipulation",
+              }}
             >
               <span className="text-2xl" aria-label={s.label}>{s.icon}</span>
               <span>{s.label}</span>
@@ -210,6 +225,7 @@ function ArtNavBar({ activeSection, setActiveSection }) {
           </li>
         ))}
       </ul>
+    </div>
   );
 }
 
