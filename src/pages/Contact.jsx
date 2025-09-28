@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import React, { useState, useEffect, useRef } from 'react';
+import { FaGithub, FaInstagram, FaLinkedin, FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -60,11 +60,11 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl shadow-lg p-8">
+          <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col h-full">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -134,46 +134,15 @@ const Contact = () => {
                 type="submit"
                 className="w-full bg-accent-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-accent-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
-                Send Message
+                Send Your Note
               </button>
             </form>
           </div>
 
-          {/* Contact Info & Social */}
-          {/* <div className="space-y-8">
-      
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mr-4">
-                    <svg className="w-6 h-6 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Email</h3>
-                    <p className="text-gray-600">{personalInfo.email}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mr-4">
-                    <svg className="w-6 h-6 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Location</h3>
-                    <p className="text-gray-600">{personalInfo.location}</p>
-                  </div>
-                </div>
-              </div>
-            </div> */}
-
-            {/* What I'm Looking For */}
-            <div className="bg-white rounded-2xl shadow-lg p-8">
+          {/* Right column: Quotes carousel above "Let's Collaborate On" */}
+          <div className="flex flex-col h-full">
+            <CreativityCarousel />
+            <div className="bg-white rounded-2xl shadow-lg p-8 mt-8 flex-1 flex flex-col">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Let's Collaborate On</h2>
               <div className="space-y-3">
                 {[
@@ -196,11 +165,127 @@ const Contact = () => {
                 <a href="https://instagram.com/sumi_field" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-accent-100 text-accent-700 font-semibold px-4 py-2 rounded-lg shadow hover:bg-accent-200 transition"><FaInstagram /> Instagram</a>
               </div>
             </div>
-
           </div>
         </div>
       </div>
+    </div>
+  );
+};
 
+const creativityQuotes = [
+  {
+    text: "Don’t get set into one form, adapt it and build your own, and let it grow. Be like water, my friend.",
+    author: "Bruce Lee"
+  },
+  {
+    text: "Absorb what is useful, discard what is not, add what is uniquely your own.",
+    author: "Bruce Lee"
+  },
+  {
+    text: "Art reaches its greatest point when it is devoid of self-consciousness. Freedom discovers man the moment he loses concern over what impression he is making or about to make.",
+    author: "Bruce Lee"
+  },
+  {
+    text: "If you spend too much time thinking about a thing, you’ll never get it done.",
+    author: "Bruce Lee"
+  },
+  {
+    text: "Knowing is not enough, we must apply. Willing is not enough, we must do.",
+    author: "Bruce Lee"
+  },
+  {
+    text: "The key to immortality is first living a life worth remembering.",
+    author: "Bruce Lee"
+  },
+  {
+    text: "Life itself is your teacher, and you are in a state of constant learning.",
+    author: "Bruce Lee"
+  },
+  {
+    text: "The doubters said, 'Man can not fly, The doers said, 'Maybe, but we'll try,' And finally soared // In the morning glow // While non-believers // Watched from below.",
+    author: "Bruce Lee"
+  },
+  {
+    text: "If you love life, don't waste time, for time is what life is made up of.",
+    author: "Bruce Lee"
+  },
+  {
+    text: "The meaning of life is that it is to be lived, and it is not to be traded and conceptualized and squeezed into a pattern of systems.",
+    author: "Bruce Lee"
+  },
+  {
+    text: "The most dangerous person is the one who listens, thinks and observes.",
+    author: "Bruce Lee"
+  },
+  {
+    text: "If you always put limits on everything you do, physical or anything else, it will spread into your work and into your life. There are no limits. There are only plateaus, and you must not stay there, you must go beyond them.",
+    author: "Bruce Lee"
+  },
+  {
+    text: "Masters in all branches of art must first be masters in living, for the soul creates everything.",
+    author: "Bruce Lee"
+  },
+];
+
+const CreativityCarousel = () => {
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [animating] = useState(false);
+  const timeoutRef = useRef(null);
+
+  // Auto-rotate
+  useEffect(() => {
+    if (paused) return;
+    timeoutRef.current = setTimeout(() => {
+      handleNextRandom();
+    }, 5000);
+    return () => clearTimeout(timeoutRef.current);
+    // eslint-disable-next-line
+  }, [index, paused]);
+
+  // Show a new random quote (not the current one)
+  const handleNextRandom = () => {
+    setTimeout(() => {
+      let next;
+      do {
+        next = Math.floor(Math.random() * creativityQuotes.length);
+      } while (next === index && creativityQuotes.length > 1);
+      setIndex(next);
+    }, 350);
+  };
+
+  return (
+    <div
+      className={`bg-accent-50 rounded-2xl shadow-lg p-8 flex flex-col items-center transition-all duration-500 min-h-[260px] relative
+        ${animating ? 'animate-fade-slide' : ''}
+      `}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <FaQuoteLeft className="text-accent-300 text-3xl mb-4" />
+      <div className="text-xl font-semibold text-accent-700 text-center min-h-[72px] whitespace-pre-line transition-all duration-300">
+        {creativityQuotes[index].text}
+      </div>
+      <div className="mt-4 text-accent-400 font-bold text-lg text-center italic">— {creativityQuotes[index].author}</div>
+      <button
+        className="mt-6 px-6 py-3 bg-accent-600 text-white rounded-full font-semibold shadow hover:bg-accent-700 transition-all duration-200 active:scale-95"
+        onClick={handleNextRandom}
+        aria-label="Inspire Me!"
+      >
+        Inspire Me!
+      </button>
+      <style>
+        {`
+        .animate-fade-slide {
+          animation: fadeSlide 0.35s cubic-bezier(.4,2,.3,1) both;
+        }
+        @keyframes fadeSlide {
+          from { opacity: 0; transform: translateY(24px) scale(0.98);}
+          to { opacity: 1; transform: none;}
+        }
+        `}
+      </style>
+    </div>
   );
 };
 
