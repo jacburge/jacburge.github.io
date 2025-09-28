@@ -457,7 +457,7 @@ function ResumePage() {
                     <img src={role.logo} alt={role.company} className="w-12 h-12 object-contain" />
                   </div>
                   {/* Card: add left margin for timeline/logo on desktop */}
-                  <div className="flex-1 ml-0 sm:ml-24 pt-12 sm:pt-0" >
+                  <div className="flex-1 ml-0 sm:ml-24 pt-12 sm:pt-0">
                     <ExpandableExperience role={role} />
                   </div>
                 </div>
