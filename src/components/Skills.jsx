@@ -183,7 +183,6 @@ const Card = ({ children }) => (
 
 
 const Skills = () => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
   return (
     <section id="skills" className="py-20 bg-gray-50">
       <div className="max-w-5xl mx-auto px-4">

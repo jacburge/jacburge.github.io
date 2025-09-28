@@ -155,20 +155,6 @@ const certifications = [
   },
 ];
 
-const skills = {
-  technical: [
-    "Machine Learning & Predictive Analytics (XGBoost, GLM, Prophet, K-Means)",
-    "Programming (Python, SQL, R, SAS)",
-    "Data Engineering (Snowflake, Liquibase, ETL pipelines)",
-    "Cloud & DevOps (AWS, Jenkins, Docker, GitLab CI/CD)",
-    "Web Application Development (Django, Flask, React, REST APIs)",
-    "Visualization (Tableau)",
-  ],
-  leadership: [
-    "Team Building", "Cross-Functional Leadership", "Agile Methods", "Product Strategy & Roadmapping", "Stakeholder Communication & Influence", "User-Centered Design", "Mentorship"
-  ],
-};
-
 const speaking = [
   {
     title: "Industry Expert Interviewee",

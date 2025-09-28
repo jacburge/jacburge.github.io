@@ -229,7 +229,7 @@ const creativityQuotes = [
 
 const CreativityCarousel = () => {
   const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const [paused] = useState(false);
   const [animating] = useState(false);
   const timeoutRef = useRef(null);
 
@@ -259,8 +259,6 @@ const CreativityCarousel = () => {
       className={`bg-accent-50 rounded-2xl shadow-lg p-8 flex flex-col items-center transition-all duration-500 min-h-[260px] relative
         ${animating ? 'animate-fade-slide' : ''}
       `}
-      // onMouseEnter={() => setPaused(true)}
-      // onMouseLeave={() => setPaused(false)}
     >
       <FaQuoteLeft className="text-accent-300 text-3xl mb-4" />
       <div className="text-xl font-semibold text-accent-700 text-center min-h-[72px] whitespace-pre-line transition-all duration-300">
