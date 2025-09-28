@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import TechStackCard from "../components/TechStack";
-import { FaLinkedin, FaEnvelope, FaAward, FaMicrophone, FaGraduationCap, FaBriefcase, FaTools, FaCertificate, FaStar, FaComments, FaChevronDown, FaList } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaAward, FaMicrophone, FaGraduationCap, FaBriefcase, FaTools, FaCertificate, FaStar, FaComments, FaChevronDown, FaList, FaFilePdf } from "react-icons/fa";
 import logo from "../assets/logo.png";
 import disneyLogo from "../assets/logos/Disney.png";
 import libertyLogo from "../assets/logos/liberty.png";
