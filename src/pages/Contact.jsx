@@ -62,14 +62,18 @@ const Contact = () => {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       body: params.toString()
-    }).then(() => {
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({ name: '', email: '', subject: '', message: '', honeypot: '' });
-        setErrors({});
-      }, 3000);
-    });
+    })
+      .then(() => {
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({ name: '', email: '', subject: '', message: '', honeypot: '' });
+          setErrors({});
+        }, 3000);
+      })
+      .catch(() => {
+        setErrors({ submit: "Sorry, there was a problem sending your message. Please try again later." });
+      });
   };
 
   if (isSubmitted) {
@@ -185,6 +189,7 @@ const Contact = () => {
                 {errors.message && <div className="text-red-500 text-xs mt-1">{errors.message}</div>}
               </div>
               {errors.honeypot && <div className="text-red-500 text-xs mt-1">{errors.honeypot}</div>}
+              {errors.submit && <div className="text-red-500 text-xs mt-1">{errors.submit}</div>}
               <button
                 type="submit"
                 className="w-full bg-accent-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-accent-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
