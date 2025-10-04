@@ -312,7 +312,8 @@ const Art = () => {
             <p className="text-gray-600 mb-6">
               If my art or creative process resonates, whether for collaboration, a custom piece, or creative conversation, I’d love to connect!
             </p>
-            <button className="bg-accent-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-700 transition-colors">
+            <button className="bg-accent-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-700 transition-colors"
+            onClick={() => { window.location.href = "/contact"; }}>
               Get in Touch
             </button>
           </div>

@@ -6,9 +6,14 @@ const Contact = () => {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    honeypot: '', // hidden field for bot detection
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  // Email validation regex
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -18,17 +23,53 @@ const Contact = () => {
     }));
   };
 
+  // Validate form before submit
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required.";
+    if (!formData.email.trim()) newErrors.email = "Email is required.";
+    else if (!emailRegex.test(formData.email)) newErrors.email = "Invalid email format.";
+    if (!formData.subject.trim()) newErrors.subject = "Subject is required.";
+    if (!formData.message.trim()) newErrors.message = "Message is required.";
+    // Honeypot check
+    if (formData.honeypot) newErrors.honeypot = "Bot detected.";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSds7pHa_Kgiue0SpkYvvN0nXb6L6S5lcVDuamz1SF6gEaMSfA/formResponse";
+
+  const GOOGLE_FORM_FIELDS = {
+    name: "entry.394206360",     
+    email: "entry.388401812",
+    subject: "entry.889504005",
+    message: "entry.1130901553"
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real application, you would send the form data to a backend
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 3000);
+    if (!validateForm()) return;
+    const params = new URLSearchParams();
+    params.append(GOOGLE_FORM_FIELDS.name, formData.name);
+    params.append(GOOGLE_FORM_FIELDS.email, formData.email);
+    params.append(GOOGLE_FORM_FIELDS.subject, formData.subject);
+    params.append(GOOGLE_FORM_FIELDS.message, formData.message);
+
+    fetch(GOOGLE_FORM_ACTION_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: params.toString()
+    }).then(() => {
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({ name: '', email: '', subject: '', message: '', honeypot: '' });
+        setErrors({});
+      }, 3000);
+    });
   };
 
   if (isSubmitted) {
@@ -64,7 +105,17 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col h-full">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h2>
-            <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col">
+            <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col" autoComplete="off">
+              {/* Honeypot field (hidden from users, visible to bots) */}
+              <input
+                type="text"
+                name="honeypot"
+                value={formData.honeypot}
+                onChange={handleInputChange}
+                style={{ display: 'none' }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -77,9 +128,10 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors"
+                    className={`w-full px-4 py-3 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors`}
                     placeholder="John Doe"
                   />
+                  {errors.name && <div className="text-red-500 text-xs mt-1">{errors.name}</div>}
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
@@ -92,9 +144,10 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors"
+                    className={`w-full px-4 py-3 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors`}
                     placeholder="john@example.com"
                   />
+                  {errors.email && <div className="text-red-500 text-xs mt-1">{errors.email}</div>}
                 </div>
               </div>
               
@@ -109,9 +162,10 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors"
+                  className={`w-full px-4 py-3 border ${errors.subject ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors`}
                   placeholder="Project collaboration opportunity"
                 />
+                {errors.subject && <div className="text-red-500 text-xs mt-1">{errors.subject}</div>}
               </div>
               
               <div>
@@ -125,11 +179,12 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors resize-vertical"
+                  className={`w-full px-4 py-3 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors resize-vertical`}
                   placeholder="Tell me about your project or idea..."
                 />
+                {errors.message && <div className="text-red-500 text-xs mt-1">{errors.message}</div>}
               </div>
-              
+              {errors.honeypot && <div className="text-red-500 text-xs mt-1">{errors.honeypot}</div>}
               <button
                 type="submit"
                 className="w-full bg-accent-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-accent-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
