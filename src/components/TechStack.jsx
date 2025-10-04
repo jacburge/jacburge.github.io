@@ -198,8 +198,7 @@ const techStack = [
   {
     src: djangoLogo,
     alt: 'Django',
-    tooltip: 'Django: Backend frameworks, user management, APIs',
-
+    tooltip: 'Django: Backend frameworks, user management, APIs'
   },
   {
     src: snowflakeLogo,

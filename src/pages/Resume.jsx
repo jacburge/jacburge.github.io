@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import TechStackCard from "../components/TechStack";
-import { FaLinkedin, FaEnvelope, FaAward, FaMicrophone, FaGraduationCap, FaBriefcase, FaTools, FaCertificate, FaStar, FaComments, FaChevronDown, FaList } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaAward, FaMicrophone, FaGraduationCap, FaBriefcase, FaTools, FaCertificate, FaStar, FaComments, FaChevronDown, FaList, FaFilePdf } from "react-icons/fa";
 import logo from "../assets/logo.png";
 import disneyLogo from "../assets/logos/Disney.png";
 import libertyLogo from "../assets/logos/liberty.png";
@@ -457,7 +457,7 @@ function ResumePage() {
                     <img src={role.logo} alt={role.company} className="w-12 h-12 object-contain" />
                   </div>
                   {/* Card: add left margin for timeline/logo on desktop */}
-                  <div className="flex-1 ml-0 sm:ml-24 pt-12 sm:pt-0" >
+                  <div className="flex-1 ml-0 sm:ml-24 pt-12 sm:pt-0">
                     <ExpandableExperience role={role} />
                   </div>
                 </div>
