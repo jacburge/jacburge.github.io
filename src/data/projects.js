@@ -22,9 +22,9 @@ export const projects = [
       { url: "https://www.canva.com/design/DAGtn8BCTm0/QX5kYhfkAh2svJkpSm5Gow/view?utm_content=DAGtn8BCTm0&utm_campaign=share_your_design&utm_medium=link2&utm_source=shareyourdesignpanel", type: "Website", label: "Individual Pitch Video" },
       { url: "https://github.com/jacburge/maxwell", type: "github", label: "GitHub Repo" }
     ],
-    details: `<p><strong>Overview:</strong> For our Entrepreneurship class, we each pitched a business idea and voted on the ideas to form groups that would ultimately present to a VC panel. My pitch was one of 8 out of 41 chosen to proceed. <ul> Led a 5 person cross-functional team to develop an MVP for an AI-powered pet health triage app.</ul><ul> Conducted customer discovery, designed UX flows, and pitched to VCs.</ul></p><ul><li>Developed React frontend and API integration</li><li>Used GitHub Copilot for rapid prototyping</li><li>Led product strategy and customer discovery</li></ul>`,
-    reflection: `This project taught me how to evaluate riskiest assumptions, conduct market size analysis, and use customer discovery to evaluate hypotheses. I learned to balance technical feasibility with user needs and business goals.`,
-    role: "Team Lead, Product Lead & UX Designer",
+    details: `<p><strong>Overview:</strong> For our Entrepreneurship class, we each pitched a business idea and voted on the ideas to form groups that would ultimately present to a VC panel. My pitch was one of 8 out of 41 chosen to proceed.`,
+    reflection: `This project involved evaluating riskiest assumptions, conduct market size analysis, and use customer discovery to test hypotheses. Led a 5 person cross-functional team to develop an MVP for an AI-powered pet health triage app. Conducted customer discovery, designed UX flows, and pitched to VCs. Developed React frontend and API integration, used GitHub Copilot for rapid prototyping with prompt engineering for photo triage evalution testing.`,
+    role: "Team Lead, CEO & Product",
     featured: true,
   },
   {
@@ -39,7 +39,7 @@ export const projects = [
       { url: "https://jacburge.github.io/nfl-survivor-pool/", type: "website", label: "Live Demo" }
     ],
     details: `<p><strong>Features:</strong> Calculates weekly NFL picks using real-time data and forecasts. Interactive charts and pick history.</p>`,
-    reflection: `Building this taught me about API reliability and the importance of clear data visualization for decision-making.`,
+    reflection: `I enjoy playing fantasy football with coworkers, not because I watch any football but I enjoy the satisfaction and opportunity to "beat" the ESPN forecasting team in low-stakes sports betting using statistics! Of course, a lot of it boils down to luck. However, a classmate of mine in grad school challenged me to see if my data science skills could beat his football expertise in a game of Survivor Pool. He paid for the entries, and I built this app pulling data on betting lines, win probabilities, future value, and pick distribution to calculate expected values for optimal picks each week.`,
     role: "Full Stack Developer",
     featured: true,
   },
@@ -54,7 +54,7 @@ export const projects = [
       { url: "https://github.com/jacburge/Degrees-That-Pay-You-Back/blob/master/Degrees%20That%20Pay%20You%20Back%20(Datacamp).ipynb", type: "github", label: "GitHub Repo" },
     ],
     details: `<p><strong>Impact:</strong> Over 2,500 students completed this project, learning R and data analysis with real-world salary data.</p>`,
-    reflection: `<p>I enjoyed designing educational content and seeing students apply analytics to real decisions.</p>`,
+    reflection: `I am passionate about designing accessible educational content that empowers learners. Creating this project allowed me to blend my technical expertise with my love for teaching.`,
     role: "Project Author",
     featured: true,
   },
@@ -68,9 +68,9 @@ export const projects = [
     links: [
       { url: "https://public.tableau.com/app/profile/jaclyn2886/viz/WelcometoMyLibrary/LIBRARY", type: "website", label: "Tableau Viz" }
     ],
-    details: `A visual analysis exploring my Goodreads data (reading history, genre, ratings, etc.) from 2002 to 2019, posted on Tableau Server. I like to read, a lot. What better way to celebrate that than inviting you on a visual analytical storytelling journey through my reading history over the last several years! (Thanks to Goodreads for storing my reading data and Tableau for the visualization tools). On my Tableau Server account you may also find another project building dashboards for Bill and Melinda Gates foundation grant data.</p>`,
-    // reflection: `Data can reveal personal stories. This project helped me reflect on my reading journey.`,
-    role: "Data Analyst",
+    details: `A visual analysis exploring my Goodreads data (reading history, genre, ratings, etc.) from 2002 to 2019, posted on Tableau Server.`,
+    reflection: `I like to read, a lot. What better way to celebrate that than inviting you on a visual analytical storytelling journey through my reading history over the last several years! (Thanks to Goodreads for storing my reading data and Tableau for the visualization tools). On my Tableau Server account you may also find another project building dashboards for Bill and Melinda Gates foundation grant data.`,
+    role: "Data Visualization Engineer",
     featured: false,
   },
   {
@@ -85,7 +85,7 @@ export const projects = [
     ],
     details: `<p>Salon [səˈlän] n. 1. A periodic assembly of guests, particularly a gathering of literary, artistic, social, cultural, or intellectual distinction. Monthly book club with diverse selections and lively discussions. Focus on stories from diverse backgrounds with impactful stories.</p>`,
     reflection: `Community building is about creating welcoming spaces for all voices. We created this book club after noticing most book clubs in our area were tailored to specific demographics or too far away. Our group has enjoyed perspectives from diverse men and women from early 20's to 70+.`,
-    role: "Co-Host",
+    role: "Meetup Host",
     featured: false,
   },
   {
@@ -100,7 +100,7 @@ export const projects = [
     ],
     details: `During my time in Seattle, I hosted this group as a monthly open community fostering the sharing of art, ideas, and passions, alongside the interactive blending of talents for new creative mashups. The only requirement to attend was bringing a 'creative contribution' of your choice to share in a casual jam-setting - the opportunities were endless.`,
     reflection: `I am passionate about empowering people to unlock their creativity. I recall a friend saying she didn't have anything creative to contribute, but then learned she designs and makes her own clothes! We enjoyed a wide range of creative expressions including poetry, music, salsa, visual art, fire dancing, tarot readings, and more.`,
-    role: "Founder",
+    role: "Founder & Host",
     featured: false,
   },
   {
