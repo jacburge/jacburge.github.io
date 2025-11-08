@@ -157,6 +157,12 @@ const certifications = [
 
 const speaking = [
   {
+    title: "Guest Speaker on Data Science & Product Career Journey",
+    role: "Cal Poly University, San Luis Obispo",
+    dates: "2025",
+    summary: "Invited to speak to the Quantitative Analysis Club about personal career journey into data science and product management with an emphasis on creativity, leadership, and continuous learning.",
+  },
+  {
     title: "Industry Expert Interviewee",
     role: "Education Strategy Group / NYC Public Schools",
     dates: "2025",
@@ -166,7 +172,7 @@ const speaking = [
     title: "Guest Speaker on Data Science Career Journey",
     role: "Stanton University",
     dates: "2022",
-    summary: "Spoke to data science students about career journey, creativity, and storytelling in data science.",
+    summary: "Invited to speak to data science students about personal career journey into data science with an emphasis on creativity and storytelling.",
   },
   {
     title: "Conference Speaker — Disney Data & Analytics Conference",
