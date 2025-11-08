@@ -155,14 +155,14 @@ const Projects = () => {
             <button className="absolute top-4 right-4 text-gray-500 hover:text-accent-700 text-2xl" onClick={() => setModal(null)} aria-label="Close">&times;</button>
             {/* Carousel/gallery */}
             {modal.media?.length > 1 ? (
-              <div className="relative mb-6 rounded-2xl overflow-auto max-h-[70vh] bg-gray-50 shadow-lg flex items-center justify-center">
+              <div className="relative mb-6 rounded-2xl bg-gray-50 shadow-lg flex items-center justify-center" style={{ height: '60vh' }}>
                 {getMediaType(modal.media[carouselIdx]) === 'video' ? (
-                  <video src={modal.media[carouselIdx]} className="w-full h-auto max-h-[70vh] object-contain" controls />
+                  <video src={modal.media[carouselIdx]} className="h-full w-auto max-w-full object-contain mx-auto" controls />
                 ) : (
                   <img
                     src={modal.media[carouselIdx]}
                     alt={modal.title}
-                    className="w-auto h-auto max-h-[70vh] max-w-full object-contain mx-auto"
+                    className="h-full w-auto max-w-full object-contain mx-auto"
                     style={{ display: 'block' }}
                   />
                 )}
@@ -189,14 +189,14 @@ const Projects = () => {
                 </div>
               </div>
             ) : (
-              <div className="mb-6 rounded-2xl overflow-auto max-h-[70vh] bg-gray-50 shadow-lg flex items-center justify-center">
+              <div className="mb-6 rounded-2xl bg-gray-50 shadow-lg flex items-center justify-center" style={{ height: '60vh' }}>
                 {getMediaType(modal.media?.[0]) === 'video' ? (
-                  <video src={modal.media?.[0]} className="w-full h-auto max-h-[70vh] object-contain" controls />
+                  <video src={modal.media?.[0]} className="h-full w-auto max-w-full object-contain mx-auto" controls />
                 ) : (
                   <img
                     src={modal.media?.[0]}
                     alt={modal.title}
-                    className="w-auto h-auto max-h-[70vh] max-w-full object-contain mx-auto"
+                    className="h-full w-auto max-w-full object-contain mx-auto"
                     style={{ display: 'block' }}
                   />
                 )}
