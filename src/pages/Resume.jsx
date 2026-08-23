@@ -7,13 +7,14 @@ import libertyLogo from "../assets/logos/liberty.png";
 import berkeleyLogo from "../assets/logos/berkeley.png";
 import umdLogo from "../assets/logos/umd.png";
 import edxLogo from "../assets/logos/edX.png";
+import { personalInfo } from "../data/projects";
 
 const education = [
   {
     logo: umdLogo,
     institution: "University of Maryland, College Park",
     degree: "Executive Master of Business Administration",
-    dates: "Expected May 2026",
+    dates: "May 2026",
     summary: "STEM-designated EMBA program focused on purposeful strategic leadership, analytics, and innovation.",
   },
   {
@@ -157,38 +158,75 @@ const certifications = [
 
 const speaking = [
   {
-    title: "Guest Speaker on Data Science & Product Career Journey",
-    role: "Cal Poly University, San Luis Obispo",
-    dates: "2025",
-    summary: "Invited to speak to the Quantitative Analysis Club about personal career journey into data science and product management with an emphasis on creativity, leadership, and continuous learning.",
+    title: "\"Audience Flow Intelligence: Connecting What Airs, What People Watch, and What They Say\"",
+    role: "Snowflake Summit · Conference Speaker",
+    dates: "2026",
+    summary: "First GenAI application for executive producers in our org, connecting what airs, what people watch, and what they say.",
+    links: [
+      { label: "Session Details", url: "https://reg.snowflake.com/flow/snowflake/summit26/sessions/page/catalog/session/1763534212920001UGhb" },
+      { label: "Permanent copy", url: "/press/snowflake-summit-2026-audience-flow-intelligence.html" },
+    ],
   },
   {
-    title: "Industry Expert Interviewee",
-    role: "Education Strategy Group / NYC Public Schools",
+    title: "\"Dancing With the Stats: AI-Driven Content Intelligence\"",
+    role: "Disney Data & Analytics Conference · Conference Speaker",
+    dates: "2026",
+    summary: "AI-driven content intelligence capabilities for entertainment analytics and executive decision-making.",
+  },
+  {
+    title: "\"The Human Behind the Science: Judgment, Creativity and Perspective in Human-Centered Analytics\"",
+    role: "Disney Data & Analytics Women · Panel Speaker",
+    dates: "2026",
+    summary: "Panel on judgment, allyship, and human-centered usage of analytics for Women in Analytics.",
+    links: [
+      { label: "Speaker Profile", url: "https://disneydataconference.com/speakers/" },
+      { label: "Permanent copy", url: "/press/ddac-2026-ddaw-panel.html" },
+    ],
+  },
+  {
+    title: "\"Data Science & Product Career Journey\"",
+    role: "Cal Poly University · Guest Speaker",
+    dates: "2025",
+    summary: "Career journey into data science and product management with an emphasis on creativity, leadership, and continuous learning.",
+  },
+  {
+    title: "\"AI and Workforce Readiness in Public Education\"",
+    role: "Education Strategy Group / NYC Public Schools · Industry Expert",
     dates: "2025",
     summary: "Consulted as an industry leader on AI and workforce readiness for public education initiatives.",
   },
   {
-    title: "Guest Speaker on Data Science Career Journey",
-    role: "Stanton University",
+    title: "\"Data Science Career Journey\"",
+    role: "Stanton University · Guest Speaker",
     dates: "2022",
-    summary: "Invited to speak to data science students about personal career journey into data science with an emphasis on creativity and storytelling.",
+    summary: "Career journey into data science with an emphasis on creativity and storytelling.",
   },
   {
-    title: "Conference Speaker — Disney Data & Analytics Conference",
-    role: "Disney Data & Analytics Conference",
+    title: "\"And the Emmy Goes To… Behind the Scenes of Digital Television Forecasting\"",
+    role: "Disney Data & Analytics Conference · Conference Speaker",
     dates: "2019",
-    summary: "Presented 'And the Emmy Goes To… Behind the Scenes of Digital Television Forecasting' on feature engineering, ML, and business integration best practices.",
+    summary: "Feature engineering, machine learning, and business integration best practices for digital television forecasting.",
   },
   {
-    title: "DataCamp Instructor",
-    role: "Datacamp",
+    title: "\"Degrees That Pay You Back: Cluster Analysis in R\"",
+    role: "DataCamp · Instructor",
     dates: "2018",
     summary: "Designed curriculum for 2500+ students on clustering analysis and visualization, emphasizing effective storytelling with data.",
   },
 ];
 
 const awards = [
+  {
+    title: "Best & Brightest Executive MBA",
+    role: "Poets & Quants, Robert H. Smith School of Business",
+    dates: "2026",
+    summary: "Honors the most accomplished, promising, and respected EMBA graduates from the highest-ranked business schools worldwide.",
+    links: [
+      { label: "Poets & Quants", url: "https://poetsandquantsforexecs.com/students/2026-best-brightest-executive-mba-jaclyn-field-mathai-university-of-maryland-smith/" },
+      { label: "Smith News", url: "https://www.rhsmith.umd.edu/news/smiths-jaclyn-mathai-among-best-brightest-executive-mbas-class-2026" },
+      { label: "Permanent copy", url: "/press/poets-and-quants-best-brightest-2026.html" },
+    ],
+  },
   {
     title: "Chinese Martial Arts Gold Medalist",
     role: "CMAT, ICMAC, Can-Am Competitions",
@@ -225,10 +263,10 @@ const badgeColors = {
 const sectionAnchors = [
   { id: "education", label: "Education", icon: <FaGraduationCap /> },
   { id: "experience", label: "Work Experience", icon: <FaBriefcase /> },
-  { id: "skills", label: "Skills", icon: <FaTools /> },
-  { id: "certifications", label: "Certifications", icon: <FaCertificate /> },
   { id: "awards", label: "Awards", icon: <FaStar /> },
   { id: "speaking", label: "Speaking", icon: <FaComments /> },
+  { id: "skills", label: "Skills", icon: <FaTools /> },
+  { id: "certifications", label: "Certifications", icon: <FaCertificate /> },
   { id: "contact", label: "Contact", icon: <FaEnvelope /> },
 ];
 
@@ -374,8 +412,8 @@ function ResumePage() {
         style={{ left: 0, right: 0 }}
       >
         <h1 className="text-4xl font-bold text-accent-700 mb-2">Jaclyn Field Mathai</h1>
-        <div className="text-lg font-semibold text-accent-600 mb-2">Senior Data Science Leader | ML Products | Creative Strategy</div>
-        <div className="text-gray-700 text-base max-w-xl mb-2">I turn complex data and bold ideas into products that save time, unlock revenue, and delight users.</div>
+        <div className="text-lg font-semibold text-accent-600 mb-2">{personalInfo.tagline}</div>
+        <div className="text-gray-700 text-base max-w-xl mb-2">{personalInfo.bio}</div>
       </section>
       <ResumeNavBar activeSection={activeSection} />
       <main className="w-full max-w-5xl mx-auto px-2 lg:px-0 flex-1">
@@ -471,6 +509,76 @@ function ResumePage() {
             </div>
           </div>
         </section>
+        <section ref={sectionRefs.current.awards} id="awards" className="mb-12 animate-fade-in">
+          <h2
+            id="awards-header"
+            className="text-2xl font-bold text-accent-700 mb-6"
+            style={{ scrollMarginTop: "120px" }}
+          >
+            Awards & Honors
+          </h2>
+          <div className="flex flex-wrap gap-6 justify-center">
+            {awards.map((item, i) => (
+              <div key={i} className="bg-white rounded-2xl shadow-lg p-6 border border-accent-100 flex flex-col items-center min-w-[220px] max-w-[320px]">
+                <FaAward className="text-accent-400 text-3xl mb-2" />
+                <div className="font-bold text-lg text-accent-700 text-center mb-1">{item.title}</div>
+                <div className="text-sm text-gray-500 text-center mb-1">{item.role}</div>
+                <div className="text-xs text-accent-400 font-semibold mb-1">{item.dates}</div>
+                <div className="text-gray-600 text-center">{item.summary}</div>
+                {item.links?.length > 0 && (
+                  <div className="flex flex-wrap justify-center gap-2 mt-3">
+                    {item.links.map((link) => (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold text-accent-600 hover:text-accent-800 underline underline-offset-2"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+        <section ref={sectionRefs.current.speaking} id="speaking" className="mb-12 animate-fade-in">
+          <h2
+            id="speaking-header"
+            className="text-2xl font-bold text-accent-700 mb-6"
+            style={{ scrollMarginTop: "120px" }}
+          >
+            Speaking & Thought Leadership
+          </h2>
+          <div className="flex flex-wrap gap-6 justify-center">
+            {speaking.map((item, i) => (
+              <div key={i} className="bg-white rounded-2xl shadow-lg p-6 border border-accent-100 flex flex-col items-center min-w-[220px] max-w-[320px]">
+                <FaMicrophone className="text-accent-400 text-3xl mb-2" />
+                <div className="font-bold text-lg text-accent-700 text-center mb-1">{item.title}</div>
+                <div className="text-sm text-gray-500 text-center mb-1">{item.role}</div>
+                <div className="text-xs text-accent-400 font-semibold mb-1">{item.dates}</div>
+                <div className="text-gray-600 text-center">{item.summary}</div>
+                {item.links?.length > 0 && (
+                  <div className="flex flex-wrap justify-center gap-2 mt-3">
+                    {item.links.map((link) => (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold text-accent-600 hover:text-accent-800 underline underline-offset-2"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
         <section ref={sectionRefs.current.skills} id="skills" className="mb-12 animate-fade-in">
           <h2
             id="skills-header"
@@ -497,46 +605,6 @@ function ResumePage() {
                 <div className="text-sm text-gray-500 text-center mb-1">{cert.org}</div>
                 <div className="text-xs text-accent-400 font-semibold mb-1">{cert.date}</div>
                 <span className="inline-block px-4 py-1 rounded-full font-semibold text-sm mb-2" style={{ background: badgeColors[cert.type], color: '#fff' }}>{cert.type}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-        <section ref={sectionRefs.current.awards} id="awards" className="mb-12 animate-fade-in">
-          <h2
-            id="awards-header"
-            className="text-2xl font-bold text-accent-700 mb-6"
-            style={{ scrollMarginTop: "120px" }}
-          >
-            Awards & Honors
-          </h2>
-          <div className="flex flex-wrap gap-6 justify-center">
-            {awards.map((item, i) => (
-              <div key={i} className="bg-white rounded-2xl shadow-lg p-6 border border-accent-100 flex flex-col items-center min-w-[220px] max-w-[320px]">
-                <FaAward className="text-accent-400 text-3xl mb-2" />
-                <div className="font-bold text-lg text-accent-700 text-center mb-1">{item.title}</div>
-                <div className="text-sm text-gray-500 text-center mb-1">{item.role}</div>
-                <div className="text-xs text-accent-400 font-semibold mb-1">{item.dates}</div>
-                <div className="text-gray-600 text-center">{item.summary}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-        <section ref={sectionRefs.current.speaking} id="speaking" className="mb-12 animate-fade-in">
-          <h2
-            id="speaking-header"
-            className="text-2xl font-bold text-accent-700 mb-6"
-            style={{ scrollMarginTop: "120px" }}
-          >
-            Speaking & Thought Leadership
-          </h2>
-          <div className="flex flex-wrap gap-6 justify-center">
-            {speaking.map((item, i) => (
-              <div key={i} className="bg-white rounded-2xl shadow-lg p-6 border border-accent-100 flex flex-col items-center min-w-[220px] max-w-[320px]">
-                <FaMicrophone className="text-accent-400 text-3xl mb-2" />
-                <div className="font-bold text-lg text-accent-700 text-center mb-1">{item.title}</div>
-                <div className="text-sm text-gray-500 text-center mb-1">{item.role}</div>
-                <div className="text-xs text-accent-400 font-semibold mb-1">{item.dates}</div>
-                <div className="text-gray-600 text-center">{item.summary}</div>
               </div>
             ))}
           </div>

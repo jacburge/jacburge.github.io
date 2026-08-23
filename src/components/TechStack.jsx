@@ -9,6 +9,8 @@ import gitlabLogo from '../assets/logos/gitlab.png';
 import jiraLogo from '../assets/logos/jira.png';
 import canvaLogo from '../assets/logos/canva.png';
 import copilotLogo from '../assets/logos/copilot.png';
+import cursorLogo from '../assets/logos/cursor.png';
+import claudeCodeLogo from '../assets/logos/claude-code.svg';
 import airtableLogo from '../assets/logos/airtable.png';
 import asanaLogo from '../assets/logos/asana.png';
 import balsamiqLogo from '../assets/logos/balsamiq.png';
@@ -51,6 +53,8 @@ const techCategories = {
   balsamiq: ["Design"],
   canva: ["Design", "Visualization", "AI"],
   githubcopilot: ["Programming", "Machine Learning", "Web App Development", "AI"],
+  cursor: ["Programming", "Machine Learning", "Web App Development", "AI"],
+  claudecode: ["Programming", "Machine Learning", "Web App Development", "AI"],
 };
 
 const allCategories = Array.from(new Set(Object.values(techCategories).flat()));
@@ -269,7 +273,17 @@ const techStack = [
     src: copilotLogo,
     alt: 'GitHub Copilot',
     tooltip: 'GitHub Copilot: AI pair programming, code generation, productivity',
-  }
+  },
+  {
+    src: cursorLogo,
+    alt: 'Cursor',
+    tooltip: 'Cursor: AI-native IDE for agentic development, codebase-aware editing, and rapid prototyping',
+  },
+  {
+    src: claudeCodeLogo,
+    alt: 'Claude Code',
+    tooltip: 'Claude Code: Agentic AI coding assistant for terminal and IDE workflows, testing, and git operations',
+  },
 ];
 
   return (

@@ -40,7 +40,7 @@ const schools = [
 
 const schoolBullets = [
   [
-    "Expected graduation 2026",
+    "GPA 4.0, Poets & Quants Best & Brightest",
     "STEM-designated",
     "Led capstone entrepreneurship project on AI for pet healh care"
   ],

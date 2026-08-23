@@ -23,7 +23,7 @@ export const projects = [
       { url: "https://github.com/jacburge/maxwell", type: "github", label: "GitHub Repo" }
     ],
     details: `<p><strong>Overview:</strong> For our Entrepreneurship class, we each pitched a business idea and voted on the ideas to form groups that would ultimately present to a VC panel. My pitch was one of 8 out of 41 chosen to proceed.`,
-    reflection: `This project involved evaluating riskiest assumptions, conduct market size analysis, and use customer discovery to test hypotheses. Led a 5 person cross-functional team to develop an MVP for an AI-powered pet health triage app. Conducted customer discovery, designed UX flows, and pitched to VCs. Developed React frontend and API integration, used GitHub Copilot for rapid prototyping with prompt engineering for photo triage evalution testing.`,
+    reflection: `This project involved evaluating riskiest assumptions, conduct market size analysis, and use customer discovery to test hypotheses. Led a 5 person cross-functional team to develop an MVP for an AI-powered pet health triage app. Conducted customer discovery, designed UX flows, and pitched to VCs. Developed React frontend and API integration, used GitHub Copilot for rapid prototyping with prompt engineering for photo triage evaluation testing.`,
     role: "Team Lead, CEO & Product",
     featured: true,
   },
@@ -79,10 +79,8 @@ export const projects = [
     summary: "SHELF: Salon for Hip, Evocative, Literary Fanatics. We are an inclusive group of bibliophiles seeking to share a social space for discussing thought-provoking, inspiring, and diverse novels. This is a Meetup community I currently co-host each month.",
     image: shelfImg,
     media: [shelfImg],
-    tags: ["Meetup", "Community Building", "Event Planning", "Literature", "Diversity & Inclusion","Leadership"],
-    links: [
-      { url: "#", type: "website", label: "Meetup Page" }
-    ],
+    tags: ["Community Building", "Event Planning", "Literature", "Diversity & Inclusion","Leadership"],
+    links: [],
     details: `<p>Salon [səˈlän] n. 1. A periodic assembly of guests, particularly a gathering of literary, artistic, social, cultural, or intellectual distinction. Monthly book club with diverse selections and lively discussions. Focus on stories from diverse backgrounds with impactful stories.</p>`,
     reflection: `Community building is about creating welcoming spaces for all voices. We created this book club after noticing most book clubs in our area were tailored to specific demographics or too far away. Our group has enjoyed perspectives from diverse men and women from early 20's to 70+.`,
     role: "Meetup Host",
@@ -128,8 +126,8 @@ export const projects = [
     links: [
       { url: "https://WudangDanPai.com", type: "website", label: "Website" }
     ],
-    details: `I redesigned their website with a bright, simpler, more modern look in alignment with the academy's desired aesthetic. I also served as webmaster, designer, and consultant for the managing of new content and online presence as they continue to advertise internal Chinese martial arts classes in Seattle, WA for several years.`,
-    reflection: `The mission of the Wudang Internal Martial Arts Academy is to spread awareness of Chinese internal martial arts, promote health and spiritual cultivation, and to teach serious and practical fighting techniques for self-defense.`,
+    details: `The mission of the Wudang Internal Martial Arts Academy is to spread awareness of Chinese internal martial arts, promote health and spiritual cultivation, and to teach serious and practical fighting techniques for self-defense.`,
+    reflection: `I redesigned their website with a bright, simpler, more modern look in alignment with the academy's desired aesthetic. I also served as webmaster, designer, and consultant for the managing of new content and online presence as they continue to advertise internal Chinese martial arts classes in Seattle, WA for several years.`,
     role: "Webmaster & Designer",
     featured: false,
   },
@@ -188,8 +186,8 @@ export const projects = [
 
 export const personalInfo = {
   name: "Jaclyn Field Mathai",
-  tagline: "Data Science | Product Strategy | Creative Leadership",
-  bio: "I turn complex data and bold ideas into products that save time, unlock revenue, and delight users.",
+  tagline: "AI Product & Intelligence Platform Leader",
+  bio: "Blending creativity and AI to amplify stories and human connection.",
   email: "hello@jaclynfieldmath.ai",
   location: "Greater DC Area"
 };

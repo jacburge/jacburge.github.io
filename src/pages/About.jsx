@@ -27,7 +27,9 @@ const About = () => (
               <h3 className="font-bold text-2xl text-accent-700">Background</h3>
             </div>
             <p className="text-lg text-gray-700 font-medium leading-relaxed mb-2">
-              I am a product-minded data science leader, blending analytics, storytelling, and art to create products that empower and inspire. Rooted in an interdisciplinary background, I bring a <span className="text-accent-600 font-semibold">maker’s mindset</span> to everything I do.
+              I bring creativity, technical rigor, and human-centered leadership to create data products that empower and inspire. Over the last decade, I’ve scaled a team that builds AI products for executives and products, scaled ML-driven platforms and frameworks that automated 60+ hours of monthly forecasting while supporting hundreds of millions in ad revenue, migrated legacy stacks to cloud pipelines, and led cross-functional initiatives converting ambiguity into action.
+              Rooted in an interdisplinary background as a Berkeley-trained cognitive scientist, I bring a maker's mindset to everything I do.
+              Cognitive science studies the mind through both computational models and human meaning. This duality has always mattered to me. For AI to have measurable impact, it must amplify human ingenuity.
             </p>
           </div>
           {/* Philosophy */}
