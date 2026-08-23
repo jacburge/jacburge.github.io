@@ -89,7 +89,7 @@ const Projects = () => {
       {/* Top headline and intro */}
       <div className="max-w-5xl mx-auto px-4 pt-16 pb-8 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold text-accent-700 mb-4">Selected Works</h1>
-        <p className="text-lg text-gray-700 mb-6 font-medium">A showcase of my favorite passion projects—exploring data, design, and community building. Click any card to learn more!</p>
+        <p className="text-lg text-gray-700 mb-6 font-medium max-w-3xl mx-auto">Currently leading a multi-product AI analytics portfolio at a major entertainment company. These are a few favorite passion projects outside of work from over the years, exploring data, design, and community building.</p>
       </div>
       {/* Projects grid */}
       <section className="max-w-7xl mx-auto px-4 mb-16">
