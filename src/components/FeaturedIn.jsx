@@ -1,4 +1,5 @@
 import umdLogo from '../assets/logos/umd.png';
+import poetsAndQuantsLogo from '../assets/logos/poets-and-quants.png';
 import snowflakeLogo from '../assets/logos/snowflake.png';
 
 const highlights = [
@@ -8,8 +9,9 @@ const highlights = [
     summary: "Profiled among the most accomplished EMBA graduates from top business schools worldwide.",
     url: "https://poetsandquantsforexecs.com/students/2026-best-brightest-executive-mba-jaclyn-field-mathai-university-of-maryland-smith/",
     cta: "Read Profile",
-    image: umdLogo,
-    imageAlt: "University of Maryland Smith School of Business",
+    image: poetsAndQuantsLogo,
+    imageAlt: "Poets & Quants for Executives",
+    imageClassName: "h-10 w-full max-w-[280px] object-contain",
   },
   {
     title: "Among Best & Brightest Executive MBAs, Class of 2026",
@@ -46,7 +48,7 @@ const FeaturedIn = () => (
               <img
                 src={item.image}
                 alt={item.imageAlt}
-                className="h-12 object-contain"
+                className={item.imageClassName ?? "h-12 object-contain"}
               />
             </div>
             <div className="text-xs font-semibold uppercase tracking-wide text-accent-500 mb-2 text-center">
