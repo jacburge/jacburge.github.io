@@ -1,5 +1,5 @@
 import Hero from '../components/Hero';
-import FeaturedProjects from '../components/FeaturedProjects';
+import FeaturedIn from '../components/FeaturedIn';
 import Skills from '../components/Skills';
 import AboutMe from '../components/AboutMe';
 // Import About, Footer as needed
@@ -9,7 +9,7 @@ const Home = () => (
     <Hero />
     <AboutMe />
     <Skills />
-    <FeaturedProjects />
+    <FeaturedIn />
     {/* Add About, Footer components here */}
   </div>
 );

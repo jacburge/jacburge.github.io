@@ -25,12 +25,13 @@ const AboutMeCard = () => (
         <div>
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-accent-700 mb-8 text-center leading-tight">
-            Data scientist. Team builder. Artist <span className="text-accent-600">&amp; martial artist</span>.
+            AI product builder. Team builder. Artist <span className="text-accent-600">&amp; martial artist</span>.
           </h1>
         </div>
           <p className="text-lg text-gray-700 font-medium leading-relaxed mb-2">
-            I am a product-minded data science leader, blending creativity and technology to distill clarity from complexity. Over the last decade, I’ve scaled ML-driven platforms and frameworks that automated <span className="text-accent-600 font-semibold">60+ hours of monthly forecasting</span> while supporting <span className="text-accent-600 font-semibold">hundreds of millions in ad revenue</span>, migrated legacy stacks to cloud pipelines, and led cross-functional teams that convert ambiguity into action. Rooted in an interdisciplinary background, I bring a <span className="text-accent-600 font-semibold">maker’s mindset</span> to everything I do.
-          </p>
+          I bring creativity, technical rigor, and human-centered leadership to create data products that empower and inspire. Over the last decade, I’ve scaled a team that builds AI products for executives and products, scaled ML-driven platforms and frameworks that automated 60+ hours of monthly forecasting while supporting hundreds of millions in ad revenue, migrated legacy stacks to cloud pipelines, and led cross-functional initiatives converting ambiguity into action.
+              Rooted in an interdisplinary background as a Berkeley-trained cognitive scientist, I bring a maker's mindset to everything I do.
+              Cognitive science studies the mind through both computational models and human meaning. This duality has always mattered to me. For AI to have measurable impact, it must amplify human ingenuity.          </p>
         </div>
         {/* Philosophy */}
         <div>
@@ -39,17 +40,17 @@ const AboutMeCard = () => (
             <h2 className="font-bold text-2xl text-accent-700">Philosophy</h2>
           </div>
           <p className="text-lg text-gray-700 font-medium leading-relaxed mb-2">
-            I believe <span className="text-accent-600 font-semibold">creativity is for everyone</span>—it just takes courage, practice, and the willingness to learn from failure. Building data products is like making art or practicing martial arts: it’s messy, dynamic, and demands resilience. Whether I’m leading a technical team or painting on a Sunday, I’m driven by curiosity, empathy, and the joy of turning ideas into reality.
+            My leadership philosophy is building environments where technical depth and creative thinking have space to harmonize. I believe creativity is for everyone—it just takes courage, practice, and the willingness to learn from failure. Building data products is like making art or practicing martial arts: messy, dynamic, and demanding resilience. Whether I'm leading a team through ambiguity or painting on a Sunday, I'm driven by curiosity and the joy of turning ideas into reality.
           </p>
         </div>
-        {/* Mission */}
+        {/* Purpose */}
         <div>
           <div className="flex items-center justify-center gap-3 mb-2">
             <FaRocket className="text-accent-600 text-3xl" />
-            <h2 className="font-bold text-2xl text-accent-700">Mission</h2>
+            <h2 className="font-bold text-2xl text-accent-700">Purpose</h2>
           </div>
           <p className="text-lg text-gray-700 font-medium leading-relaxed">
-            My mission is to break down barriers so more people feel seen, empowered, and inspired to create. 
+            Blending art and technology to amplify stories affirming a sense of belonging and human connection.
           </p>
         </div>
       </div>
