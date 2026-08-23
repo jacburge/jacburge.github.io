@@ -164,6 +164,8 @@ const speaking = [
     summary: "First GenAI application for executive producers in our org, connecting what airs, what people watch, and what they say.",
     links: [
       { label: "Session Details", url: "https://reg.snowflake.com/flow/snowflake/summit26/sessions/page/catalog/session/1763534212920001UGhb" },
+      { label: "Archived snapshot", url: "/press/snowflake-summit-2026-audience-flow-intelligence.png" },
+      { label: "Speaker profile", url: "/press/snowflake-summit-2026-speaker-profile.png" },
     ],
   },
   {
@@ -179,6 +181,8 @@ const speaking = [
     summary: "Panel on judgment, allyship, and human-centered usage of analytics for Women in Analytics.",
     links: [
       { label: "Speaker Profile", url: "https://disneydataconference.com/speakers/" },
+      { label: "Archived snapshot", url: "/press/ddac-2026-speaker-profile.png" },
+      { label: "Panel details", url: "/press/ddaw-2026-human-behind-the-science.png" },
     ],
   },
   {
