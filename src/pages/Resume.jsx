@@ -21,7 +21,7 @@ const education = [
     logo: berkeleyLogo,
     institution: "University of California, Berkeley",
     degree: "B.A., Cognitive Science",
-    dates: "Graduated May 2015",
+    dates: "May 2015",
     summary: "Cognitive Science: interdisciplinary study of the mind, blending computer science, neuroscience, linguistics, and more.",
   },
 ];
@@ -164,7 +164,6 @@ const speaking = [
     summary: "First GenAI application for executive producers in our org, connecting what airs, what people watch, and what they say.",
     links: [
       { label: "Session Details", url: "https://reg.snowflake.com/flow/snowflake/summit26/sessions/page/catalog/session/1763534212920001UGhb" },
-      { label: "Permanent copy", url: "/press/snowflake-summit-2026-audience-flow-intelligence.html" },
     ],
   },
   {
@@ -180,7 +179,6 @@ const speaking = [
     summary: "Panel on judgment, allyship, and human-centered usage of analytics for Women in Analytics.",
     links: [
       { label: "Speaker Profile", url: "https://disneydataconference.com/speakers/" },
-      { label: "Permanent copy", url: "/press/ddac-2026-ddaw-panel.html" },
     ],
   },
   {
@@ -224,7 +222,6 @@ const awards = [
     links: [
       { label: "Poets & Quants", url: "https://poetsandquantsforexecs.com/students/2026-best-brightest-executive-mba-jaclyn-field-mathai-university-of-maryland-smith/" },
       { label: "Smith News", url: "https://www.rhsmith.umd.edu/news/smiths-jaclyn-mathai-among-best-brightest-executive-mbas-class-2026" },
-      { label: "Permanent copy", url: "/press/poets-and-quants-best-brightest-2026.html" },
     ],
   },
   {
