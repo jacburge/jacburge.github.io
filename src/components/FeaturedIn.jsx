@@ -25,6 +25,7 @@ const highlights = [
     source: "Snowflake Summit 2026",
     summary: "Connecting what airs, what people watch, and what they say — the first GenAI application for executive producers in our org.",
     url: "https://reg.snowflake.com/flow/snowflake/summit26/sessions/page/catalog/session/1763534212920001UGhb",
+    archiveUrl: "/press/snowflake-summit-2026-audience-flow-intelligence.png",
     cta: "View Session",
     image: snowflakeLogo,
     imageAlt: "Snowflake Summit",
@@ -53,14 +54,26 @@ const FeaturedIn = () => (
             </div>
             <h3 className="text-xl font-semibold mb-2 text-center text-accent-700">{item.title}</h3>
             <p className="text-gray-700 mb-6 text-center flex-1">{item.summary}</p>
-            <a
-              href={item.url}
-              className="mt-auto bg-accent-600 text-white px-6 py-2 rounded-2xl font-semibold text-base hover:bg-accent-700 transition shadow text-center"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {item.cta}
-            </a>
+            <div className="mt-auto flex flex-col gap-2">
+              <a
+                href={item.url}
+                className="bg-accent-600 text-white px-6 py-2 rounded-2xl font-semibold text-base hover:bg-accent-700 transition shadow text-center"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {item.cta}
+              </a>
+              {item.archiveUrl && (
+                <a
+                  href={item.archiveUrl}
+                  className="text-sm font-semibold text-accent-600 hover:text-accent-800 underline underline-offset-2 text-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Archived snapshot
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>
